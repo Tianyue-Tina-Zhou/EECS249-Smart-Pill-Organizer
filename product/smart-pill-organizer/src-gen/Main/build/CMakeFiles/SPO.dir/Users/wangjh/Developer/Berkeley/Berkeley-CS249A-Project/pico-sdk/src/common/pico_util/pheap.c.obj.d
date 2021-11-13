@@ -41,9 +41,9 @@ CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/stdint.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/sys/_intsup.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/generated/pico_base/pico/version.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/generated/pico_base/pico/version.h \
  /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_base/include/pico/config.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/generated/pico_base/pico/config_autogen.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/generated/pico_base/pico/config_autogen.h \
  /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/boards/include/boards/pico.h \
  /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \

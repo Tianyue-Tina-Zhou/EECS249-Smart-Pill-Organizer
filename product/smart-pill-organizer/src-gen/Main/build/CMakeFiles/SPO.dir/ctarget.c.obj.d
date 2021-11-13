@@ -1,9 +1,9 @@
 CMakeFiles/SPO.dir/ctarget.c.obj: \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/ctarget.c \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/ctarget.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/reactor.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/platform.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/ctarget.c \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/ctarget.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/reactor.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/stdint.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/machine/_default_types.h \
@@ -12,7 +12,7 @@ CMakeFiles/SPO.dir/ctarget.c.obj: \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/sys/_intsup.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/sys/_stdint.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/platform/lf_tag_64_32.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform/lf_tag_64_32.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/stdio.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/_ansi.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/newlib.h \
@@ -53,7 +53,7 @@ CMakeFiles/SPO.dir/ctarget.c.obj: \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/sys/syslimits.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/errno.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/sys/errno.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/pqueue.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/util.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/tag.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/trace.h
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/pqueue.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/util.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/tag.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/trace.h

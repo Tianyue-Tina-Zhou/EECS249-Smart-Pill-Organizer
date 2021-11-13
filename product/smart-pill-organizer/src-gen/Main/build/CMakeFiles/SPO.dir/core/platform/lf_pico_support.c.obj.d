@@ -1,6 +1,6 @@
 CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj: \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.c \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.c \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/stdint.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/machine/_default_types.h \
@@ -9,10 +9,10 @@ CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj: \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/sys/_intsup.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/sys/_stdint.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/platform/lf_tag_64_32.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/platform/../platform.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/platform/../platform/lf_pico_support.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_clock_support.c \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform/lf_tag_64_32.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform/../platform.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform/../platform/lf_pico_support.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_clock_support.c \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/time.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/_ansi.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/newlib.h \

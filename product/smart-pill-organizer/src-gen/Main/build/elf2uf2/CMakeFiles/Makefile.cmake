@@ -7,11 +7,11 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/boot_uf2/CMakeLists.txt"
+  "/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/tools/elf2uf2/CMakeLists.txt"
   "CMakeFiles/3.21.4/CMakeCCompiler.cmake"
   "CMakeFiles/3.21.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.21.4/CMakeSystem.cmake"
-  "/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/boot_uf2/CMakeLists.txt"
-  "/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/tools/elf2uf2/CMakeLists.txt"
   "/opt/homebrew/Cellar/cmake/3.21.4/share/cmake/Modules/CMakeCCompiler.cmake.in"
   "/opt/homebrew/Cellar/cmake/3.21.4/share/cmake/Modules/CMakeCCompilerABI.c"
   "/opt/homebrew/Cellar/cmake/3.21.4/share/cmake/Modules/CMakeCInformation.cmake"

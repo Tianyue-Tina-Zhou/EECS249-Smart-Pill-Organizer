@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 set(ENV{PICO_SDK_PATH} "../../../../../pico-sdk")
-
+set(PICO_PLATFORM rp2040)
 include(../../pico_sdk_import.cmake)
 
 project(SPO)

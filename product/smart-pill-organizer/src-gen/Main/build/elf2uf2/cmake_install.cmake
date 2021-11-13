@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2/boot_uf2_headers/cmake_install.cmake")
+  include("/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2/boot_uf2_headers/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

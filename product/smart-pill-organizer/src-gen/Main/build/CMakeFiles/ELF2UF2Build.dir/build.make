@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main
+CMAKE_SOURCE_DIR = /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build
+CMAKE_BINARY_DIR = /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build
 
 # Utility rule file for ELF2UF2Build.
 
@@ -76,51 +76,51 @@ CMakeFiles/ELF2UF2Build-complete: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-pa
 CMakeFiles/ELF2UF2Build-complete: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure
 CMakeFiles/ELF2UF2Build-complete: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build
 CMakeFiles/ELF2UF2Build-complete: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'ELF2UF2Build'"
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/CMakeFiles
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/CMakeFiles/ELF2UF2Build-complete
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-done
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'ELF2UF2Build'"
+	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles
+	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles/ELF2UF2Build-complete
+	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-done
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Performing build step for 'ELF2UF2Build'"
-	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2 && $(MAKE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Performing build step for 'ELF2UF2Build'"
+	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2 && $(MAKE)
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure: elf2uf2/tmp/ELF2UF2Build-cfgcmd.txt
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Performing configure step for 'ELF2UF2Build'"
-	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2 && /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake "-GUnix Makefiles" /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/tools/elf2uf2
-	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2 && /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Performing configure step for 'ELF2UF2Build'"
+	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2 && /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake "-GUnix Makefiles" /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/tools/elf2uf2
+	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2 && /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "No download step for 'ELF2UF2Build'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "No download step for 'ELF2UF2Build'"
 	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E echo_append
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download
+	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'ELF2UF2Build'"
-	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2 && /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E echo_append
-	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2 && /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'ELF2UF2Build'"
+	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2 && /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E echo_append
+	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2 && /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'ELF2UF2Build'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'ELF2UF2Build'"
 	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/tools/elf2uf2
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2/tmp
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2/src
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir
+	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2
+	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2
+	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2/tmp
+	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp
+	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2/src
+	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E make_directory /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp
+	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'ELF2UF2Build'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'ELF2UF2Build'"
 	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E echo_append
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch
+	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No update step for 'ELF2UF2Build'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No update step for 'ELF2UF2Build'"
 	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E echo_append
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update
+	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E touch /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update
 
 ELF2UF2Build: CMakeFiles/ELF2UF2Build
 ELF2UF2Build: CMakeFiles/ELF2UF2Build-complete
@@ -143,6 +143,6 @@ CMakeFiles/ELF2UF2Build.dir/clean:
 .PHONY : CMakeFiles/ELF2UF2Build.dir/clean
 
 CMakeFiles/ELF2UF2Build.dir/depend:
-	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/build/CMakeFiles/ELF2UF2Build.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles/ELF2UF2Build.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ELF2UF2Build.dir/depend
 

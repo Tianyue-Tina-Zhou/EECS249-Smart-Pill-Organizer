@@ -1,9 +1,9 @@
 CMakeFiles/SPO.dir/Main.c.obj: \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/Main.c \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/ctarget.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/reactor.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/platform.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/Main.c \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/ctarget.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/reactor.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/stdint.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/machine/_default_types.h \
@@ -12,7 +12,7 @@ CMakeFiles/SPO.dir/Main.c.obj: \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/sys/_intsup.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/sys/_stdint.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/platform/lf_tag_64_32.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform/lf_tag_64_32.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/stdio.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/_ansi.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/newlib.h \
@@ -53,16 +53,51 @@ CMakeFiles/SPO.dir/Main.c.obj: \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/sys/syslimits.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/errno.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/sys/errno.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/pqueue.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/util.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/tag.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/trace.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/reactor.c \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/reactor_common.c \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/reactor.h \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/tag.c \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/pqueue.c \
- /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/src-gen/Main/core/util.c \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/pqueue.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/util.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/tag.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/trace.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/reactor.c \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/reactor_common.c \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/reactor.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/tag.c \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/pqueue.c \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/util.c \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/assert.h \
  /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/signal.h \
- /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/sys/signal.h
+ /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/sys/signal.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_base/include/pico.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_base/include/pico/types.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_base/include/pico/assert.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/generated/pico_base/pico/version.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_base/include/pico/config.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/generated/pico_base/pico/config_autogen.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/boards/include/boards/pico.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_base/include/pico/types.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_base/include/pico/error.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/include/pico/time.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
+ /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h
