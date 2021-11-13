@@ -1,5 +1,0 @@
-/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/build/elf2uf2/CMakeFiles/rebuild_cache.dir
-/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/build/elf2uf2/CMakeFiles/edit_cache.dir
-/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/build/elf2uf2/CMakeFiles/elf2uf2.dir
-/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/build/elf2uf2/boot_uf2_headers/CMakeFiles/rebuild_cache.dir
-/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/eecs-249/smart-pill-organizer/build/elf2uf2/boot_uf2_headers/CMakeFiles/edit_cache.dir
