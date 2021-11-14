@@ -9,7 +9,7 @@
  * @return 0 on success, error number otherwise (see pthread_create()).
  */
 int lf_thread_create(_lf_thread_t* thread, void *(*lf_thread) (void *), void* arguments) {
-    return pthread_create((pthread_t*)thread, NULL, lf_thread, arguments);
+    return thrd_create((thrd_t*)thread, (thrd_start_t)lf_thread, arguments);
 }
 
 /**
@@ -20,7 +20,9 @@ int lf_thread_create(_lf_thread_t* thread, void *(*lf_thread) (void *), void* ar
  * @return 0 on success, error number otherwise (see pthread_join()).
  */
 int lf_thread_join(_lf_thread_t thread, void** thread_return) {
-    return pthread_join((pthread_t)thread, thread_return);
+    thread_return = (void**)malloc(sizeof(void*));
+    *thread_return= (int*)malloc(sizeof(int));
+    return thrd_join((thrd_t)thread, (int*)*thread_return);
 }
 
 /**
@@ -30,10 +32,7 @@ int lf_thread_join(_lf_thread_t thread, void** thread_return) {
  */
 int lf_mutex_init(_lf_mutex_t* mutex) {
     // Set up a recursive mutex
-    pthread_mutexattr_t attr;
-    pthread_mutexattr_init(&attr);
-    pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
-    return pthread_mutex_init((pthread_mutex_t*)mutex, &attr);
+    return mtx_init((mtx_t*)mutex, mtx_timed | mtx_recursive);
 }
 
 /**
@@ -42,7 +41,7 @@ int lf_mutex_init(_lf_mutex_t* mutex) {
  * @return 0 on success, error number otherwise (see pthread_mutex_lock()).
  */
 int lf_mutex_lock(_lf_mutex_t* mutex) {
-    return pthread_mutex_lock((pthread_mutex_t*)mutex);
+    return mtx_lock((mtx_t*) mutex);
 }
 
 /** 
@@ -51,7 +50,7 @@ int lf_mutex_lock(_lf_mutex_t* mutex) {
  * @return 0 on success, error number otherwise (see pthread_mutex_unlock()).
  */
 int lf_mutex_unlock(_lf_mutex_t* mutex) {
-    return pthread_mutex_unlock((pthread_mutex_t*)mutex);
+    return mtx_unlock((mtx_t*) mutex);
 }
 
 /** 
@@ -60,11 +59,7 @@ int lf_mutex_unlock(_lf_mutex_t* mutex) {
  * @return 0 on success, error number otherwise (see pthread_cond_init()).
  */
 int lf_cond_init(_lf_cond_t* cond) {
-    pthread_condattr_t cond_attr;
-    pthread_condattr_init(&cond_attr);
-    // Limit the scope of the condition variable to this process (default)
-    pthread_condattr_setpshared(&cond_attr, PTHREAD_PROCESS_PRIVATE);
-    return pthread_cond_init(cond, &cond_attr);
+    return cnd_init((cnd_t*)cond);
 }
 
 /** 
@@ -73,7 +68,7 @@ int lf_cond_init(_lf_cond_t* cond) {
  * @return 0 on success, error number otherwise (see pthread_cond_broadcast()).
  */
 int lf_cond_broadcast(_lf_cond_t* cond) {
-    return pthread_cond_broadcast((pthread_cond_t*)cond);
+    return cnd_broadcast((cnd_t*)cond);
 }
 
 /** 
@@ -82,7 +77,7 @@ int lf_cond_broadcast(_lf_cond_t* cond) {
  * @return 0 on success, error number otherwise (see pthread_cond_signal()).
  */
 int lf_cond_signal(_lf_cond_t* cond) {
-    return pthread_cond_signal((pthread_cond_t*)cond);
+    return cnd_signal((cnd_t*)cond);
 }
 
 /** 
@@ -92,7 +87,7 @@ int lf_cond_signal(_lf_cond_t* cond) {
  * @return 0 on success, error number otherwise (see pthread_cond_wait()).
  */
 int lf_cond_wait(_lf_cond_t* cond, _lf_mutex_t* mutex) {
-    return pthread_cond_wait((pthread_cond_t*)cond, (pthread_mutex_t*)mutex);
+    return cnd_wait((cnd_t*)cond, (mtx_t*)mutex);
 }
 
 /** 
@@ -109,13 +104,13 @@ int lf_cond_timedwait(_lf_cond_t* cond, _lf_mutex_t* mutex, int64_t absolute_tim
     struct timespec timespec_absolute_time
             = {(time_t)absolute_time_ns / 1000000000LL, (long)absolute_time_ns % 1000000000LL};
     int return_value = 0;
-    return_value = pthread_cond_timedwait(
-        (pthread_cond_t*)cond,
-        (pthread_mutex_t*)mutex,
+    return_value = cnd_timedwait(
+        (cnd_t*)cond, 
+        (mtx_t*)mutex, 
         &timespec_absolute_time
     );
     switch (return_value) {
-        case ETIMEDOUT:
+        case thrd_timedout:
             return_value = _LF_TIMEOUT;
             break;
         

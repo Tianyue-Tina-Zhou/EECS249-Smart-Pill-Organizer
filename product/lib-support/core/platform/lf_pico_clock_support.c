@@ -5,8 +5,6 @@
  * Initialize the LF clock. Must be called before using other clock-related APIs.
  */
 void lf_initialize_clock() {
-    stdio_init_all();
-    return;
 }
 
 /**

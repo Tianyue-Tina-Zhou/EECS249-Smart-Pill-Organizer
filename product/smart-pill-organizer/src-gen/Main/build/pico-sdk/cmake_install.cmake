@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk
+# Install script for directory: /home/jerry/EECS249-Smart-Pill-Organizer/pico-sdk
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -32,16 +32,11 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "TRUE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/arm-none-eabi-objdump")
-endif()
-
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/tools/cmake_install.cmake")
-  include("/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/cmake_install.cmake")
-  include("/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/docs/cmake_install.cmake")
+  include("/home/jerry/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/tools/cmake_install.cmake")
+  include("/home/jerry/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/cmake_install.cmake")
+  include("/home/jerry/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/docs/cmake_install.cmake")
 
 endif()
 

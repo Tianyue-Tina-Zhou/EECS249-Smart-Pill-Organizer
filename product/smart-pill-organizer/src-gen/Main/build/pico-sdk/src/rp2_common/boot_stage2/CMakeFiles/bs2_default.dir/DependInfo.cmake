@@ -1,14 +1,10 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
   "ASM"
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_ASM
-  "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/boot_stage2/compile_time_choice.S" "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj"
+  "/home/jerry/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/boot_stage2/compile_time_choice.S" "/home/jerry/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj"
   )
 set(CMAKE_ASM_COMPILER_ID "GNU")
 
@@ -22,21 +18,17 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
-  "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/core"
-  "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/core/platform"
-  "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/core/federated"
-  "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/boot_stage2/asminclude"
-  "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_regs/include"
-  "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_base/include"
-  "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_base/include"
+  "/home/jerry/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/core"
+  "/home/jerry/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/core/platform"
+  "/home/jerry/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/core/federated"
+  "/home/jerry/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/boot_stage2/asminclude"
+  "/home/jerry/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_regs/include"
+  "/home/jerry/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_base/include"
+  "/home/jerry/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_base/include"
   "generated/pico_base"
-  "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/boards/include"
-  "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/include"
-  "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/boot_stage2/include"
-  )
-
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/jerry/EECS249-Smart-Pill-Organizer/pico-sdk/src/boards/include"
+  "/home/jerry/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/include"
+  "/home/jerry/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/boot_stage2/include"
   )
 
 # Targets to which this target links.
