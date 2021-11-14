@@ -1,6 +1,6 @@
 #include <time.h>
 #include <errno.h>
-
+#include "lf_pico_support.h"
 /**
  * Initialize the LF clock. Must be called before using other clock-related APIs.
  */
@@ -32,6 +32,6 @@ int lf_clock_gettime(instant_t* t) {
  * @return 0 for success, or -1 for failure.
  */
 int lf_nanosleep(instant_t requested_time) {
-    sleep_us(requested_time * 1000);
+    sleep_us(requested_time/1000);
     return 0;
 }

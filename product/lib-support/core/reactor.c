@@ -387,5 +387,5 @@ int lf_reactor_c_main(int argc, char* argv[]) {
 }
 
 int main(int argc, char* argv[]) {
-    return lf_reactor_c_main(argc, argv);
+    return lf_reactor_c_main(0, NULL);
 }
