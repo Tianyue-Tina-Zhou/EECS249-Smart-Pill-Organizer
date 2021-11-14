@@ -1407,8 +1407,6 @@ lf_pico_clock_support.c
 /home/jerry/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.h
 lf_pico_threads_support.h
 /home/jerry/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_threads_support.h
-lf_pico_threads_support.h
-/home/jerry/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_threads_support.h
 stdint.h
 -
 stdbool.h
