@@ -19,6 +19,7 @@ rm smart-pill-organizer/src-gen/Main/CMakeLists.txt
 
 cp -r lib-support/core smart-pill-organizer/src-gen/Main/core
 cp lib-support/CMakeLists.txt smart-pill-organizer/src-gen/Main/CMakeLists.txt
+cp -r waveshare smart-pill-organizer/src-gen/Main/waveshare
 
 cd smart-pill-organizer/src-gen/Main
 mkdir build
