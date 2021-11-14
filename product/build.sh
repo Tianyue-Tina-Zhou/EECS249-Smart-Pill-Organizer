@@ -30,4 +30,4 @@ make -j4
 
 echo "Building C codes into PICO executable. Done!"
 
-open .
+#open .

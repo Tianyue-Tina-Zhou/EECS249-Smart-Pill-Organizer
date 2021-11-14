@@ -1,7 +1,5 @@
-CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj: \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio/driver.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj: \
+ /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_base/include/pico.h \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_base/include/pico/types.h \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_base/include/pico/assert.h \
@@ -25,20 +23,20 @@ CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-
  /usr/include/newlib/sys/cdefs.h \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_base/include/pico/types.h \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_base/include/pico/error.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
+ /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/include/pico/time.h \
+ /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
+ /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h \
+ /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
+ /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/usb.h \
+ /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/usb.h \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h
+ /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
+ /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/iobank0.h \
+ /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
+ /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/include/pico/fix/rp2040_usb_device_enumeration.h

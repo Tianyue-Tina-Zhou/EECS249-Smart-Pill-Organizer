@@ -46,8 +46,4 @@ CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/include/pico/printf.h \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
  /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio/driver.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
- /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h
+ /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h

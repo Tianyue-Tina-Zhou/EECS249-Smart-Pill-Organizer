@@ -10,7 +10,8 @@
 #include "pico/stdlib.h"
 #include "pico/binary_info.h"
 
-const uint LED_PIN = 25;
+#define LED_PIN 25
+
     
 
 // *********** End of preamble.

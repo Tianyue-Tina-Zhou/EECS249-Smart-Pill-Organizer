@@ -5,7 +5,8 @@ main reactor Main {
         #include "pico/stdlib.h"
         #include "pico/binary_info.h"
 
-        const uint LED_PIN = 25;
+        #define LED_PIN 25
+
     =}
     reaction(startup) {=
         bi_decl(bi_program_description("First Blink"));
@@ -22,3 +23,4 @@ main reactor Main {
         }
     =}
 }
+
