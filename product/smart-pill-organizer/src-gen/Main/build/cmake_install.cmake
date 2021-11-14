@@ -1,4 +1,4 @@
-# Install script for directory: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main
+# Install script for directory: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/opt/homebrew/bin/arm-none-eabi-objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/arm-none-eabi-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/cmake_install.cmake")
+  include("/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

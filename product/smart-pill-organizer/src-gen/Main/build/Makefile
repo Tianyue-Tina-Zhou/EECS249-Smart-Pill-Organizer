@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake
+CMAKE_COMMAND = /home/hxx/miniconda3/lib/python3.8/site-packages/cmake/data/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E rm -f
+RM = /home/hxx/miniconda3/lib/python3.8/site-packages/cmake/data/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main
+CMAKE_SOURCE_DIR = /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build
+CMAKE_BINARY_DIR = /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/prod
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/hxx/miniconda3/lib/python3.8/site-packages/cmake/data/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -77,8 +77,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/opt/homebrew/Cellar/cmake/3.21.4/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/hxx/miniconda3/lib/python3.8/site-packages/cmake/data/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -143,6 +143,19 @@ SPO/fast:
 .PHONY : SPO/fast
 
 #=============================================================================
+# Target rules for targets named bs2_default
+
+# Build rule for target.
+bs2_default: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bs2_default
+.PHONY : bs2_default
+
+# fast build rule for target.
+bs2_default/fast:
+	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/build.make pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/build
+.PHONY : bs2_default/fast
+
+#=============================================================================
 # Target rules for targets named bs2_default_bin
 
 # Build rule for target.
@@ -168,19 +181,6 @@ bs2_default_padded_checksummed_asm/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/build.make pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/build
 .PHONY : bs2_default_padded_checksummed_asm/fast
 
-#=============================================================================
-# Target rules for targets named bs2_default
-
-# Build rule for target.
-bs2_default: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bs2_default
-.PHONY : bs2_default
-
-# fast build rule for target.
-bs2_default/fast:
-	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/build.make pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/build
-.PHONY : bs2_default/fast
-
 Main.obj: Main.c.obj
 .PHONY : Main.obj
 
@@ -204,910 +204,6 @@ Main.s: Main.c.s
 Main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Main.c.s
 .PHONY : Main.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj
-
-# target to build an object file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i
-
-# target to preprocess a source file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
-
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s: Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s
-
-# target to generate assembly for a file
-Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
-.PHONY : Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 
 core/platform/lf_pico_support.obj: core/platform/lf_pico_support.c.obj
 .PHONY : core/platform/lf_pico_support.obj
@@ -1157,6 +253,910 @@ ctarget.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/ctarget.c.s
 .PHONY : ctarget.c.s
 
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj
+
+# target to build an object file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i
+
+# target to preprocess a source file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
+
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s: mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s
+
+# target to generate assembly for a file
+mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SPO.dir/build.make CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
+.PHONY : mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1173,125 +1173,125 @@ help:
 	@echo "... Main.obj"
 	@echo "... Main.i"
 	@echo "... Main.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i"
-	@echo "... Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s"
 	@echo "... core/platform/lf_pico_support.obj"
 	@echo "... core/platform/lf_pico_support.i"
 	@echo "... core/platform/lf_pico_support.s"
 	@echo "... ctarget.obj"
 	@echo "... ctarget.i"
 	@echo "... ctarget.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i"
+	@echo "... mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s"
 .PHONY : help
 
 

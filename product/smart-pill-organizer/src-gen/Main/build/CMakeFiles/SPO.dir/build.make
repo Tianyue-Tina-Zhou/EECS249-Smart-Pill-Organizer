@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake
+CMAKE_COMMAND = /home/hxx/miniconda3/lib/python3.8/site-packages/cmake/data/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E rm -f
+RM = /home/hxx/miniconda3/lib/python3.8/site-packages/cmake/data/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main
+CMAKE_SOURCE_DIR = /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build
+CMAKE_BINARY_DIR = /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SPO.dir/depend.make
@@ -72,714 +72,714 @@ include CMakeFiles/SPO.dir/flags.make
 CMakeFiles/SPO.dir/Main.c.obj: CMakeFiles/SPO.dir/flags.make
 CMakeFiles/SPO.dir/Main.c.obj: ../Main.c
 CMakeFiles/SPO.dir/Main.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SPO.dir/Main.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Main.c.obj -MF CMakeFiles/SPO.dir/Main.c.obj.d -o CMakeFiles/SPO.dir/Main.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/Main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SPO.dir/Main.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Main.c.obj -MF CMakeFiles/SPO.dir/Main.c.obj.d -o CMakeFiles/SPO.dir/Main.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/Main.c
 
 CMakeFiles/SPO.dir/Main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Main.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/Main.c > CMakeFiles/SPO.dir/Main.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/Main.c > CMakeFiles/SPO.dir/Main.c.i
 
 CMakeFiles/SPO.dir/Main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Main.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/Main.c -o CMakeFiles/SPO.dir/Main.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/Main.c -o CMakeFiles/SPO.dir/Main.c.s
 
 CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj: CMakeFiles/SPO.dir/flags.make
 CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj: ../core/platform/lf_pico_support.c
 CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj -MF CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj.d -o CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj -MF CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj.d -o CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.c
 
 CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.c > CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.c > CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.i
 
 CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.c -o CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/core/platform/lf_pico_support.c -o CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.s
 
 CMakeFiles/SPO.dir/ctarget.c.obj: CMakeFiles/SPO.dir/flags.make
 CMakeFiles/SPO.dir/ctarget.c.obj: ../ctarget.c
 CMakeFiles/SPO.dir/ctarget.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SPO.dir/ctarget.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/ctarget.c.obj -MF CMakeFiles/SPO.dir/ctarget.c.obj.d -o CMakeFiles/SPO.dir/ctarget.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/ctarget.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SPO.dir/ctarget.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/ctarget.c.obj -MF CMakeFiles/SPO.dir/ctarget.c.obj.d -o CMakeFiles/SPO.dir/ctarget.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/ctarget.c
 
 CMakeFiles/SPO.dir/ctarget.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/ctarget.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/ctarget.c > CMakeFiles/SPO.dir/ctarget.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/ctarget.c > CMakeFiles/SPO.dir/ctarget.c.i
 
 CMakeFiles/SPO.dir/ctarget.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/ctarget.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/ctarget.c -o CMakeFiles/SPO.dir/ctarget.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/ctarget.c -o CMakeFiles/SPO.dir/ctarget.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building ASM object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj   -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building ASM object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj   -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.i"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.i"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.s"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building ASM object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj   -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building ASM object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj   -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.i"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.i"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.s"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building ASM object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj   -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building ASM object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj   -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.i"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.i"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.s"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building ASM object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.obj   -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building ASM object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.obj"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.obj   -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.i"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.i"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.s"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building ASM object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj   -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building ASM object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj   -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.i"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.i"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.s"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building ASM object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj   -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building ASM object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj   -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.i"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.i"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.s"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building ASM object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj   -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building ASM object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj   -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.i"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.i"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.s"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building ASM object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj   -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building ASM object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj   -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.i"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.i"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.s"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building ASM object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj   -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building ASM object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj   -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.i"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.i"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.s"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building ASM object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj   -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building ASM object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj   -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.i"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.i"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.s"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building ASM object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj   -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building ASM object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj   -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.i"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing ASM source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.i"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.s"
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling ASM source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj"
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i"
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s"
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj: CMakeFiles/SPO.dir/flags.make
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj: /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj -MF CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj.d -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj -c /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj: CMakeFiles/SPO.dir/flags.make
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj: /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj: CMakeFiles/SPO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj -MF CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj.d -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj -c /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c > CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c > CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
 
-CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c -o CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
+CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c -o CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
 
 # Object files for target SPO
 SPO_OBJECTS = \
 "CMakeFiles/SPO.dir/Main.c.obj" \
 "CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj" \
 "CMakeFiles/SPO.dir/ctarget.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj" \
-"CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj"
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj" \
+"CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj"
 
 # External object files for target SPO
 SPO_EXTERNAL_OBJECTS =
@@ -787,61 +787,61 @@ SPO_EXTERNAL_OBJECTS =
 SPO.elf: CMakeFiles/SPO.dir/Main.c.obj
 SPO.elf: CMakeFiles/SPO.dir/core/platform/lf_pico_support.c.obj
 SPO.elf: CMakeFiles/SPO.dir/ctarget.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/time.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_time/timeout_helper.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/sem.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/lock_core.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/mutex.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_sync/critical_section.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/datetime.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/pheap.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/common/pico_util/queue.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-SPO.elf: CMakeFiles/SPO.dir/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/time.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_time/timeout_helper.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/sem.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/lock_core.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/mutex.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_sync/critical_section.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/datetime.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/pheap.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/common/pico_util/queue.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+SPO.elf: CMakeFiles/SPO.dir/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
 SPO.elf: CMakeFiles/SPO.dir/build.make
 SPO.elf: pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S
 SPO.elf: CMakeFiles/SPO.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Linking CXX executable SPO.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Linking CXX executable SPO.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SPO.dir/link.txt --verbose=$(VERBOSE)
-	/opt/homebrew/bin/arm-none-eabi-objcopy -Oihex /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/SPO.elf SPO.hex
-	/opt/homebrew/bin/arm-none-eabi-objcopy -Obinary /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/SPO.elf SPO.bin
-	/opt/homebrew/bin/arm-none-eabi-objdump -h /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/SPO.elf >SPO.dis
-	/opt/homebrew/bin/arm-none-eabi-objdump -d /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/SPO.elf >>SPO.dis
-	elf2uf2/elf2uf2 /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/SPO.elf SPO.uf2
+	/usr/bin/arm-none-eabi-objcopy -Oihex /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/SPO.elf SPO.hex
+	/usr/bin/arm-none-eabi-objcopy -Obinary /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/SPO.elf SPO.bin
+	/usr/bin/arm-none-eabi-objdump -h /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/SPO.elf >SPO.dis
+	/usr/bin/arm-none-eabi-objdump -d /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/SPO.elf >>SPO.dis
+	elf2uf2/elf2uf2 /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/SPO.elf SPO.uf2
 
 # Rule to build all files generated by this target.
 CMakeFiles/SPO.dir/build: SPO.elf
@@ -852,6 +852,6 @@ CMakeFiles/SPO.dir/clean:
 .PHONY : CMakeFiles/SPO.dir/clean
 
 CMakeFiles/SPO.dir/depend:
-	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles/SPO.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles/SPO.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SPO.dir/depend
 

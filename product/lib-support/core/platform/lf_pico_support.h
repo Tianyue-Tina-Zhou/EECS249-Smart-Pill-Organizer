@@ -39,6 +39,9 @@ THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <stdint.h> // For fixed-width integral types
 #include <stdbool.h>
 
+#include "pico/stdlib.h"
+#include "pico/binary_info.h"
+
 // Use 64-bit times and 32-bit unsigned microsteps
 #include "lf_tag_64_32.h"
 

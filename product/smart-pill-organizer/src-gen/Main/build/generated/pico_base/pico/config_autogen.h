@@ -4,8 +4,8 @@
 
 // based on PICO_CONFIG_HEADER_FILES:
 
-#include "/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/boards/include/boards/pico.h"
+#include "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/boards/include/boards/pico.h"
 
 // based on PICO_RP2040_CONFIG_HEADER_FILES:
 
-#include "/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h"
+#include "/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h"

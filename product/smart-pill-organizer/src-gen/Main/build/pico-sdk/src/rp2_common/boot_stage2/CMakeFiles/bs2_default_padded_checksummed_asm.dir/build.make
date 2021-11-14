@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake
+CMAKE_COMMAND = /home/hxx/miniconda3/lib/python3.8/site-packages/cmake/data/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -E rm -f
+RM = /home/hxx/miniconda3/lib/python3.8/site-packages/cmake/data/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main
+CMAKE_SOURCE_DIR = /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build
+CMAKE_BINARY_DIR = /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build
 
 # Utility rule file for bs2_default_padded_checksummed_asm.
 
@@ -69,12 +69,12 @@ include pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checks
 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm: pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S
 
 pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S: pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating bs2_default_padded_checksummed.S"
-	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2 && /Library/Frameworks/Python.framework/Versions/3.10/bin/python3.10 /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/boot_stage2/pad_checksum -s 0xffffffff /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating bs2_default_padded_checksummed.S"
+	cd /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2 && /home/hxx/miniconda3/bin/python3.8 /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/boot_stage2/pad_checksum -s 0xffffffff /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S
 
 pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin: pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating bs2_default.bin"
-	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2 && /opt/homebrew/bin/arm-none-eabi-objcopy -Obinary /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating bs2_default.bin"
+	cd /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2 && /usr/bin/arm-none-eabi-objcopy -Obinary /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 bs2_default_padded_checksummed_asm: pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm
 bs2_default_padded_checksummed_asm: pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
@@ -87,10 +87,10 @@ pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_as
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/build
 
 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/clean:
-	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2 && $(CMAKE_COMMAND) -P CMakeFiles/bs2_default_padded_checksummed_asm.dir/cmake_clean.cmake
+	cd /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2 && $(CMAKE_COMMAND) -P CMakeFiles/bs2_default_padded_checksummed_asm.dir/cmake_clean.cmake
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/clean
 
 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/depend:
-	cd /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/src/rp2_common/boot_stage2 /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2 /Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/src/rp2_common/boot_stage2 /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2 /mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/depend
 

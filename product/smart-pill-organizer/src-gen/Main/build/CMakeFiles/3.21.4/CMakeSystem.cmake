@@ -1,9 +1,9 @@
-set(CMAKE_HOST_SYSTEM "Darwin-21.1.0")
-set(CMAKE_HOST_SYSTEM_NAME "Darwin")
-set(CMAKE_HOST_SYSTEM_VERSION "21.1.0")
-set(CMAKE_HOST_SYSTEM_PROCESSOR "arm64")
+set(CMAKE_HOST_SYSTEM "Linux-4.4.0-19041-Microsoft")
+set(CMAKE_HOST_SYSTEM_NAME "Linux")
+set(CMAKE_HOST_SYSTEM_VERSION "4.4.0-19041-Microsoft")
+set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
-include("/Users/wangjh/Developer/Berkeley/Berkeley-CS249A-Project/pico-sdk/cmake/preload/toolchains/pico_arm_gcc.cmake")
+include("/mnt/c/study/GRAD/249A/proj/EECS249-Smart-Pill-Organizer/pico-sdk/cmake/preload/toolchains/pico_arm_gcc.cmake")
 
 set(CMAKE_SYSTEM "PICO")
 set(CMAKE_SYSTEM_NAME "PICO")
