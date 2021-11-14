@@ -6,6 +6,7 @@
  * Initialize the LF clock. Must be called before using other clock-related APIs.
  */
 void lf_initialize_clock() {
+    clocks_init();
 }
 
 /**
@@ -18,7 +19,11 @@ void lf_initialize_clock() {
  * @return 0 for success, or -1 for failure
  */
 int lf_clock_gettime(instant_t* t) {
-    *t = time_us_64()*1000;
+    if (t == NULL) {
+        // The t argument address references invalid memory
+        return -1;
+    }
+     *t = time_us_64() * 1000;
     return 0;
 }
 
