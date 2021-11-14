@@ -19,6 +19,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # endif()
 set(CoreLib core)
 
+add_subdirectory(waveshare/Config/)
+add_subdirectory(waveshare/Infrared/)
+add_subdirectory(waveshare/LCD/)
+add_subdirectory(waveshare/Fonts/)
+add_subdirectory(waveshare/GUI/)
+
+include_directories(./waveshare/Config)
+include_directories(./waveshare/GUI)
+include_directories(./waveshare/LCD)
+include_directories(./waveshare/Infrared)
+
 include_directories(${CoreLib})
 include_directories(${CoreLib}/platform)
 include_directories(${CoreLib}/federated)
@@ -33,4 +44,4 @@ pico_add_extra_outputs(SPO)
 pico_enable_stdio_usb(SPO 1)
 pico_enable_stdio_uart(SPO 0)
 
-target_link_libraries(SPO pico_stdlib)
+target_link_libraries(SPO LCD Infrared GUI Fonts Config pico_stdlib hardware_spi)

@@ -4,16 +4,60 @@ main reactor Main {
     preamble {=
         #include "pico/stdlib.h"
         #include "pico/binary_info.h"
+        #include "LCD_1in14_V2.h"
+        #include "DEV_Config.h"
+        #include "GUI_Paint.h"
+        #include "Debug.h"
+
+        #include "Infrared.h"
+
         const uint LED_PIN = 25;
         bool led = true;
+        UWORD *BlackImage;
+        int count = 0;
+
+        int lcd_init() {
+            if(DEV_Module_Init()!=0){
+                return -1;
+            }
+            DEV_SET_PWM(50);
+            
+            // LCD Init
+            LCD_1IN14_V2_Init(HORIZONTAL);
+            LCD_1IN14_V2_Clear(WHITE);
+
+            UDOUBLE Imagesize = LCD_1IN14_V2_HEIGHT * LCD_1IN14_V2_WIDTH * 2;
+            if((BlackImage = (UWORD *)malloc(Imagesize)) == NULL) {
+                // Failed to apply for black memory...
+                return;
+            }
+        }
+
+        int lcd_print(const char * pString)
+        {   
+            // 1.Create a new image cache named BlackImage and fill it with white
+            Paint_NewImage((UBYTE *) BlackImage, LCD_1IN14_V2.WIDTH, LCD_1IN14_V2.HEIGHT, 0, WHITE);
+            Paint_SetScale(65);
+            Paint_Clear(WHITE);
+            Paint_SetRotate(ROTATE_0);
+            Paint_Clear(WHITE);
+            
+            // 2.Drawing on the image
+            Paint_DrawString_EN(20, 20, pString, &Font20, WHITE, BLACK);
+
+            // 3.Refresh the picture in RAM to LCD
+            LCD_1IN14_V2_Display(BlackImage);
+            DEV_SET_PWM(10);
+        }
     =}
-    timer t(0 sec, 500 msec)
+    timer t(0 sec, 1000 msec)
     reaction(startup) {=
         //bi_decl(bi_program_description("First Blink"));
         //bi_decl(bi_1pin_with_name(LED_PIN, "On-board LED"));
         gpio_init(LED_PIN);
         gpio_set_dir(LED_PIN, GPIO_OUT);
 
+        lcd_init();
         stdio_init_all();
         printf("System Initialized!\r\n");
     =}
@@ -21,8 +65,13 @@ main reactor Main {
     reaction(t) {=
         //bi_decl(bi_program_description("First Blink"));
         //bi_decl(bi_1pin_with_name(LED_PIN, "On-board LED"));
-        printf("Blinking!\r\n");
+        
+        static char display_buf[16];
+        snprintf(display_buf, 16, "SECONDS: %d", count);
+        lcd_print(display_buf);
+
         gpio_put(LED_PIN, led);
         led = !led;
+        count = (count + 1) % 60;
     =}
 }
