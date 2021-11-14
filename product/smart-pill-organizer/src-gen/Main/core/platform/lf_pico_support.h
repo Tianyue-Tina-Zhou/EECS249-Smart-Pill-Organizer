@@ -35,6 +35,7 @@ THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifdef NUMBER_OF_WORKERS
 #include "lf_pico_threads_support.h"
 #endif
+#include "lf_pico_threads_support.h"
 
 #include <stdint.h> // For fixed-width integral types
 #include <stdbool.h>
