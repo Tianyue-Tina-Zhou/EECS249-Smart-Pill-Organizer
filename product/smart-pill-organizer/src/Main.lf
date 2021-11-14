@@ -4,20 +4,26 @@ main reactor Main {
     preamble {=
         #include "pico/stdlib.h"
         #include "pico/binary_info.h"
-
-        const uint LED_PIN = 25;
     =}
     reaction(startup) {=
-        bi_decl(bi_program_description("First Blink"));
-        bi_decl(bi_1pin_with_name(LED_PIN, "On-board LED"));
+	    const uint led_pin = 25;
 
-        gpio_init(LED_PIN);
-        gpio_set_dir(LED_PIN, GPIO_OUT);
-        while (1) {
-            gpio_put(LED_PIN, 1);
-            sleep_ms(500);
-            gpio_put(LED_PIN, 0);
-            sleep_ms(500);
-        }
+	    // Initialize LED pin
+	    gpio_init(led_pin);
+	    gpio_set_dir(led_pin, GPIO_OUT);
+
+	    // Initialize chosen serial port
+	    stdio_init_all();
+
+	    // Loop forever
+	    while (true) {
+
+		// Blink LED
+		printf("Blinking!\r\n");
+		gpio_put(led_pin, true);
+		sleep_ms(1000);
+		gpio_put(led_pin, false);
+		sleep_ms(1000);
+	    }
     =}
 }

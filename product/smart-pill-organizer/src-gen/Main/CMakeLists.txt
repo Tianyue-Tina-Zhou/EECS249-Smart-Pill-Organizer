@@ -29,4 +29,8 @@ add_executable(SPO Main.c core/platform/lf_pico_support.c ctarget.c)
 
 pico_add_extra_outputs(SPO)
 
+# enable usb output, disable uart output
+pico_enable_stdio_usb(SPO 1)
+pico_enable_stdio_uart(SPO 0)
+
 target_link_libraries(SPO pico_stdlib)
