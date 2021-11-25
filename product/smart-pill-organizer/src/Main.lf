@@ -10,6 +10,7 @@ main reactor Main {
         #include "Debug.h"
 
         #include "Infrared.h"
+		#include "TCS34725.h"
 
         const uint LED_PIN = 25;
         bool led = true;
@@ -32,6 +33,14 @@ main reactor Main {
                 return;
             }
         }
+		
+		int color_sensing_init() {
+            if (DEV_ModuleInit() != 0){
+                return -1;
+            }
+            TCS34725_Init();
+			TCS34725_SetLight(60);
+    }
 
         int lcd_print(const char * pString)
         {   
@@ -49,8 +58,27 @@ main reactor Main {
             LCD_1IN14_V2_Display(BlackImage);
             DEV_SET_PWM(10);
         }
+		
+		int lcd_show_color(const char * pString)
+        {   
+            // 1.Create a new image cache named BlackImage and fill it with white
+            Paint_NewImage((UBYTE *) BlackImage, LCD_1IN14_V2.WIDTH, LCD_1IN14_V2.HEIGHT, 0, WHITE);
+            Paint_SetScale(65);
+            Paint_Clear(WHITE);
+            Paint_SetRotate(ROTATE_0);
+            Paint_Clear(WHITE);
+            
+            // 2.Drawing on the image
+			Paint_DrawString_EN(20, 20, "Color collected", &Font20, WHITE, BLACK);
+            Paint_DrawRectangle(45, 60, 180, 90, 0x001F, DOT_PIXEL_2X2,DRAW_FILL_FULL);
+
+            // 3.Refresh the picture in RAM to LCD
+            LCD_1IN14_V2_Display(BlackImage);
+            DEV_SET_PWM(10);
+        }
     =}
     timer t(0 sec, 1000 msec)
+	timer color_Sensing(0 sec, 1000 msec)
     reaction(startup) {=
         //bi_decl(bi_program_description("First Blink"));
         //bi_decl(bi_1pin_with_name(LED_PIN, "On-board LED"));
@@ -58,6 +86,7 @@ main reactor Main {
         gpio_set_dir(LED_PIN, GPIO_OUT);
 
         lcd_init();
+		// color_sensing_init();
         stdio_init_all();
         printf("System Initialized!\r\n");
     =}
@@ -68,11 +97,18 @@ main reactor Main {
         
         static char display_buf[16];
         snprintf(display_buf, 16, "SECONDS: %d", count);
-        lcd_print(display_buf);
+        //lcd_print(display_buf);
 
         gpio_put(LED_PIN, led);
         led = !led;
         count = (count + 1) % 60;
+    =}
+	
+	reaction(color_Sensing) {=
+        //bi_decl(bi_program_description("First Blink"));
+        //bi_decl(bi_1pin_with_name(LED_PIN, "On-board LED"));
+        
+        lcd_show_color("abc");
     =}
 }
 
