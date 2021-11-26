@@ -34,13 +34,11 @@ main reactor Main {
             }
         }
 		
-		int color_sensing_init() {
-            if (DEV_ModuleInit() != 0){
-                return -1;
-            }
+		void color_sensing_init() {
             TCS34725_Init();
-			TCS34725_SetLight(60);
-    }
+			DEV_SET_PWM(50);
+			
+		}
 
         int lcd_print(const char * pString)
         {   
@@ -59,7 +57,7 @@ main reactor Main {
             DEV_SET_PWM(10);
         }
 		
-		int lcd_show_color(const char * pString)
+		int lcd_show_color(UWORD color)
         {   
             // 1.Create a new image cache named BlackImage and fill it with white
             Paint_NewImage((UBYTE *) BlackImage, LCD_1IN14_V2.WIDTH, LCD_1IN14_V2.HEIGHT, 0, WHITE);
@@ -70,7 +68,10 @@ main reactor Main {
             
             // 2.Drawing on the image
 			Paint_DrawString_EN(20, 20, "Color collected", &Font20, WHITE, BLACK);
-            Paint_DrawRectangle(45, 60, 180, 90, 0x001F, DOT_PIXEL_2X2,DRAW_FILL_FULL);
+            Paint_DrawRectangle(45, 60, 180, 90, color, DOT_PIXEL_2X2,DRAW_FILL_FULL);
+			char *s;
+			sprintf(s, "0X%X", color);
+			Paint_DrawString_EN(20, 20, s, &Font20, WHITE, BLACK);
 
             // 3.Refresh the picture in RAM to LCD
             LCD_1IN14_V2_Display(BlackImage);
@@ -86,7 +87,7 @@ main reactor Main {
         gpio_set_dir(LED_PIN, GPIO_OUT);
 
         lcd_init();
-		// color_sensing_init();
+		color_sensing_init();
         stdio_init_all();
         printf("System Initialized!\r\n");
     =}
@@ -107,8 +108,10 @@ main reactor Main {
 	reaction(color_Sensing) {=
         //bi_decl(bi_program_description("First Blink"));
         //bi_decl(bi_1pin_with_name(LED_PIN, "On-board LED"));
-        
-        lcd_show_color("abc");
+		RGB rgb=TCS34725_Get_RGBData();
+		UWORD RGB565=TCS34725_GetRGB888(rgb);
+		printf("got this %X!\r\n", RGB565);
+        //lcd_show_color(RGB565);
     =}
 }
 

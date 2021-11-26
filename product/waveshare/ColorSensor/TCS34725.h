@@ -102,7 +102,9 @@
 /**
  * PWM
 **/
-#define DEV_Set_PWM(_Value)        softPwmWrite(PWM_PIN, _Value);
+#define PWM_PIN 15
+#define INT_PIN 0
+//#define DEV_Set_PWM(_Value)        softPwmWrite(PWM_PIN, _Value);
 #define DEV_PWM_value               100
 /*-----------------------------------------------------------------------------*/
 /**

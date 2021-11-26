@@ -46,7 +46,8 @@ static void TCS34725_WriteByte(UBYTE add, UBYTE data)
     //Responsible for not finding the register, 
     //refer to the data sheet Command Register CMD(Bit 7)
     add = add | TCS34725_CMD_BIT;
-    DEV_I2C_WriteByte(add, data);
+    uint8_t reg;
+    DEV_I2C_Write(add, reg, data);
 }
 
 /******************************************************************************
@@ -57,7 +58,8 @@ parameter	:
 static UBYTE TCS34725_ReadByte(UBYTE add)
 {
     add = add | TCS34725_CMD_BIT;
-    return DEV_I2C_ReadByte(add);
+    uint8_t reg;
+    return DEV_I2C_ReadByte(add, reg);
 }
 
 /******************************************************************************
@@ -70,7 +72,12 @@ static UWORD TCS34725_ReadWord(UBYTE add)
 {
 
     add = add | TCS34725_CMD_BIT;
-    return DEV_I2C_ReadWord(add);
+    uint8_t reg;
+	UWORD result;
+	result = DEV_I2C_ReadByte(add, reg);
+	result = result << 8; 
+	result += DEV_I2C_ReadByte(add + 0x4, reg);
+    return result;
 }
 
 /******************************************************************************
@@ -189,7 +196,7 @@ parameter	:
 UBYTE  TCS34725_Init(void)
 {
 	UBYTE ID = 0;
-    DEV_Set_I2CAddress(TCS34725_ADDRESS);
+    //DEV_Set_I2CAddress(TCS34725_ADDRESS);
 	ID = TCS34725_ReadByte(TCS34725_ID);
     if(ID != 0x44 && ID != 0x4D){
         return 1;
@@ -206,7 +213,7 @@ UBYTE  TCS34725_Init(void)
     TCS34725_Enable();
     TCS34725_Interrupt_Enable();
     //Set the LCD brightness
-    TCS34725_SetLight(40);
+    //TCS34725_SetLight(40);
 	
 	return 0;
 }
@@ -413,13 +420,13 @@ function:   Set the onboard LED brightness
 parameter	:
      value : 0 - 100
 ******************************************************************************/
-void TCS34725_SetLight(UWORD value)
-{
-    if(value<=100){
-        value =value*DEV_PWM_value/100;
-        DEV_Set_PWM(value);
-    } 
-}
+// void TCS34725_SetLight(UWORD value)
+// {
+//     if(value<=100){
+//         value =value*DEV_PWM_value/100;
+//         DEV_Set_PWM(value);
+//     } 
+// }
 
 
 

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 set(ENV{PICO_SDK_PATH} "../../../../../pico-sdk")
 set(PICO_PLATFORM rp2040)
-include(../../pico_sdk_import.cmake)
+include(../../../../../pico-sdk/external/pico_sdk_import.cmake)
 
 project(SPO)
 
@@ -24,11 +24,13 @@ add_subdirectory(waveshare/Infrared/)
 add_subdirectory(waveshare/LCD/)
 add_subdirectory(waveshare/Fonts/)
 add_subdirectory(waveshare/GUI/)
+add_subdirectory(waveshare/ColorSensor/)
 
 include_directories(./waveshare/Config)
 include_directories(./waveshare/GUI)
 include_directories(./waveshare/LCD)
 include_directories(./waveshare/Infrared)
+include_directories(./waveshare/ColorSensor)
 
 include_directories(${CoreLib})
 include_directories(${CoreLib}/platform)
@@ -44,4 +46,4 @@ pico_add_extra_outputs(SPO)
 pico_enable_stdio_usb(SPO 1)
 pico_enable_stdio_uart(SPO 0)
 
-target_link_libraries(SPO LCD Infrared GUI Fonts Config pico_stdlib hardware_spi)
+target_link_libraries(SPO LCD Infrared GUI Fonts ColorSensor Config pico_stdlib hardware_spi)
