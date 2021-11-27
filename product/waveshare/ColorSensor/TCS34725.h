@@ -28,7 +28,11 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 ******************************************************************************/
-
+#include <stdio.h>
+#include <string.h>
+#include "pico/stdlib.h"
+#include "pico/binary_info.h"
+#include "hardware/i2c.h"
 #include "DEV_Config.h"
 
 /**
@@ -36,7 +40,6 @@
 **/
 // I2C 7-bit address 0x29, 8-bit address 0x52
 #define TCS34725_ADDRESS          0x29
-
 /**
 * Register
 **/
@@ -118,6 +121,9 @@
 #define TCS34725_CT_Coef 3810.0
 #define TCS34725_CT_Offset 1391.0
 
+#define PICO_DEFAULT_I2C 0
+#define PICO_DEFAULT_I2C_SDA_PIN 4
+#define PICO_DEFAULT_I2C_SCL_PIN 5
 /**
 * Integration Time
 **/
@@ -154,7 +160,7 @@ typedef struct{
 
 /*-----------------------------------------------------------------------------*/
 //initialization
-UBYTE TCS34725_Init(void);
+ UBYTE TCS34725_Init(void);
 void TCS34725_SetLight(UWORD value);
 void TCS34725_Set_Gain(TCS34725Gain_t gain);
 void TCS34725_Set_IntegrationTime(TCS34725IntegrationTime_t it);
@@ -167,6 +173,6 @@ UWORD TCS34725_GetRGB565(RGB rgb);
 UDOUBLE TCS34725_GetRGB888(RGB rgb);
 
 
-//Read Light
+// //Read Light
 UWORD TCS34725_Get_Lux(RGB rgb);
 UBYTE TCS34725_GetLux_Interrupt(UWORD Threshold_H, UWORD Threshold_L);
