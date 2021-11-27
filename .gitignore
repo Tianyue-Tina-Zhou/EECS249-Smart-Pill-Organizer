@@ -1,3 +1,4 @@
 .DS_Store
 product/smart-pill-organizer/src-gen
 .vscode
+*.xcuserstate
