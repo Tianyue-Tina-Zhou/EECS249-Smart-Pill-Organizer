@@ -45,10 +45,10 @@ static void TCS34725_WriteByte(UBYTE add, UBYTE data)
     //Note: remember to add this when users write their own
     //Responsible for not finding the register, 
     //refer to the data sheet Command Register CMD(Bit 7)
-    //add = add | TCS34725_CMD_BIT;
-    //uint8_t reg;
-    i2c_write_blocking(i2c_default, add, data, 1, true);
-    //DEV_I2C_Write(add, reg, data);
+    add = add | TCS34725_CMD_BIT;
+    uint8_t reg;
+    //i2c_write_blocking(i2c_default, add, data, 1, true);
+    DEV_I2C_Write(add, reg, data);
 }
 
 /******************************************************************************
@@ -72,13 +72,17 @@ parameter	:
 static UWORD TCS34725_ReadWord(UBYTE add)
 {
     uint8_t buf[2];
-    uint8_t reg;
-    //i2c_write_blocking(i2c_default, add, &reg, 1, true);
+    uint8_t reg = 121;
+    add = add | TCS34725_CMD_BIT;
+    i2c_write_blocking(i2c_default, add, &reg, 1, true);
     i2c_read_blocking(i2c_default, add, buf, 2, false);
     UWORD result = ( buf[0] << 8) | buf[1];
-     printf("i2c_default %f PICO_DEFAULT_I2C_SDA_PIN %f!\r\n", i2c_default, 4);
+    double temp = 123;
+     printf("i2c_default %f!\r\n", i2c_default);
+     printf("test temp %f!\r\n", temp);
 
-      printf("reading from %X, got value %f!\r\n", add,result);
+      printf("reading from %X, !\r\n", add);
+      printf(" got value %f!\r\n", result);
 
     // uint8_t lsb;
     // uint8_t msb;
@@ -218,11 +222,11 @@ UBYTE  TCS34725_Init(void)
     //     return 1;
     // }
     // //Set the integration time and gain
-	 //TCS34725_Set_Integration_Time(TCS34725_INTEGRATIONTIME_154MS);	
-    // TCS34725_Set_Gain(TCS34725_GAIN_60X);
+	TCS34725_Set_Integration_Time(TCS34725_INTEGRATIONTIME_154MS);	
+    TCS34725_Set_Gain(TCS34725_GAIN_60X);
     
-    // IntegrationTime_t = TCS34725_INTEGRATIONTIME_154MS;
-    // Gain_t = TCS34725_GAIN_60X;
+     IntegrationTime_t = TCS34725_INTEGRATIONTIME_154MS;
+     Gain_t = TCS34725_GAIN_60X;
     // //Set Interrupt
     // TCS34725_Set_Interrupt_Threshold(0xff00, 0x00ff);//Interrupt upper and lower threshold
     // TCS34725_Set_Interrupt_Persistence_Reg(TCS34725_PERS_2_CYCLE);
@@ -232,11 +236,11 @@ UBYTE  TCS34725_Init(void)
     // TCS34725_SetLight(40);
 
     // This example will use I2C0 on the default SDA and SCL pins (GP4, GP5 on a Pico)
-    i2c_init(i2c_default, 100 * 1000);
+    i2c_init(i2c_default, 400 * 1000);
     gpio_set_function(PICO_DEFAULT_I2C_SDA_PIN, GPIO_FUNC_I2C);
     gpio_set_function(PICO_DEFAULT_I2C_SCL_PIN, GPIO_FUNC_I2C);
-    gpio_pull_up(PICO_DEFAULT_I2C_SDA_PIN);
-    gpio_pull_up(PICO_DEFAULT_I2C_SCL_PIN);
+    //gpio_pull_up(PICO_DEFAULT_I2C_SDA_PIN);
+    //gpio_pull_up(PICO_DEFAULT_I2C_SCL_PIN);
     // Make the I2C pins available to picotool
     bi_decl(bi_2pins_with_func(PICO_DEFAULT_I2C_SDA_PIN, PICO_DEFAULT_I2C_SCL_PIN, GPIO_FUNC_I2C));
 
