@@ -15,6 +15,7 @@ main reactor Main {
         bool led = true;
         UWORD *BlackImage;
         int count = 0;
+        const char * CMD_PREFIX = "<C>";
 
         int lcd_init() {
             if(DEV_Module_Init()!=0){
@@ -69,6 +70,7 @@ main reactor Main {
         static char display_buf[16];
         snprintf(display_buf, 16, "SECONDS: %d", count);
         lcd_print(display_buf);
+        printf("%s%s", CMD_PREFIX, display_buf);
 
         gpio_put(LED_PIN, led);
         led = !led;
