@@ -1,4 +1,4 @@
-Clean up
+# Clean up
 echo "Cleaning up build directory ..."
 ./clean.sh
 echo "Cleaning up build directory. Done!"
