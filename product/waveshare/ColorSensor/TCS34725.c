@@ -73,10 +73,6 @@ static UWORD TCS34725_ReadWord(UBYTE add)
     i2c_write_blocking(i2c_default,TCS34725_ADDRESS, &reg, 1, true);
     i2c_read_blocking(i2c_default,TCS34725_ADDRESS, buf, 2, false);
     UWORD result = ( buf[1] << 8) | buf[0];
-
-    printf("reading from reg %X, !\r\n", reg);
-    printf(" got value %X buf 0 %X !\r\n", buf[1], buf[0]);
-
     return result;
 }
 
@@ -222,10 +218,6 @@ parameter	:
 ******************************************************************************/
 RGB TCS34725_Get_RGBData()
 {
-    UBYTE ID = 0;
-    printf("hi! %x", ID);
-    //DEV_Set_I2CAddress(TCS34725_ADDRESS);
-
     RGB temp;
     temp.C = TCS34725_ReadWord(TCS34725_CDATAL | TCS34725_CMD_Read_Word);
     temp.R = TCS34725_ReadWord(TCS34725_RDATAL | TCS34725_CMD_Read_Word);
@@ -420,13 +412,13 @@ function:   Set the onboard LED brightness
 parameter	:
      value : 0 - 100
 ******************************************************************************/
-// void TCS34725_SetLight(UWORD value)
-// {
-//     if(value<=100){
-//         value =value*DEV_PWM_value/100;
-//         DEV_Set_PWM(value);
-//     } 
-// }
+void TCS34725_SetLight(UWORD value)
+{
+    if(value<=100){
+        value =value*DEV_PWM_value/100;
+        DEV_SET_PWM(value);
+    } 
+}
 
 
 

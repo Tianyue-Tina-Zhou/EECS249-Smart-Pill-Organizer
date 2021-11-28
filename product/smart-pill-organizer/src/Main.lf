@@ -94,10 +94,10 @@ main reactor Main {
         //bi_decl(bi_program_description("First Blink"));
         //bi_decl(bi_1pin_with_name(LED_PIN, "On-board LED"));
         
-        static char display_buf[16];
-        snprintf(display_buf, 16, "SECONDS: %d", count);
-        lcd_print(display_buf);
-        printf("%s%s", CMD_PREFIX, display_buf);
+        //static char display_buf[16];
+        //snprintf(display_buf, 16, "SECONDS: %d", count);
+        //lcd_print(display_buf);
+        //printf("%s%s", CMD_PREFIX, display_buf);
 
         gpio_put(LED_PIN, led);
         led = !led;
