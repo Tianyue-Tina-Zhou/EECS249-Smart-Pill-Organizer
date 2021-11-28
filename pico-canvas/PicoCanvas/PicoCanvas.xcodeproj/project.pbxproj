@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF0276262752AF2C00054F9D /* SerialPortManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0276252752AF2C00054F9D /* SerialPortManager.swift */; };
+		BF0276282752AFF900054F9D /* CommandParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0276272752AFF900054F9D /* CommandParser.swift */; };
+		BFC5C5952752A1EB007CE939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5C5942752A1EB007CE939 /* AppDelegate.swift */; };
+		BFC5C5972752A1EB007CE939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5C5962752A1EB007CE939 /* ViewController.swift */; };
+		BFC5C5992752A1EC007CE939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC5C5982752A1EC007CE939 /* Assets.xcassets */; };
+		BFC5C59C2752A1EC007CE939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC5C59A2752A1EC007CE939 /* Main.storyboard */; };
+		EF2E903B59C04B7BE7833CEE /* Pods_PicoCanvas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32361EF80CD3B23DF1D3B71 /* Pods_PicoCanvas.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		87949C46261C39CA44E8BC04 /* Pods-PicoCanvas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicoCanvas.debug.xcconfig"; path = "Target Support Files/Pods-PicoCanvas/Pods-PicoCanvas.debug.xcconfig"; sourceTree = "<group>"; };
+		ABB19C688A887644483C9B86 /* Pods-PicoCanvas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicoCanvas.release.xcconfig"; path = "Target Support Files/Pods-PicoCanvas/Pods-PicoCanvas.release.xcconfig"; sourceTree = "<group>"; };
+		BF0276252752AF2C00054F9D /* SerialPortManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialPortManager.swift; sourceTree = "<group>"; };
+		BF0276272752AFF900054F9D /* CommandParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandParser.swift; sourceTree = "<group>"; };
+		BFC5C5912752A1EB007CE939 /* PicoCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicoCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC5C5942752A1EB007CE939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BFC5C5962752A1EB007CE939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BFC5C5982752A1EC007CE939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFC5C59B2752A1EC007CE939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BFC5C59D2752A1EC007CE939 /* PicoCanvas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PicoCanvas.entitlements; sourceTree = "<group>"; };
+		E32361EF80CD3B23DF1D3B71 /* Pods_PicoCanvas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicoCanvas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFC5C58E2752A1EB007CE939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF2E903B59C04B7BE7833CEE /* Pods_PicoCanvas.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4FCA5E6DC69D4E71009D1A41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E32361EF80CD3B23DF1D3B71 /* Pods_PicoCanvas.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C23A0DE43ADC4DBAD3FDDC8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87949C46261C39CA44E8BC04 /* Pods-PicoCanvas.debug.xcconfig */,
+				ABB19C688A887644483C9B86 /* Pods-PicoCanvas.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BFC5C5882752A1EB007CE939 = {
+			isa = PBXGroup;
+			children = (
+				BFC5C5932752A1EB007CE939 /* PicoCanvas */,
+				BFC5C5922752A1EB007CE939 /* Products */,
+				6C23A0DE43ADC4DBAD3FDDC8 /* Pods */,
+				4FCA5E6DC69D4E71009D1A41 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BFC5C5922752A1EB007CE939 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFC5C5912752A1EB007CE939 /* PicoCanvas.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFC5C5932752A1EB007CE939 /* PicoCanvas */ = {
+			isa = PBXGroup;
+			children = (
+				BFC5C5942752A1EB007CE939 /* AppDelegate.swift */,
+				BFC5C5962752A1EB007CE939 /* ViewController.swift */,
+				BFC5C5982752A1EC007CE939 /* Assets.xcassets */,
+				BFC5C59A2752A1EC007CE939 /* Main.storyboard */,
+				BFC5C59D2752A1EC007CE939 /* PicoCanvas.entitlements */,
+				BF0276252752AF2C00054F9D /* SerialPortManager.swift */,
+				BF0276272752AFF900054F9D /* CommandParser.swift */,
+			);
+			path = PicoCanvas;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFC5C5902752A1EB007CE939 /* PicoCanvas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFC5C5A02752A1EC007CE939 /* Build configuration list for PBXNativeTarget "PicoCanvas" */;
+			buildPhases = (
+				B753D94ED967B5CBC72754D6 /* [CP] Check Pods Manifest.lock */,
+				BFC5C58D2752A1EB007CE939 /* Sources */,
+				BFC5C58E2752A1EB007CE939 /* Frameworks */,
+				BFC5C58F2752A1EB007CE939 /* Resources */,
+				39F7A76DE71EBEE189498BF1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PicoCanvas;
+			productName = PicoCanvas;
+			productReference = BFC5C5912752A1EB007CE939 /* PicoCanvas.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFC5C5892752A1EB007CE939 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					BFC5C5902752A1EB007CE939 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = BFC5C58C2752A1EB007CE939 /* Build configuration list for PBXProject "PicoCanvas" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BFC5C5882752A1EB007CE939;
+			productRefGroup = BFC5C5922752A1EB007CE939 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFC5C5902752A1EB007CE939 /* PicoCanvas */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFC5C58F2752A1EB007CE939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC5C5992752A1EC007CE939 /* Assets.xcassets in Resources */,
+				BFC5C59C2752A1EC007CE939 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39F7A76DE71EBEE189498BF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PicoCanvas/Pods-PicoCanvas-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PicoCanvas/Pods-PicoCanvas-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PicoCanvas/Pods-PicoCanvas-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B753D94ED967B5CBC72754D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PicoCanvas-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFC5C58D2752A1EB007CE939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF0276262752AF2C00054F9D /* SerialPortManager.swift in Sources */,
+				BFC5C5972752A1EB007CE939 /* ViewController.swift in Sources */,
+				BF0276282752AFF900054F9D /* CommandParser.swift in Sources */,
+				BFC5C5952752A1EB007CE939 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BFC5C59A2752A1EC007CE939 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFC5C59B2752A1EC007CE939 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BFC5C59E2752A1EC007CE939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BFC5C59F2752A1EC007CE939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		BFC5C5A12752A1EC007CE939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87949C46261C39CA44E8BC04 /* Pods-PicoCanvas.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PicoCanvas/PicoCanvas.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = eecs249a.PicoCanvas;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BFC5C5A22752A1EC007CE939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABB19C688A887644483C9B86 /* Pods-PicoCanvas.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PicoCanvas/PicoCanvas.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = eecs249a.PicoCanvas;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFC5C58C2752A1EB007CE939 /* Build configuration list for PBXProject "PicoCanvas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFC5C59E2752A1EC007CE939 /* Debug */,
+				BFC5C59F2752A1EC007CE939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFC5C5A02752A1EC007CE939 /* Build configuration list for PBXNativeTarget "PicoCanvas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFC5C5A12752A1EC007CE939 /* Debug */,
+				BFC5C5A22752A1EC007CE939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFC5C5892752A1EB007CE939 /* Project object */;
+}
