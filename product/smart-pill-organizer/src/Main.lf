@@ -65,13 +65,14 @@ main reactor Main {
             Paint_Clear(WHITE);
             Paint_SetRotate(ROTATE_0);
             Paint_Clear(WHITE);
+            printf("got this 888 %X!\r\n", color);
             
             // 2.Drawing on the image
 			Paint_DrawString_EN(20, 20, "Color collected", &Font20, WHITE, BLACK);
             Paint_DrawRectangle(45, 60, 180, 90, color, DOT_PIXEL_2X2,DRAW_FILL_FULL);
 			char *s;
 			sprintf(s, "0X%X", color);
-			Paint_DrawString_EN(20, 20, s, &Font20, WHITE, BLACK);
+			Paint_DrawString_EN(20, 110, s, &Font20, WHITE, BLACK);
 
             // 3.Refresh the picture in RAM to LCD
             LCD_1IN14_V2_Display(BlackImage);
@@ -109,9 +110,9 @@ main reactor Main {
         //bi_decl(bi_program_description("First Blink"));
         //bi_decl(bi_1pin_with_name(LED_PIN, "On-board LED"));
 		RGB rgb=TCS34725_Get_RGBData();
-		UWORD RGB565=TCS34725_GetRGB888(rgb);
-		printf("got this %X!\r\n", RGB565);
-        //lcd_show_color(RGB565);
+		UWORD RGB565=TCS34725_GetRGB565(rgb);
+		//printf("got this 565 %X!\r\n", RGB565);
+        lcd_show_color(RGB565);
     =}
 }
 

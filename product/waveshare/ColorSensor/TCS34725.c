@@ -42,13 +42,8 @@ parameter	:
 ******************************************************************************/
 static void TCS34725_WriteByte(UBYTE add, UBYTE data)
 {
-    //Note: remember to add this when users write their own
-    //Responsible for not finding the register, 
-    //refer to the data sheet Command Register CMD(Bit 7)
-    //add = add | TCS34725_CMD_BIT;
-    //uint8_t reg;
-    i2c_write_blocking(i2c_default, add, data, 1, true);
-    //DEV_I2C_Write(add, reg, data);
+    uint8_t buf[2] = {add | TCS34725_CMD_BIT, data};
+    i2c_write_blocking(i2c_default, TCS34725_ADDRESS, buf, 2, true);
 }
 
 /******************************************************************************
@@ -58,9 +53,11 @@ parameter	:
 ******************************************************************************/
 static UBYTE TCS34725_ReadByte(UBYTE add)
 {
-    add = add | TCS34725_CMD_BIT;
-    uint8_t reg;
-    return DEV_I2C_ReadByte(add, reg);
+    uint8_t reg = add | TCS34725_CMD_BIT;
+    uint8_t value[1];
+    i2c_write_blocking(i2c_default,TCS34725_ADDRESS, &reg, 1, true);
+    i2c_read_blocking(i2c_default,TCS34725_ADDRESS, value, 1, false);
+    return value[0];
 }
 
 /******************************************************************************
@@ -72,13 +69,13 @@ parameter	:
 static UWORD TCS34725_ReadWord(UBYTE add)
 {
     uint8_t buf[2];
-    uint8_t reg;
-    //i2c_write_blocking(i2c_default, add, &reg, 1, true);
-    i2c_read_blocking(i2c_default, add, buf, 2, false);
-    UWORD result = ( buf[0] << 8) | buf[1];
-     printf("i2c_default %f PICO_DEFAULT_I2C_SDA_PIN %f!\r\n", i2c_default, 4);
+    uint8_t reg = add | TCS34725_CMD_BIT;
+    i2c_write_blocking(i2c_default,TCS34725_ADDRESS, &reg, 1, true);
+    i2c_read_blocking(i2c_default,TCS34725_ADDRESS, buf, 2, false);
+    UWORD result = ( buf[1] << 8) | buf[0];
 
-      printf("reading from %X, got value %f!\r\n", add,result);
+      printf("reading from reg %X, !\r\n", reg);
+      printf(" got value %X buf 0 %X !\r\n", buf[1], buf[0]);
 
     // uint8_t lsb;
     // uint8_t msb;
@@ -102,7 +99,7 @@ function:
 ******************************************************************************/
 static void TCS34725_Enable(void)
 {
-    (TCS34725_ENABLE, TCS34725_ENABLE_PON);
+    TCS34725_WriteByte(TCS34725_ENABLE, TCS34725_ENABLE_PON);
     DEV_Delay_ms(3);
     TCS34725_WriteByte(TCS34725_ENABLE, TCS34725_ENABLE_PON | TCS34725_ENABLE_AEN);
     DEV_Delay_ms(3);  
@@ -237,10 +234,15 @@ UBYTE  TCS34725_Init(void)
     gpio_set_function(PICO_DEFAULT_I2C_SCL_PIN, GPIO_FUNC_I2C);
     gpio_pull_up(PICO_DEFAULT_I2C_SDA_PIN);
     gpio_pull_up(PICO_DEFAULT_I2C_SCL_PIN);
-    // Make the I2C pins available to picotool
-    bi_decl(bi_2pins_with_func(PICO_DEFAULT_I2C_SDA_PIN, PICO_DEFAULT_I2C_SCL_PIN, GPIO_FUNC_I2C));
+    // // Make the I2C pins available to picotool
+    // bi_decl(bi_2pins_with_func(PICO_DEFAULT_I2C_SDA_PIN, PICO_DEFAULT_I2C_SCL_PIN, GPIO_FUNC_I2C));
 
     TCS34725_Enable();
+    UBYTE ID = TCS34725_ReadByte(TCS34725_ID);
+    if(ID != 0x44 && ID != 0x4D){
+        printf("Incorrect setup, got device id: %x", ID);
+        return -1;
+    }
 	
 	return 0;
 }
@@ -256,39 +258,15 @@ parameter	:
 ******************************************************************************/
 RGB TCS34725_Get_RGBData()
 {
-       for (int addr = 0; addr < (1 << 7); ++addr) {
-        if (addr % 16 == 0) {
-            printf("%02x ", addr);
-        }
- 
-        // Perform a 1-byte dummy read from the probe address. If a slave
-        // acknowledges this address, the function returns the number of bytes
-        // transferred. If the address byte is ignored, the function returns
-        // -1.
- 
-        // Skip over any reserved addresses.
-        int ret;
-        uint8_t rxdata;
-        if (reserved_addr(addr))
-            ret = PICO_ERROR_GENERIC;
-        else
-            ret = i2c_read_blocking(i2c_default, addr, &rxdata, 1, false);
- 
-        printf(ret < 0 ? "." : "@");
-        printf(addr % 16 == 15 ? "\n" : "  ");
-    }
-    printf("Done.\n");\
+    UBYTE ID = 0;
+    printf("hi! %x", ID);
+    //DEV_Set_I2CAddress(TCS34725_ADDRESS);
+
     RGB temp;
     temp.C = TCS34725_ReadWord(TCS34725_CDATAL | TCS34725_CMD_Read_Word);
     temp.R = TCS34725_ReadWord(TCS34725_RDATAL | TCS34725_CMD_Read_Word);
-    temp.G = TCS34725_ReadWord(TCS34725_GDATAL );
-    temp.B = TCS34725_ReadWord(TCS34725_ENABLE);
-    
-    printf("temp.C %X!\r\n", temp.C);
-    printf("temp.R %X!\r\n", temp.R);
-    printf("temp.G %X!\r\n", temp.G);
-    printf("TCS34725_ENABLE %x!\r\n", temp.B);
-
+    temp.G = TCS34725_ReadWord(TCS34725_GDATAL | TCS34725_CMD_Read_Word);
+    temp.B = TCS34725_ReadWord(TCS34725_BDATAL | TCS34725_CMD_Read_Word);
     switch (IntegrationTime_t){
         case TCS34725_INTEGRATIONTIME_2_4MS:
               DEV_Delay_ms(3);
