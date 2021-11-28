@@ -74,21 +74,8 @@ static UWORD TCS34725_ReadWord(UBYTE add)
     i2c_read_blocking(i2c_default,TCS34725_ADDRESS, buf, 2, false);
     UWORD result = ( buf[1] << 8) | buf[0];
 
-      printf("reading from reg %X, !\r\n", reg);
-      printf(" got value %X buf 0 %X !\r\n", buf[1], buf[0]);
-
-    // uint8_t lsb;
-    // uint8_t msb;
-    // add = add | TCS34725_CMD_BIT;
-
-    // i2c_write_blocking(i2c_default, add, &reg, 1, true);
-    // i2c_read_blocking(i2c_default, add, &lsb, 1, false);
-
-    // reg |= 0x01;
-    // i2c_write_blocking(i2c_default, add, &reg, 1, true);
-    // i2c_read_blocking(i2c_default, add, &msb, 1, false);
-
-    // UWORD result = (msb << 8) | lsb;
+    printf("reading from reg %X, !\r\n", reg);
+    printf(" got value %X buf 0 %X !\r\n", buf[1], buf[0]);
 
     return result;
 }
@@ -208,34 +195,11 @@ parameter	:
 ******************************************************************************/
 UBYTE  TCS34725_Init(void)
 {
-	// UBYTE ID = 0;
-    // //DEV_Set_I2CAddress(TCS34725_ADDRESS);
-	// ID = TCS34725_ReadByte(TCS34725_ID);
-    // if(ID != 0x44 && ID != 0x4D){
-    //     return 1;
-    // }
-    // //Set the integration time and gain
-	 //TCS34725_Set_Integration_Time(TCS34725_INTEGRATIONTIME_154MS);	
-    // TCS34725_Set_Gain(TCS34725_GAIN_60X);
-    
-    // IntegrationTime_t = TCS34725_INTEGRATIONTIME_154MS;
-    // Gain_t = TCS34725_GAIN_60X;
-    // //Set Interrupt
-    // TCS34725_Set_Interrupt_Threshold(0xff00, 0x00ff);//Interrupt upper and lower threshold
-    // TCS34725_Set_Interrupt_Persistence_Reg(TCS34725_PERS_2_CYCLE);
-    // TCS34725_Enable();
-    // TCS34725_Interrupt_Enable();
-    // //Set the LCD brightness
-    // TCS34725_SetLight(40);
-
-    // This example will use I2C0 on the default SDA and SCL pins (GP4, GP5 on a Pico)
     i2c_init(i2c_default, 100 * 1000);
     gpio_set_function(PICO_DEFAULT_I2C_SDA_PIN, GPIO_FUNC_I2C);
     gpio_set_function(PICO_DEFAULT_I2C_SCL_PIN, GPIO_FUNC_I2C);
     gpio_pull_up(PICO_DEFAULT_I2C_SDA_PIN);
     gpio_pull_up(PICO_DEFAULT_I2C_SCL_PIN);
-    // // Make the I2C pins available to picotool
-    // bi_decl(bi_2pins_with_func(PICO_DEFAULT_I2C_SDA_PIN, PICO_DEFAULT_I2C_SCL_PIN, GPIO_FUNC_I2C));
 
     TCS34725_Enable();
     UBYTE ID = TCS34725_ReadByte(TCS34725_ID);
