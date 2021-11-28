@@ -1,7 +1,7 @@
 # Clean up
-echo "Cleaning up build directory ..."
-./clean.sh
-echo "Cleaning up build directory. Done!"
+# echo "Cleaning up build directory ..."
+# ./clean.sh
+# echo "Cleaning up build directory. Done!"
 
 # # Build C codes from LF
 echo "Building Lingua-Franca codes into C ..."
