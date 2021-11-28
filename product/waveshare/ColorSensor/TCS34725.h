@@ -160,7 +160,7 @@ typedef struct{
 
 /*-----------------------------------------------------------------------------*/
 //initialization
- UBYTE TCS34725_Init(void);
+UBYTE TCS34725_Init(void);
 void TCS34725_SetLight(UWORD value);
 void TCS34725_Set_Gain(TCS34725Gain_t gain);
 void TCS34725_Set_IntegrationTime(TCS34725IntegrationTime_t it);

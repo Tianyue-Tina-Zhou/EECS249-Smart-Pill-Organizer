@@ -46,4 +46,4 @@ pico_add_extra_outputs(SPO)
 pico_enable_stdio_usb(SPO 1)
 pico_enable_stdio_uart(SPO 0)
 
-target_link_libraries(SPO LCD Infrared GUI Fonts ColorSensor Config pico_stdlib hardware_spi)
+target_link_libraries(SPO LCD Infrared GUI Fonts ColorSensor Config pico_stdlib hardware_spi hardware_i2c)
