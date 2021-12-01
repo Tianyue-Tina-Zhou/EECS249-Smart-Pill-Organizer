@@ -10,7 +10,7 @@
  * @return 0 on success, error number otherwise (see pthread_create()).
  */
 int lf_thread_create(_lf_thread_t* thread, void *(*lf_thread) (void *), void* arguments) {
-    return thrd_create((thrd_t*)thread, (thrd_start_t)lf_thread, arguments);
+    return 0;
 }
 
 /**
@@ -21,9 +21,7 @@ int lf_thread_create(_lf_thread_t* thread, void *(*lf_thread) (void *), void* ar
  * @return 0 on success, error number otherwise (see pthread_join()).
  */
 int lf_thread_join(_lf_thread_t thread, void** thread_return) {
-    thread_return = (void**)malloc(sizeof(void*));
-    *thread_return= (int*)malloc(sizeof(int));
-    return thrd_join((thrd_t)thread, (int*)*thread_return);
+    return 0;
 }
 
 /**
@@ -33,7 +31,7 @@ int lf_thread_join(_lf_thread_t thread, void** thread_return) {
  */
 int lf_mutex_init(_lf_mutex_t* mutex) {
     // Set up a recursive mutex
-    return mtx_init((mtx_t*)mutex, mtx_timed | mtx_recursive);
+    return 0;
 }
 
 /**
@@ -42,7 +40,7 @@ int lf_mutex_init(_lf_mutex_t* mutex) {
  * @return 0 on success, error number otherwise (see pthread_mutex_lock()).
  */
 int lf_mutex_lock(_lf_mutex_t* mutex) {
-    return mtx_lock((mtx_t*) mutex);
+    return 0;
 }
 
 /** 
@@ -51,7 +49,7 @@ int lf_mutex_lock(_lf_mutex_t* mutex) {
  * @return 0 on success, error number otherwise (see pthread_mutex_unlock()).
  */
 int lf_mutex_unlock(_lf_mutex_t* mutex) {
-    return mtx_unlock((mtx_t*) mutex);
+    return 0;
 }
 
 /** 
@@ -60,7 +58,7 @@ int lf_mutex_unlock(_lf_mutex_t* mutex) {
  * @return 0 on success, error number otherwise (see pthread_cond_init()).
  */
 int lf_cond_init(_lf_cond_t* cond) {
-    return cnd_init((cnd_t*)cond);
+    return 0;
 }
 
 /** 
@@ -69,7 +67,7 @@ int lf_cond_init(_lf_cond_t* cond) {
  * @return 0 on success, error number otherwise (see pthread_cond_broadcast()).
  */
 int lf_cond_broadcast(_lf_cond_t* cond) {
-    return cnd_broadcast((cnd_t*)cond);
+    return 0;
 }
 
 /** 
@@ -78,7 +76,7 @@ int lf_cond_broadcast(_lf_cond_t* cond) {
  * @return 0 on success, error number otherwise (see pthread_cond_signal()).
  */
 int lf_cond_signal(_lf_cond_t* cond) {
-    return cnd_signal((cnd_t*)cond);
+    return 0;
 }
 
 /** 
@@ -88,7 +86,7 @@ int lf_cond_signal(_lf_cond_t* cond) {
  * @return 0 on success, error number otherwise (see pthread_cond_wait()).
  */
 int lf_cond_wait(_lf_cond_t* cond, _lf_mutex_t* mutex) {
-    return cnd_wait((cnd_t*)cond, (mtx_t*)mutex);
+    return 0;
 }
 
 /** 
@@ -100,23 +98,5 @@ int lf_cond_wait(_lf_cond_t* cond, _lf_mutex_t* mutex) {
  *  number otherwise (see pthread_cond_timedwait).
  */
 int lf_cond_timedwait(_lf_cond_t* cond, _lf_mutex_t* mutex, int64_t absolute_time_ns) {
-    // Convert the absolute time to a timespec.
-    // timespec is seconds and nanoseconds.
-    struct timespec timespec_absolute_time
-            = {(time_t)absolute_time_ns / 1000000000LL, (long)absolute_time_ns % 1000000000LL};
-    int return_value = 0;
-    return_value = cnd_timedwait(
-        (cnd_t*)cond, 
-        (mtx_t*)mutex, 
-        &timespec_absolute_time
-    );
-    switch (return_value) {
-        case thrd_timedout:
-            return_value = _LF_TIMEOUT;
-            break;
-        
-        default:
-            break;
-    }
-    return return_value;
+    return 0;
 }

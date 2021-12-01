@@ -50,7 +50,7 @@ main reactor Main {
             DEV_SET_PWM(10);
         }
     =}
-    timer t(0 sec, 1000 msec)
+    
     reaction(startup) {=
         //bi_decl(bi_program_description("First Blink"));
         //bi_decl(bi_1pin_with_name(LED_PIN, "On-board LED"));
@@ -62,6 +62,7 @@ main reactor Main {
         printf("System Initialized!\r\n");
     =}
 
+    timer t(0 sec, 1000 msec)
     reaction(t) {=
         //bi_decl(bi_program_description("First Blink"));
         //bi_decl(bi_1pin_with_name(LED_PIN, "On-board LED"));
