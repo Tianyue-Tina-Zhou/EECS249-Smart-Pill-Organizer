@@ -1,8 +1,4 @@
-# Clean up
-echo "Cleaning up build directory ..."
-./clean.sh
-echo "Cleaning up build directory. Done!"
-
+rm -rf smart-pill-organizer/src-gen/Main/*
 # # Build C codes from LF
 echo "Building Lingua-Franca codes into C ..."
 ../lfc/bin/run/lfc smart-pill-organizer/src/Main.lf 2> /dev/null 1> /dev/null
@@ -18,7 +14,7 @@ rm -rf smart-pill-organizer/src-gen/Main/build
 rm smart-pill-organizer/src-gen/Main/CMakeLists.txt
 
 cp -r lib-support/core smart-pill-organizer/src-gen/Main/core
-cp lib-support/CMakeLists.txt smart-pill-organizer/src-gen/Main/CMakeLists.txt
+cp lib-support/CMakeListsWindows.txt smart-pill-organizer/src-gen/Main/CMakeLists.txt
 cp -r waveshare smart-pill-organizer/src-gen/Main/waveshare
 
 cd smart-pill-organizer/src-gen/Main
@@ -31,4 +27,4 @@ make -j4
 
 echo "Building C codes into PICO executable. Done!"
 
-open .
+#open .
