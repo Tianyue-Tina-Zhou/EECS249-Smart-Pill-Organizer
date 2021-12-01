@@ -1,4 +1,3 @@
-// This is a smoke test of a minimal reactor.
 target C;
 main reactor Main {
     preamble {=
@@ -13,9 +12,11 @@ main reactor Main {
 		#include "TCS34725.h"
 
         const uint LED_PIN = 25;
+        const uint PB3_PIN = 28;
         bool led = true;
         UWORD *BlackImage;
         int count = 0;
+        bool PB3_Pressed = false;
         const char * CMD_PREFIX = "<C>";
 
         int lcd_init() {
@@ -31,7 +32,7 @@ main reactor Main {
             UDOUBLE Imagesize = LCD_1IN14_V2_HEIGHT * LCD_1IN14_V2_WIDTH * 2;
             if((BlackImage = (UWORD *)malloc(Imagesize)) == NULL) {
                 // Failed to apply for black memory...
-                return;
+                return 1;
             }
         }
 		
@@ -41,7 +42,7 @@ main reactor Main {
 			
 		}
 
-        int lcd_print(const char * pString)
+        void lcd_print(const char * pString)
         {   
             // 1.Create a new image cache named BlackImage and fill it with white
             Paint_NewImage((UBYTE *) BlackImage, LCD_1IN14_V2.WIDTH, LCD_1IN14_V2.HEIGHT, 0, WHITE);
@@ -58,7 +59,7 @@ main reactor Main {
             DEV_SET_PWM(10);
         }
 		
-		int lcd_show_color(UWORD color)
+		void lcd_show_color(UWORD color)
         {   
             // 1.Create a new image cache named BlackImage and fill it with white
             Paint_NewImage((UBYTE *) BlackImage, LCD_1IN14_V2.WIDTH, LCD_1IN14_V2.HEIGHT, 0, WHITE);
@@ -75,42 +76,50 @@ main reactor Main {
             LCD_1IN14_V2_Display(BlackImage);
             DEV_SET_PWM(10);
         }
-    =}
-    timer t(0 sec, 1000 msec)
-	timer color_Sensing(0 sec, 1000 msec)
-    reaction(startup) {=
-        //bi_decl(bi_program_description("First Blink"));
-        //bi_decl(bi_1pin_with_name(LED_PIN, "On-board LED"));
-        gpio_init(LED_PIN);
-        gpio_set_dir(LED_PIN, GPIO_OUT);
 
+        void init_gpio()
+        {
+            gpio_init(LED_PIN);
+            gpio_set_dir(LED_PIN, GPIO_OUT);
+            gpio_init(PB3_PIN);
+            gpio_set_dir(PB3_PIN, GPIO_IN);
+        }
+    =}
+    
+    reaction(startup) {=
+        init_gpio();
         lcd_init();
 		color_sensing_init();
         stdio_init_all();
         printf("System Initialized!\r\n");
     =}
 
-    timer t(0 sec, 1000 msec)
-    reaction(t) {=
-        //bi_decl(bi_program_description("First Blink"));
-        //bi_decl(bi_1pin_with_name(LED_PIN, "On-board LED"));
-        
-        //static char display_buf[16];
-        //snprintf(display_buf, 16, "SECONDS: %d", count);
-        //lcd_print(display_buf);
-        //printf("%s%s", CMD_PREFIX, display_buf);
-
+    timer blink_led(0 msec, 200 msec)
+    reaction(blink_led) {=
         gpio_put(LED_PIN, led);
         led = !led;
-        count = (count + 1) % 60;
     =}
 	
-	reaction(color_Sensing) {=
-		RGB rgb=TCS34725_Get_RGBData();
-		UWORD RGB565=TCS34725_GetRGB565(rgb);
-        UDOUBLE RGB888=TCS34725_GetRGB888(rgb);
-		printf("Color sensed in RGB565 %X, RGB888 %X!\r\n", RGB565, RGB888);
-        lcd_show_color(RGB565);
+    timer pb_sampling(0 msec, 50 msec)
+    reaction(pb_sampling) {=
+        PB3_Pressed = gpio_get(28);
+        printf("PB3 Pressed: %d\n", PB3_Pressed);
     =}
+
+    timer lcd_refresh(0 msec, 100 msec)
+    reaction(lcd_refresh) {=
+        static char display_buf[16];
+        snprintf(display_buf, 16, "PB3: %d", PB3_Pressed);
+        lcd_print(display_buf);
+    =}
+
+    // timer color_Sensing(0 sec, 1000 msec)
+	// reaction(color_Sensing) {=
+	// 	RGB rgb=TCS34725_Get_RGBData();
+	// 	UWORD RGB565=TCS34725_GetRGB565(rgb);
+    //     UDOUBLE RGB888=TCS34725_GetRGB888(rgb);
+	// 	printf("Color sensed in RGB565 %X, RGB888 %X!\r\n", RGB565, RGB888);
+    //     lcd_show_color(RGB565);
+    // =}
 }
 

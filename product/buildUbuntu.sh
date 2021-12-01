@@ -1,4 +1,4 @@
-# Clean up
+# # Clean up
 echo "Cleaning up build directory ..."
 ./clean.sh
 echo "Cleaning up build directory. Done!"
@@ -19,7 +19,7 @@ rm smart-pill-organizer/src-gen/Main/CMakeLists.txt
 
 cp -r lib-support/core smart-pill-organizer/src-gen/Main/core
 cp lib-support/CMakeLists.txt smart-pill-organizer/src-gen/Main/CMakeLists.txt
-cp -r waveshare smart-pill-organizer/src-gen/Main/waveshare
+cp -r lib-support/waveshare smart-pill-organizer/src-gen/Main/waveshare
 
 cd smart-pill-organizer/src-gen/Main
 mkdir build
@@ -30,5 +30,5 @@ cmake ..
 make -j4
 
 echo "Building C codes into PICO executable. Done!"
-
-open .
+cp ~/EECS249-Smart-Pill-Organizer/product/smart-pill-organizer/src-gen/Main/build/SPO.uf2 /media/jerry/RPI-RP2/SPO.uf2
+#open .
