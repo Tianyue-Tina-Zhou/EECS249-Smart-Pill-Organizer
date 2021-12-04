@@ -40,6 +40,9 @@ class ViewController: NSViewController {
 extension ViewController {
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
+        guard let canvas = canvas else { return }
+        lastCursor = CGPoint(x: event.locationInWindow.x, y: event.locationInWindow.y)
+        canvas.update(cursorPosition: lastCursor, stroke: true)
     }
     
     override func mouseUp(with event: NSEvent) {
@@ -51,7 +54,6 @@ extension ViewController {
     override func mouseDragged(with event: NSEvent) {
         super.mouseDragged(with: event)
         guard let canvas = canvas else { return }
-        
         lastCursor = CGPoint(x: event.locationInWindow.x, y: event.locationInWindow.y)
         canvas.update(cursorPosition: lastCursor, stroke: true)
     }

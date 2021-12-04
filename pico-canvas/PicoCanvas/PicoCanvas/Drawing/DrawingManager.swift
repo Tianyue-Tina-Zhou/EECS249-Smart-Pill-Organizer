@@ -41,7 +41,7 @@ extension DrawingManager {
         previousPoint = position
         previousPreviousPoint = position
         
-        let newItem = DrawItem(path: CGMutablePath(), brush: brush)
+        let newItem = DrawItem(path: createNewPath(), brush: brush)
         drawItems.append(newItem)
     }
     

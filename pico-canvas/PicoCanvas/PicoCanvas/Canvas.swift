@@ -14,17 +14,28 @@ typealias CanvasRelativeCoordinate = CGPoint
 struct CanvasConfig {
     var backgroundColor: NSColor = .darkGray
     var cursorColor: NSColor = .white
-    var cursorSize = CGSize(width: 15, height: 15)
+    var cursorSize = CGSize(width: 40, height: 40)
+    var cursorPenUpScale: Double = 1
+    var cursorPenDownScale: Double = 0.5
+    var cursorPenUpAlpha: Double = 0.5
+    var cursorPenDownAlpha: Double = 1
+    var cursorAnimationDuration: TimeInterval = 0.2
     var trackingSpeed: Double = 0.001
     
     static let `default` = CanvasConfig()
 }
 
 class Canvas: NSView {
-    private var cursorPosition: CGPoint = .zero
+    private var cursorPosition: CGPoint = .zero {
+        didSet { updateCursorFrame() }
+    }
+    private var lastStroke: Bool = false {
+        didSet { animateStrokeChange(old: oldValue, new: lastStroke) }
+    }
+    
     private let config: CanvasConfig = .default
     private let manager = DrawingManager()
-    private var lastStroke: Bool = false
+    private let cursorView = NSView()
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -38,8 +49,6 @@ class Canvas: NSView {
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        
-        drawCursor()
         drawStrokes()
     }
     
@@ -84,12 +93,7 @@ extension Canvas {
     func update(cursorPosition: CGPoint, stroke: Bool) {
         defer { lastStroke = stroke }
         
-        let oldRect = calculateCursorRect(origin: self.cursorPosition)
-        setNeedsDisplay(oldRect)
-        
         self.cursorPosition = cursorPosition
-        let newRect = calculateCursorRect(origin: cursorPosition)
-        setNeedsDisplay(newRect)
         
         if stroke {
             if lastStroke {
@@ -111,8 +115,59 @@ extension Canvas {
 
 extension Canvas {
     private func configureViews() {
+        cursorView.wantsLayer = true
+        addSubview(cursorView)
+        
+        cursorView.frame.size = config.cursorSize
+        cursorView.layer?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        cursorView.layer?.contentsGravity = .center
+        cursorView.layer?.cornerRadius = config.cursorSize.width / 2
+        cursorView.layer?.backgroundColor = config.cursorColor.cgColor
+        cursorView.layer?.opacity = 0.5
+        
         manager.delegate = self
         cursorPosition = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
+        updateCursorFrame()
+    }
+    
+    private func updateCursorFrame() {
+        cursorView.frame = calculateCursorRect(origin: cursorPosition)
+    }
+    
+    private func animateStrokeChange(old: Bool, new: Bool) {
+        guard old != new else { return }
+        guard let layer = cursorView.layer else { return }
+        
+        let scaleStart = new ? config.cursorPenUpScale : config.cursorPenDownScale
+        let scaleEnd = new ? config.cursorPenDownScale : config.cursorPenUpScale
+        let alphaStart = new ? config.cursorPenUpAlpha : config.cursorPenDownAlpha
+        let alphaEnd = new ? config.cursorPenDownAlpha : config.cursorPenUpAlpha
+
+        let scaleAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.transform))
+        scaleAnimation.fromValue = calculateTransformation(scale: scaleStart)
+        scaleAnimation.toValue = calculateTransformation(scale: scaleEnd)
+
+        let alphaAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.opacity))
+        alphaAnimation.fromValue = alphaStart
+        alphaAnimation.toValue = alphaEnd
+
+        let group = CAAnimationGroup()
+        group.duration = config.cursorAnimationDuration
+        group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        group.repeatCount = 1
+        group.fillMode = .forwards
+        group.isRemovedOnCompletion = false
+        group.animations = [scaleAnimation, alphaAnimation]
+
+        layer.add(group, forKey: "cursor")
+    }
+    
+    private func calculateTransformation(scale: Double) -> CATransform3D {
+        var transform = CATransform3DIdentity
+        transform = CATransform3DTranslate(transform, config.cursorSize.width / 2, config.cursorSize.height / 2, 0)
+        transform = CATransform3DScale(transform, scale, scale, 1)
+        transform = CATransform3DTranslate(transform, -config.cursorSize.width / 2, -config.cursorSize.height / 2, 0)
+        return transform
     }
 }
 
