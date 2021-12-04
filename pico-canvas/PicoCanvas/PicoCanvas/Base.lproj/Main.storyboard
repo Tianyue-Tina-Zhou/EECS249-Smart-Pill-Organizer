@@ -684,10 +684,10 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
+                        <rect key="contentRect" x="620" y="369" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -729,6 +729,7 @@
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="8AJ-NY-Vkl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="2BD-Lz-37a"/>
                             <constraint firstItem="yKg-vJ-nuT" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="7az-LP-WTO"/>
                             <constraint firstItem="8AJ-NY-Vkl" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="8dx-IL-3aH"/>
                             <constraint firstItem="PxB-8S-jQe" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="9es-se-dzG"/>
@@ -736,7 +737,10 @@
                             <constraint firstAttribute="trailing" secondItem="8AJ-NY-Vkl" secondAttribute="trailing" id="Mua-ks-Lxs"/>
                             <constraint firstItem="yKg-vJ-nuT" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="PJD-Xd-0on"/>
                             <constraint firstItem="8AJ-NY-Vkl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Xjg-kF-ytY"/>
+                            <constraint firstItem="8AJ-NY-Vkl" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Zso-Cq-JiE"/>
+                            <constraint firstAttribute="bottom" secondItem="8AJ-NY-Vkl" secondAttribute="bottom" id="er2-pF-oDP"/>
                             <constraint firstAttribute="bottom" secondItem="PxB-8S-jQe" secondAttribute="bottom" constant="40" id="f4r-Kb-Sz5"/>
+                            <constraint firstAttribute="trailing" secondItem="8AJ-NY-Vkl" secondAttribute="trailing" id="vHs-oX-nS7"/>
                         </constraints>
                     </view>
                     <connections>

@@ -46,13 +46,13 @@ class ControlPacketProviderStub: ControlPacketProviderProtocol {
         count = (count + 1) % 100
         let packet: ControlPacket
         if count < 25 {
-            packet = .init(speedX: 1, speedY: 0, stroke: true)
+            packet = .init(speedX: 5000, speedY: 0, stroke: true)
         } else if count < 50 {
-            packet = .init(speedX: 0, speedY: 1, stroke: true)
+            packet = .init(speedX: 0, speedY: 5000, stroke: false)
         } else if count < 75 {
-            packet = .init(speedX: -1, speedY: 0, stroke: true)
+            packet = .init(speedX: -5000, speedY: 0, stroke: true)
         } else {
-            packet = .init(speedX: 0, speedY: -1, stroke: true)
+            packet = .init(speedX: 0, speedY: -5000, stroke: true)
         }
         
         delegate?.didReceiveNewControlPacket(packet: packet)
