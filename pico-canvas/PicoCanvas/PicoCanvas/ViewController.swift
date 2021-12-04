@@ -12,6 +12,7 @@ class ViewController: NSViewController {
     @IBOutlet var statusTextField: NSTextField?
     @IBOutlet var refreshButton: NSButton?
     @IBOutlet var undoButton: NSButton?
+    @IBOutlet var colorButton: NSButton?
     @IBOutlet var canvas: Canvas?
     private var lastCursor: CGPoint = .zero
     
@@ -63,6 +64,7 @@ extension ViewController {
     private func configureViews() {
         refreshButton?.action = #selector(didClickRefreshButton)
         undoButton?.action = #selector(didClickUndoButton)
+        colorButton?.action = #selector(didClickColorButton)
     }
     
     @objc
@@ -73,6 +75,22 @@ extension ViewController {
     @objc
     private func didClickUndoButton() {
         canvas?.undo()
+    }
+    
+    @objc
+    private func didClickColorButton() {
+        let colorPanel = NSColorPanel.shared
+        colorPanel.setTarget(self)
+        colorPanel.setAction(#selector(didPickColor(sender:)))
+        colorPanel.makeKeyAndOrderFront(self)
+    }
+
+    @objc
+    func didPickColor(sender:AnyObject) {
+        guard let colorPanel = sender as? NSColorPanel else { return }
+        guard let canvas = canvas else { return }
+        
+        canvas.setCursorColor(color: colorPanel.color)
     }
 }
 

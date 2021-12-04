@@ -17,8 +17,8 @@ struct CanvasConfig {
     var cursorSize = CGSize(width: 40, height: 40)
     var cursorPenUpScale: Double = 1
     var cursorPenDownScale: Double = 0.5
-    var cursorPenUpAlpha: Double = 0.5
-    var cursorPenDownAlpha: Double = 1
+    var cursorPenUpAlpha: Double = 0.3
+    var cursorPenDownAlpha: Double = 0.8
     var cursorAnimationDuration: TimeInterval = 0.2
     var trackingSpeed: Double = 0.001
     
@@ -33,7 +33,7 @@ class Canvas: NSView {
         didSet { animateStrokeChange(old: oldValue, new: lastStroke) }
     }
     
-    private let config: CanvasConfig = .default
+    private var config: CanvasConfig = .default
     private let manager = DrawingManager()
     private let cursorView = NSView()
     
@@ -109,7 +109,9 @@ extension Canvas {
     }
     
     func setCursorColor(color: NSColor) {
-        
+        config.cursorColor = color
+        manager.brush.color = Color.from(systemColor: color)
+        updateCursorColor()
     }
 }
 
@@ -119,19 +121,26 @@ extension Canvas {
         addSubview(cursorView)
         
         cursorView.frame.size = config.cursorSize
-        cursorView.layer?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        cursorView.layer?.contentsGravity = .center
-        cursorView.layer?.cornerRadius = config.cursorSize.width / 2
-        cursorView.layer?.backgroundColor = config.cursorColor.cgColor
-        cursorView.layer?.opacity = 0.5
+        if let layer = cursorView.layer {
+            layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            layer.contentsGravity = .center
+            layer.cornerRadius = config.cursorSize.width / 2
+            layer.opacity = 0.5
+        }
         
         manager.delegate = self
         cursorPosition = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
+        
         updateCursorFrame()
+        updateCursorColor()
     }
     
     private func updateCursorFrame() {
         cursorView.frame = calculateCursorRect(origin: cursorPosition)
+    }
+    
+    private func updateCursorColor() {
+        cursorView.layer?.backgroundColor = config.cursorColor.cgColor
     }
     
     private func animateStrokeChange(old: Bool, new: Bool) {

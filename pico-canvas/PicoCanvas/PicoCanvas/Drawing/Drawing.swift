@@ -20,6 +20,10 @@ struct Color : Codable, Equatable {
     
     static let white = Color(red: 1, green: 1, blue: 1)
     
+    static func from(systemColor: NSColor) -> Color {
+        return Color(red: systemColor.redComponent, green: systemColor.greenComponent, blue: systemColor.blueComponent)
+    }
+    
     var systemColor: NSColor {
         return NSColor(deviceRed: red, green: green, blue: blue, alpha: 1)
     }

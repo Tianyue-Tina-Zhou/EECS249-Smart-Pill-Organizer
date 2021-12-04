@@ -713,7 +713,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="960" height="540"/>
                                 <subviews>
                                     <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXT-H4-4pi">
-                                        <rect key="frame" x="410" y="50" width="141" height="20"/>
+                                        <rect key="frame" x="371" y="50" width="219" height="20"/>
                                         <subviews>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PxB-8S-jQe">
                                                 <rect key="frame" x="-7" y="-7" width="77" height="32"/>
@@ -729,12 +729,21 @@
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                             </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="13H-9I-Faz">
+                                                <rect key="frame" x="149" y="-7" width="77" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Color" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="735-kd-bfm">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                            </button>
                                         </subviews>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
@@ -769,6 +778,7 @@
                     </view>
                     <connections>
                         <outlet property="canvas" destination="8AJ-NY-Vkl" id="ZyN-Nx-8jd"/>
+                        <outlet property="colorButton" destination="13H-9I-Faz" id="U8v-HD-R0s"/>
                         <outlet property="refreshButton" destination="PxB-8S-jQe" id="bs7-OL-vqF"/>
                         <outlet property="statusTextField" destination="yKg-vJ-nuT" id="aPe-3J-Er3"/>
                         <outlet property="undoButton" destination="0hK-rL-6H3" id="Age-l1-dn3"/>
