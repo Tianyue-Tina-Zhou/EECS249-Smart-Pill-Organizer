@@ -11,12 +11,16 @@ class ViewController: NSViewController {
     
     @IBOutlet var statusTextField: NSTextField?
     @IBOutlet var refreshButton: NSButton?
+    @IBOutlet var canvas: Canvas?
+    
+    private let packetProvider = ControlPacketProviderStub()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         CommandParser.shared.delegate = self
         SerialPortManager.shared.delegate = self
+        packetProvider.delegate = self
         
         SerialPortManager.shared.refresh()
         
@@ -33,6 +37,7 @@ class ViewController: NSViewController {
 extension ViewController {
     private func configureViews() {
         refreshButton?.action = #selector(didClickRefreshButton)
+        packetProvider.start()
     }
     
     @objc
@@ -52,7 +57,13 @@ extension ViewController: SerialPortManagerDelegate {
 }
 
 extension ViewController: CommandParserDelegate {
-    func didRecieveNewCommand(command: String) {
-        statusTextField?.stringValue = command
+    func didRecieveNewCommand(command: Command) {
+        statusTextField?.stringValue = "\(command)"
+    }
+}
+
+extension ViewController: ControlPacketProviderDelegate {
+    func didReceiveNewControlPacket(packet: ControlPacket) {
+        canvas?.update(controlPacket: packet)
     }
 }

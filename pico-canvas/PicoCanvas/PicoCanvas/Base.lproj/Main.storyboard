@@ -709,6 +709,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="8AJ-NY-Vkl" customClass="Canvas" customModule="PicoCanvas" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yKg-vJ-nuT">
                                 <rect key="frame" x="238" y="121" width="4" height="28"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" id="PJL-uX-3AZ">
@@ -727,12 +730,17 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="yKg-vJ-nuT" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="7az-LP-WTO"/>
+                            <constraint firstItem="8AJ-NY-Vkl" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="8dx-IL-3aH"/>
                             <constraint firstItem="PxB-8S-jQe" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="9es-se-dzG"/>
+                            <constraint firstAttribute="bottom" secondItem="8AJ-NY-Vkl" secondAttribute="bottom" id="GUa-xw-Sbv"/>
+                            <constraint firstAttribute="trailing" secondItem="8AJ-NY-Vkl" secondAttribute="trailing" id="Mua-ks-Lxs"/>
                             <constraint firstItem="yKg-vJ-nuT" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="PJD-Xd-0on"/>
+                            <constraint firstItem="8AJ-NY-Vkl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Xjg-kF-ytY"/>
                             <constraint firstAttribute="bottom" secondItem="PxB-8S-jQe" secondAttribute="bottom" constant="40" id="f4r-Kb-Sz5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="canvas" destination="8AJ-NY-Vkl" id="ZyN-Nx-8jd"/>
                         <outlet property="refreshButton" destination="PxB-8S-jQe" id="bs7-OL-vqF"/>
                         <outlet property="statusTextField" destination="yKg-vJ-nuT" id="aPe-3J-Er3"/>
                     </connections>

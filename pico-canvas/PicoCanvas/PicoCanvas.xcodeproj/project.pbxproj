@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF017C1A2752F20E00B54C80 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF017C192752F20E00B54C80 /* Canvas.swift */; };
 		BF0276262752AF2C00054F9D /* SerialPortManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0276252752AF2C00054F9D /* SerialPortManager.swift */; };
 		BF0276282752AFF900054F9D /* CommandParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0276272752AFF900054F9D /* CommandParser.swift */; };
+		BF6150992752ED3E009FCAF2 /* ControlPacketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6150982752ED3E009FCAF2 /* ControlPacketProvider.swift */; };
 		BFC5C5952752A1EB007CE939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5C5942752A1EB007CE939 /* AppDelegate.swift */; };
 		BFC5C5972752A1EB007CE939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5C5962752A1EB007CE939 /* ViewController.swift */; };
 		BFC5C5992752A1EC007CE939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC5C5982752A1EC007CE939 /* Assets.xcassets */; };
@@ -19,8 +21,10 @@
 /* Begin PBXFileReference section */
 		87949C46261C39CA44E8BC04 /* Pods-PicoCanvas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicoCanvas.debug.xcconfig"; path = "Target Support Files/Pods-PicoCanvas/Pods-PicoCanvas.debug.xcconfig"; sourceTree = "<group>"; };
 		ABB19C688A887644483C9B86 /* Pods-PicoCanvas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicoCanvas.release.xcconfig"; path = "Target Support Files/Pods-PicoCanvas/Pods-PicoCanvas.release.xcconfig"; sourceTree = "<group>"; };
+		BF017C192752F20E00B54C80 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		BF0276252752AF2C00054F9D /* SerialPortManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialPortManager.swift; sourceTree = "<group>"; };
 		BF0276272752AFF900054F9D /* CommandParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandParser.swift; sourceTree = "<group>"; };
+		BF6150982752ED3E009FCAF2 /* ControlPacketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPacketProvider.swift; sourceTree = "<group>"; };
 		BFC5C5912752A1EB007CE939 /* PicoCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicoCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC5C5942752A1EB007CE939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC5C5962752A1EB007CE939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 				BFC5C59D2752A1EC007CE939 /* PicoCanvas.entitlements */,
 				BF0276252752AF2C00054F9D /* SerialPortManager.swift */,
 				BF0276272752AFF900054F9D /* CommandParser.swift */,
+				BF6150982752ED3E009FCAF2 /* ControlPacketProvider.swift */,
+				BF017C192752F20E00B54C80 /* Canvas.swift */,
 			);
 			path = PicoCanvas;
 			sourceTree = "<group>";
@@ -207,8 +213,10 @@
 			files = (
 				BF0276262752AF2C00054F9D /* SerialPortManager.swift in Sources */,
 				BFC5C5972752A1EB007CE939 /* ViewController.swift in Sources */,
+				BF6150992752ED3E009FCAF2 /* ControlPacketProvider.swift in Sources */,
 				BF0276282752AFF900054F9D /* CommandParser.swift in Sources */,
 				BFC5C5952752A1EB007CE939 /* AppDelegate.swift in Sources */,
+				BF017C1A2752F20E00B54C80 /* Canvas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
