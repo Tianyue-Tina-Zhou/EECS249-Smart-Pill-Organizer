@@ -51,8 +51,10 @@ class Canvas: NSView {
     }
     
     private func drawCursor() {
+        guard let context: CGContext = NSGraphicsContext.current?.cgContext else { return }
+        let rect = calculateCursorRect(origin: cursorPosition)
         config.cursorColor.setFill()
-        calculateCursorRect(origin: cursorPosition).fill()
+        context.fillEllipse(in: rect)
     }
     
     private func drawStrokes() {

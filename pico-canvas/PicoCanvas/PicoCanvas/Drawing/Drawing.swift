@@ -52,7 +52,7 @@ struct Brush: Codable {
     // MARK: - Static brushes
     
     public static var `default`: Brush {
-        return Brush(color: .white, width: 3)
+        return Brush(color: .white, width: 6)
     }
 }
 
