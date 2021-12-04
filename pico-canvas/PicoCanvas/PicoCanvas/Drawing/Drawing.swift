@@ -74,3 +74,52 @@ extension Brush: Equatable, Comparable, CustomStringConvertible {
         return "<Brush: color: \(color), width: \(width)>"
     }
 }
+
+extension NSColor {
+    convenience init(hex: String) {
+        var hex = hex
+        if hex.hasPrefix("0x") {
+            hex.removeFirst(2)
+        } else if hex.hasPrefix("#") {
+            hex.removeFirst(1)
+        }
+
+        guard let value = Int(hex, radix: 16) else {
+            self.init(); return
+        }
+
+        switch hex.count {
+        case 3:
+            self.init(hex3: value, alpha: 1)
+        case 6:
+            self.init(hex6: value, alpha: 1)
+        default:
+            self.init()
+        }
+    }
+    
+    private convenience init(hex3: Int, alpha: CGFloat) {
+        let r = (hex3 & 0xF00) >> 8
+        let g = (hex3 & 0x0F0) >> 4
+        let b = (hex3 & 0x00F) >> 0
+        
+        self.init(red256:   (r << 4) + r,
+                  green256: (g << 4) + g,
+                  blue256:  (b << 4) + b,
+                  alpha: alpha)
+    }
+    
+    private convenience init(hex6: Int, alpha: CGFloat) {
+        self.init(red256:   (hex6 & 0xFF0000) >> 16,
+                  green256: (hex6 & 0x00FF00) >> 8,
+                  blue256:  (hex6 & 0x0000FF) >> 0,
+                  alpha: alpha)
+    }
+    
+    private convenience init(red256: Int, green256: Int, blue256: Int, alpha: CGFloat) {
+        self.init(red:   CGFloat(red256)   / 255.0,
+                  green: CGFloat(green256) / 255.0,
+                  blue:  CGFloat(blue256)  / 255.0,
+                  alpha: alpha)
+    }
+}

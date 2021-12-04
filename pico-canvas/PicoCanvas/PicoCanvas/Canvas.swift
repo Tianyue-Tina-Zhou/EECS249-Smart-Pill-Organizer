@@ -24,7 +24,7 @@ class Canvas: NSView {
     private var cursorPosition: CGPoint = .zero
     private let config: CanvasConfig = .default
     private let manager = DrawingManager()
-    private var lastControlPacket: ControlPacket? = nil
+    private var lastStroke: Bool = false
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -73,18 +73,26 @@ class Canvas: NSView {
 
 extension Canvas {
     func update(controlPacket: ControlPacket) {
-        defer { lastControlPacket = controlPacket }
-        
-        let oldRect = calculateCursorRect(origin: cursorPosition)
         guard controlPacket.speedX != 0 || controlPacket.speedY != 0 else { return }
+        var cursorPosition = self.cursorPosition
         cursorPosition.x += CGFloat(controlPacket.speedX) * CGFloat(config.trackingSpeed)
         cursorPosition.y += CGFloat(controlPacket.speedY) * CGFloat(config.trackingSpeed)
-        let newRect = calculateCursorRect(origin: cursorPosition)
+        
+        update(cursorPosition: cursorPosition, stroke: controlPacket.stroke)
+    }
+    
+    func update(cursorPosition: CGPoint, stroke: Bool) {
+        defer { lastStroke = stroke }
+        
+        let oldRect = calculateCursorRect(origin: self.cursorPosition)
         setNeedsDisplay(oldRect)
+        
+        self.cursorPosition = cursorPosition
+        let newRect = calculateCursorRect(origin: cursorPosition)
         setNeedsDisplay(newRect)
         
-        if controlPacket.stroke {
-            if let lastControlPacket = lastControlPacket, lastControlPacket.stroke == true {
+        if stroke {
+            if lastStroke {
                 manager.strokeMoved(position: cursorPosition)
             } else {
                 manager.strokeBegan(position: cursorPosition)
@@ -94,6 +102,10 @@ extension Canvas {
     
     func undo() {
         manager.undo()
+    }
+    
+    func setCursorColor(color: NSColor) {
+        
     }
 }
 

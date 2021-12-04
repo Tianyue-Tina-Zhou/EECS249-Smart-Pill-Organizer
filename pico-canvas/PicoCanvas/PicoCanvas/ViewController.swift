@@ -12,19 +12,21 @@ class ViewController: NSViewController {
     @IBOutlet var statusTextField: NSTextField?
     @IBOutlet var refreshButton: NSButton?
     @IBOutlet var canvas: Canvas?
-    
-    private let packetProvider = ControlPacketProviderStub()
+    private var lastCursor: CGPoint = .zero
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         CommandParser.shared.delegate = self
         SerialPortManager.shared.delegate = self
-        packetProvider.delegate = self
         
         SerialPortManager.shared.refresh()
         
         configureViews()
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
     }
 
     override var representedObject: Any? {
@@ -37,12 +39,29 @@ class ViewController: NSViewController {
 extension ViewController {
     private func configureViews() {
         refreshButton?.action = #selector(didClickRefreshButton)
-        packetProvider.start()
     }
     
     @objc
     private func didClickRefreshButton() {
         SerialPortManager.shared.refresh()
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        super.mouseDown(with: event)
+    }
+    
+    override func mouseUp(with event: NSEvent) {
+        super.mouseUp(with: event)
+        guard let canvas = canvas else { return }
+        canvas.update(cursorPosition: lastCursor, stroke: false)
+    }
+    
+    override func mouseDragged(with event: NSEvent) {
+        super.mouseDragged(with: event)
+        guard let canvas = canvas else { return }
+        
+        lastCursor = CGPoint(x: event.locationInWindow.x, y: event.locationInWindow.y)
+        canvas.update(cursorPosition: lastCursor, stroke: true)
     }
 }
 
@@ -59,11 +78,15 @@ extension ViewController: SerialPortManagerDelegate {
 extension ViewController: CommandParserDelegate {
     func didRecieveNewCommand(command: Command) {
         statusTextField?.stringValue = "\(command)"
-    }
-}
-
-extension ViewController: ControlPacketProviderDelegate {
-    func didReceiveNewControlPacket(packet: ControlPacket) {
-        canvas?.update(controlPacket: packet)
+        guard let canvas = canvas else { return }
+        switch command {
+        case .rgb(let color):
+            canvas.setCursorColor(color: color)
+        case .penMove(let x, let y, let stroke):
+            let packet = ControlPacket(speedX: Float(x), speedY: Float(y), stroke: stroke)
+            canvas.update(controlPacket: packet)
+        case .undo:
+            canvas.undo()
+        }
     }
 }

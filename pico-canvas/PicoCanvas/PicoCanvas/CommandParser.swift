@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Cocoa
 
 protocol CommandParserDelegate: AnyObject {
     func didRecieveNewCommand(command: Command)
@@ -18,7 +19,7 @@ enum CommandType: Int {
 }
 
 enum Command {
-    case rgb(hex: String)
+    case rgb(color: NSColor)
     case penMove(x: Int, y: Int, stroke: Bool)
     case undo
     
@@ -31,7 +32,7 @@ enum Command {
         case .rgb:
             guard args.count == 2 else { return nil }
             guard args[1].count == 6 else { return nil }
-            self = .rgb(hex: args[1])
+            self = .rgb(color: NSColor(hex: args[1]))
         case .penMove:
             guard args.count == 4 else { return nil }
             guard let stroke = Int(args[0]), let x = Int(args[2]), let y = Int(args[3]) else { return nil }
