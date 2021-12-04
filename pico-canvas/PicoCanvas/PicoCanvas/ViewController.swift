@@ -11,6 +11,7 @@ class ViewController: NSViewController {
     
     @IBOutlet var statusTextField: NSTextField?
     @IBOutlet var refreshButton: NSButton?
+    @IBOutlet var undoButton: NSButton?
     @IBOutlet var canvas: Canvas?
     private var lastCursor: CGPoint = .zero
     
@@ -37,15 +38,6 @@ class ViewController: NSViewController {
 }
 
 extension ViewController {
-    private func configureViews() {
-        refreshButton?.action = #selector(didClickRefreshButton)
-    }
-    
-    @objc
-    private func didClickRefreshButton() {
-        SerialPortManager.shared.refresh()
-    }
-    
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
     }
@@ -62,6 +54,23 @@ extension ViewController {
         
         lastCursor = CGPoint(x: event.locationInWindow.x, y: event.locationInWindow.y)
         canvas.update(cursorPosition: lastCursor, stroke: true)
+    }
+}
+
+extension ViewController {
+    private func configureViews() {
+        refreshButton?.action = #selector(didClickRefreshButton)
+        undoButton?.action = #selector(didClickUndoButton)
+    }
+    
+    @objc
+    private func didClickRefreshButton() {
+        SerialPortManager.shared.refresh()
+    }
+    
+    @objc
+    private func didClickUndoButton() {
+        canvas?.undo()
     }
 }
 

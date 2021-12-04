@@ -711,6 +711,39 @@
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="8AJ-NY-Vkl" customClass="Canvas" customModule="PicoCanvas" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="960" height="540"/>
+                                <subviews>
+                                    <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXT-H4-4pi">
+                                        <rect key="frame" x="410" y="50" width="141" height="20"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PxB-8S-jQe">
+                                                <rect key="frame" x="-7" y="-7" width="77" height="32"/>
+                                                <buttonCell key="cell" type="push" title="refresh" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FQB-QH-UIr">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0hK-rL-6H3">
+                                                <rect key="frame" x="71" y="-7" width="77" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Undo" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GCE-Gf-CJ9">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                            </button>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="GXT-H4-4pi" secondAttribute="bottom" constant="50" id="6Ly-6u-0s1"/>
+                                    <constraint firstItem="GXT-H4-4pi" firstAttribute="centerX" secondItem="8AJ-NY-Vkl" secondAttribute="centerX" id="lxr-be-dFH"/>
+                                </constraints>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yKg-vJ-nuT">
                                 <rect key="frame" x="478" y="256" width="4" height="28"/>
@@ -720,26 +753,17 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PxB-8S-jQe">
-                                <rect key="frame" x="442" y="33" width="77" height="32"/>
-                                <buttonCell key="cell" type="push" title="refresh" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FQB-QH-UIr">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="8AJ-NY-Vkl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="2BD-Lz-37a"/>
                             <constraint firstItem="yKg-vJ-nuT" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="7az-LP-WTO"/>
                             <constraint firstItem="8AJ-NY-Vkl" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="8dx-IL-3aH"/>
-                            <constraint firstItem="PxB-8S-jQe" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="9es-se-dzG"/>
                             <constraint firstAttribute="bottom" secondItem="8AJ-NY-Vkl" secondAttribute="bottom" id="GUa-xw-Sbv"/>
                             <constraint firstAttribute="trailing" secondItem="8AJ-NY-Vkl" secondAttribute="trailing" id="Mua-ks-Lxs"/>
                             <constraint firstItem="yKg-vJ-nuT" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="PJD-Xd-0on"/>
                             <constraint firstItem="8AJ-NY-Vkl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Xjg-kF-ytY"/>
                             <constraint firstItem="8AJ-NY-Vkl" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Zso-Cq-JiE"/>
                             <constraint firstAttribute="bottom" secondItem="8AJ-NY-Vkl" secondAttribute="bottom" id="er2-pF-oDP"/>
-                            <constraint firstAttribute="bottom" secondItem="PxB-8S-jQe" secondAttribute="bottom" constant="40" id="f4r-Kb-Sz5"/>
                             <constraint firstAttribute="trailing" secondItem="8AJ-NY-Vkl" secondAttribute="trailing" id="vHs-oX-nS7"/>
                         </constraints>
                     </view>
@@ -747,6 +771,7 @@
                         <outlet property="canvas" destination="8AJ-NY-Vkl" id="ZyN-Nx-8jd"/>
                         <outlet property="refreshButton" destination="PxB-8S-jQe" id="bs7-OL-vqF"/>
                         <outlet property="statusTextField" destination="yKg-vJ-nuT" id="aPe-3J-Er3"/>
+                        <outlet property="undoButton" destination="0hK-rL-6H3" id="Age-l1-dn3"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
