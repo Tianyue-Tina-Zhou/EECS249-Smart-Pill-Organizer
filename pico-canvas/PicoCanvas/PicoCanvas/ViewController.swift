@@ -9,10 +9,12 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    @IBOutlet var statusTextField: NSTextField?
     @IBOutlet var refreshButton: NSButton?
     @IBOutlet var undoButton: NSButton?
     @IBOutlet var colorButton: NSButton?
+    @IBOutlet var clearButton: NSButton?
+    @IBOutlet var recenterButton: NSButton?
+    
     @IBOutlet var canvas: Canvas?
     @IBOutlet var colorIndicatorView: NSView?
     @IBOutlet var colorIndicatorViewBorder: NSView?
@@ -68,6 +70,9 @@ extension ViewController {
         refreshButton?.action = #selector(didClickRefreshButton)
         undoButton?.action = #selector(didClickUndoButton)
         colorButton?.action = #selector(didClickColorButton)
+        recenterButton?.action = #selector(didClickReCenterButton)
+        clearButton?.action = #selector(didClickClearButton)
+        
         colorIndicatorView?.wantsLayer = true
         colorIndicatorView?.rotate(byDegrees: 45)
         colorIndicatorView?.layer?.backgroundColor = .white
@@ -101,21 +106,32 @@ extension ViewController {
         guard let colorPanel = sender as? NSColorPanel else { return }
         update(color: colorPanel.color)
     }
+    
+    @objc
+    func didClickClearButton() {
+        guard let canvas = canvas else { return }
+        canvas.clear()
+    }
+    
+    @objc
+    func didClickReCenterButton() {
+        guard let canvas = canvas else { return }
+        canvas.recenter()
+    }
 }
 
 extension ViewController: SerialPortManagerDelegate {
     func serialPortDidOpen() {
-        statusTextField?.stringValue = "Pico Connected"
+        print("Pico Connected")
     }
     
     func serialPortDidClose() {
-        statusTextField?.stringValue = "Pico Disconnected"
+        print("Pico Disconnected")
     }
 }
 
 extension ViewController: CommandParserDelegate {
     func didRecieveNewCommand(command: Command) {
-        statusTextField?.stringValue = "\(command)"
         guard let canvas = canvas else { return }
         switch command {
         case .rgb(let color):

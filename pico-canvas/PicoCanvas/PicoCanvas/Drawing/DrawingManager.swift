@@ -63,6 +63,12 @@ extension DrawingManager {
         drawItems.removeLast()
         delegate?.manager(self, requireUpdateDisplay: nil)
     }
+    
+    func clear() {
+        guard !drawItems.isEmpty else { return }
+        drawItems.removeAll()
+        delegate?.manager(self, requireUpdateDisplay: nil)
+    }
 }
 
 extension DrawingManager {

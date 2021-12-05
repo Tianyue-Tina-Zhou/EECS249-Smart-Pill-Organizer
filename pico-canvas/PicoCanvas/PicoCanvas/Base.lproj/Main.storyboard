@@ -713,25 +713,39 @@
                                 <rect key="frame" x="0.0" y="0.0" width="960" height="540"/>
                                 <subviews>
                                     <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXT-H4-4pi">
-                                        <rect key="frame" x="371" y="50" width="219" height="20"/>
+                                        <rect key="frame" x="243" y="50" width="475" height="20"/>
                                         <subviews>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PxB-8S-jQe">
-                                                <rect key="frame" x="-7" y="-7" width="77" height="32"/>
+                                                <rect key="frame" x="-7" y="-7" width="97" height="32"/>
                                                 <buttonCell key="cell" type="push" title="refresh" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FQB-QH-UIr">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0hK-rL-6H3">
-                                                <rect key="frame" x="71" y="-7" width="77" height="32"/>
+                                                <rect key="frame" x="91" y="-7" width="97" height="32"/>
                                                 <buttonCell key="cell" type="push" title="Undo" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GCE-Gf-CJ9">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="13H-9I-Faz">
-                                                <rect key="frame" x="149" y="-7" width="77" height="32"/>
+                                                <rect key="frame" x="189" y="-7" width="97" height="32"/>
                                                 <buttonCell key="cell" type="push" title="Color" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="735-kd-bfm">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="izM-dg-N6q">
+                                                <rect key="frame" x="287" y="-7" width="97" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1AY-dh-Xcr">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xce-cF-8YR">
+                                                <rect key="frame" x="385" y="-7" width="97" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Re-Center" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iJa-WJ-ael">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -741,8 +755,12 @@
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
@@ -772,22 +790,12 @@
                                     <constraint firstAttribute="trailing" secondItem="4wC-hi-vVq" secondAttribute="trailing" constant="-40" id="pdB-tJ-VsG"/>
                                 </constraints>
                             </customView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yKg-vJ-nuT">
-                                <rect key="frame" x="478" y="256" width="4" height="28"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" id="PJL-uX-3AZ">
-                                    <font key="font" metaFont="system" size="24"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="8AJ-NY-Vkl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="2BD-Lz-37a"/>
-                            <constraint firstItem="yKg-vJ-nuT" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="7az-LP-WTO"/>
                             <constraint firstItem="8AJ-NY-Vkl" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="8dx-IL-3aH"/>
                             <constraint firstAttribute="bottom" secondItem="8AJ-NY-Vkl" secondAttribute="bottom" id="GUa-xw-Sbv"/>
                             <constraint firstAttribute="trailing" secondItem="8AJ-NY-Vkl" secondAttribute="trailing" id="Mua-ks-Lxs"/>
-                            <constraint firstItem="yKg-vJ-nuT" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="PJD-Xd-0on"/>
                             <constraint firstItem="8AJ-NY-Vkl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Xjg-kF-ytY"/>
                             <constraint firstItem="8AJ-NY-Vkl" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Zso-Cq-JiE"/>
                             <constraint firstAttribute="bottom" secondItem="8AJ-NY-Vkl" secondAttribute="bottom" id="er2-pF-oDP"/>
@@ -796,11 +804,12 @@
                     </view>
                     <connections>
                         <outlet property="canvas" destination="8AJ-NY-Vkl" id="ZyN-Nx-8jd"/>
+                        <outlet property="clearButton" destination="izM-dg-N6q" id="8E5-iw-fda"/>
                         <outlet property="colorButton" destination="13H-9I-Faz" id="U8v-HD-R0s"/>
                         <outlet property="colorIndicatorView" destination="ZAk-es-am6" id="aD7-Bd-Uqt"/>
                         <outlet property="colorIndicatorViewBorder" destination="4wC-hi-vVq" id="0RN-ax-92f"/>
+                        <outlet property="recenterButton" destination="xce-cF-8YR" id="Fb6-De-dXM"/>
                         <outlet property="refreshButton" destination="PxB-8S-jQe" id="bs7-OL-vqF"/>
-                        <outlet property="statusTextField" destination="yKg-vJ-nuT" id="aPe-3J-Er3"/>
                         <outlet property="undoButton" destination="0hK-rL-6H3" id="Age-l1-dn3"/>
                     </connections>
                 </viewController>

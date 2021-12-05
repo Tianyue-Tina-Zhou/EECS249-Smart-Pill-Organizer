@@ -108,6 +108,14 @@ extension Canvas {
         manager.undo()
     }
     
+    func clear() {
+        manager.clear()
+    }
+    
+    func recenter() {
+        cursorPosition = CGPoint(x: bounds.midX, y: bounds.midY)
+    }
+    
     func setCursorColor(color: NSColor) {
         config.cursorColor = color
         manager.brush.color = Color.from(systemColor: color)
