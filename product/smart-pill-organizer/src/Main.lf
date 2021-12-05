@@ -10,7 +10,9 @@ main reactor Main {
 
         #include "Infrared.h"
 		#include "TCS34725.h"
+        #include "icm20948.h"
 
+        // Global Variables
         const uint LED_PIN = 25;
         const uint PB3_PIN = 28;
         bool led = true;
@@ -19,6 +21,14 @@ main reactor Main {
         bool PB3_Pressed = false;
         const char * CMD_PREFIX = "<C>";
 
+        // IMU Data Pointers
+        IMU_EN_SENSOR_TYPE enMotionSensorType;
+	    IMU_ST_ANGLES_DATA stAngles;
+	    IMU_ST_SENSOR_DATA stGyroRawData;
+	    IMU_ST_SENSOR_DATA stAccelRawData;
+	    IMU_ST_SENSOR_DATA stMagnRawData;
+
+        // Initialization Functions
         int lcd_init() {
             if(DEV_Module_Init()!=0){
                 return -1;
@@ -84,33 +94,56 @@ main reactor Main {
             gpio_init(PB3_PIN);
             gpio_set_dir(PB3_PIN, GPIO_IN);
         }
+
+        void init_imu()
+        {
+            imuInit(&enMotionSensorType);
+            if(IMU_EN_SENSOR_TYPE_ICM20948 == enMotionSensorType)
+            {
+                printf("Motion sersor is ICM-20948\n" );
+            }
+            else
+            {
+                printf("Motion sersor NULL\n");
+            }
+        }
     =}
     
     reaction(startup) {=
+        stdio_init_all();
         init_gpio();
         lcd_init();
 		color_sensing_init();
-        stdio_init_all();
+        init_imu();
         printf("System Initialized!\r\n");
     =}
 
-    timer blink_led(0 msec, 200 msec)
+    timer blink_led(100 msec, 200 msec)
     reaction(blink_led) {=
         gpio_put(LED_PIN, led);
         led = !led;
     =}
 	
-    timer pb_sampling(0 msec, 50 msec)
+    timer pb_sampling(100 msec, 50 msec)
     reaction(pb_sampling) {=
         PB3_Pressed = gpio_get(28);
-        printf("PB3 Pressed: %d\n", PB3_Pressed);
+        // printf("PB3 Pressed: %d\n", PB3_Pressed);
     =}
 
-    timer lcd_refresh(0 msec, 100 msec)
-    reaction(lcd_refresh) {=
-        static char display_buf[16];
-        snprintf(display_buf, 16, "PB3: %d", PB3_Pressed);
-        lcd_print(display_buf);
+    // timer lcd_refresh(100 msec, 500 msec)
+    // reaction(lcd_refresh) {=
+    //     static char display_buf[16];
+    //     snprintf(display_buf, 16, "PB3: %d", PB3_Pressed);
+    //     lcd_print(display_buf);
+    // =}
+
+    timer imu_fetch(100 msec, 100 msec)
+    reaction(imu_fetch) {=
+        imuDataGet( &stAngles, &stGyroRawData, &stAccelRawData, &stMagnRawData);
+		// printf("Roll: %.2f     Pitch: %.2f     Yaw: %.2f \r\n",stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+        printf("----------------------------------------------------\r\n");
+        printf("Acceleration: X: %d     Y: %d     Z: %d \r\n",stAccelRawData.s16X, stAccelRawData.s16Y, stAccelRawData.s16Z);
+		printf("Gyroscope: X: %d     Y: %d     Z: %d \r\n",stGyroRawData.s16X, stGyroRawData.s16Y, stGyroRawData.s16Z);
     =}
 
     // timer color_Sensing(0 sec, 1000 msec)
