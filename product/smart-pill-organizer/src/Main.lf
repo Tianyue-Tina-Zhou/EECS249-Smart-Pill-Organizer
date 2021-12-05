@@ -13,12 +13,27 @@ main reactor Main {
         #include "icm20948.h"
 
         // Global Variables
+        //joystick & BUTTON AB
+        const uint keyA = 15; 
+        const uint keyB = 17; 
+
+        //const uint up = 2;
+        //const uint left = 16;
+        //const uint ctrl = 3;
+        //const uint right = 20;
+        //const uint down = 18;
+        
         const uint LED_PIN = 25;
         const uint PB3_PIN = 28;
+        
+
         bool led = true;
         UWORD *BlackImage;
         int count = 0;
         bool PB3_Pressed = false;
+        bool A_Pressed = false;
+        bool B_Pressed = false;
+
         const char * CMD_PREFIX = "<C>";
 
         // IMU Data Pointers
@@ -89,10 +104,19 @@ main reactor Main {
 
         void init_gpio()
         {
+            
             gpio_init(LED_PIN);
             gpio_set_dir(LED_PIN, GPIO_OUT);
             gpio_init(PB3_PIN);
             gpio_set_dir(PB3_PIN, GPIO_IN);
+            
+            gpio_init(keyA);
+            gpio_set_dir(keyA, GPIO_IN);
+            gpio_pull_up(keyA);
+            gpio_init(keyB);
+            gpio_set_dir(keyB, GPIO_IN);
+            gpio_pull_up(keyB);
+
         }
 
         void init_imu()
@@ -126,8 +150,15 @@ main reactor Main {
 	
     timer pb_sampling(100 msec, 50 msec)
     reaction(pb_sampling) {=
-        PB3_Pressed = gpio_get(28);
-        // printf("PB3 Pressed: %d\n", PB3_Pressed);
+        PB3_Pressed = gpio_get(PB3_PIN);
+        if(gpio_get(keyA) == 0){
+            A_Pressed = true;
+        }
+        else{
+            A_Pressed = false;
+        }
+        //printf("A Pressed: %d\n", A_Pressed);
+        //printf("PB3 Pressed: %d\n", PB3_Pressed);
     =}
 
     // timer lcd_refresh(100 msec, 500 msec)
