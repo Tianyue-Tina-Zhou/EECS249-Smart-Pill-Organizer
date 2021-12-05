@@ -16,7 +16,7 @@ protocol SerialPortManagerDelegate: AnyObject {
 class SerialPortManager: NSObject {
     static let shared = SerialPortManager()
     
-    private let kPortIdentifier = "usbmodem101"
+    private let kPortIdentifier = "usb"
     private var serialPort: ORSSerialPort?
     weak var delegate: SerialPortManagerDelegate?
     
