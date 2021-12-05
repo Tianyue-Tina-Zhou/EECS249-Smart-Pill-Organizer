@@ -14,6 +14,7 @@ class ViewController: NSViewController {
     @IBOutlet var colorButton: NSButton?
     @IBOutlet var clearButton: NSButton?
     @IBOutlet var recenterButton: NSButton?
+    @IBOutlet var stackView: NSStackView?
     
     @IBOutlet var canvas: Canvas?
     @IBOutlet var colorIndicatorView: NSView?
@@ -81,6 +82,11 @@ extension ViewController {
         colorIndicatorViewBorder?.rotate(byDegrees: 45)
         colorIndicatorViewBorder?.alphaValue = 0.7
         colorIndicatorViewBorder?.layer?.backgroundColor = .white
+        
+        if let item = NSApplication.shared.mainMenu?.items.last?.submenu?.items.last {
+            item.target = self
+            item.action = #selector(didClickToggleButtons)
+        }
     }
     
     @objc
@@ -117,6 +123,12 @@ extension ViewController {
     func didClickReCenterButton() {
         guard let canvas = canvas else { return }
         canvas.recenter()
+    }
+    
+    @objc
+    func didClickToggleButtons() {
+        guard let stackView = stackView else { return }
+        stackView.isHidden = !stackView.isHidden
     }
 }
 
