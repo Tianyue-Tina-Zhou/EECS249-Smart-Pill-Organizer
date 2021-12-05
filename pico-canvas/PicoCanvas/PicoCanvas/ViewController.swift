@@ -14,6 +14,9 @@ class ViewController: NSViewController {
     @IBOutlet var undoButton: NSButton?
     @IBOutlet var colorButton: NSButton?
     @IBOutlet var canvas: Canvas?
+    @IBOutlet var colorIndicatorView: NSView?
+    @IBOutlet var colorIndicatorViewBorder: NSView?
+    
     private var lastCursor: CGPoint = .zero
     
     override func viewDidLoad() {
@@ -65,6 +68,14 @@ extension ViewController {
         refreshButton?.action = #selector(didClickRefreshButton)
         undoButton?.action = #selector(didClickUndoButton)
         colorButton?.action = #selector(didClickColorButton)
+        colorIndicatorView?.wantsLayer = true
+        colorIndicatorView?.rotate(byDegrees: 45)
+        colorIndicatorView?.layer?.backgroundColor = .white
+        
+        colorIndicatorViewBorder?.wantsLayer = true
+        colorIndicatorViewBorder?.rotate(byDegrees: 45)
+        colorIndicatorViewBorder?.alphaValue = 0.7
+        colorIndicatorViewBorder?.layer?.backgroundColor = .white
     }
     
     @objc
@@ -88,9 +99,7 @@ extension ViewController {
     @objc
     func didPickColor(sender:AnyObject) {
         guard let colorPanel = sender as? NSColorPanel else { return }
-        guard let canvas = canvas else { return }
-        
-        canvas.setCursorColor(color: colorPanel.color)
+        update(color: colorPanel.color)
     }
 }
 
@@ -110,12 +119,20 @@ extension ViewController: CommandParserDelegate {
         guard let canvas = canvas else { return }
         switch command {
         case .rgb(let color):
-            canvas.setCursorColor(color: color)
+            update(color: color)
         case .penMove(let x, let y, let stroke):
             let packet = ControlPacket(speedX: Float(x), speedY: Float(y), stroke: stroke)
             canvas.update(controlPacket: packet)
         case .undo:
             canvas.undo()
         }
+    }
+    
+    private func update(color: NSColor) {
+        guard let canvas = canvas else { return }
+        let color = color.withAlphaComponent(1)
+        canvas.setCursorColor(color: color)
+        colorIndicatorView?.layer?.backgroundColor = color.cgColor
+        colorIndicatorViewBorder?.layer?.backgroundColor = color.cgColor
     }
 }

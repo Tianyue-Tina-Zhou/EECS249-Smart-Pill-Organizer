@@ -748,10 +748,28 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="4wC-hi-vVq">
+                                        <rect key="frame" x="920" y="500" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="Tru-zG-eKT"/>
+                                            <constraint firstAttribute="height" constant="80" id="we4-P9-038"/>
+                                        </constraints>
+                                    </customView>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="ZAk-es-am6">
+                                        <rect key="frame" x="930" y="510" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="HME-pf-8L1"/>
+                                            <constraint firstAttribute="width" constant="60" id="VQB-SO-7Zy"/>
+                                        </constraints>
+                                    </customView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="GXT-H4-4pi" secondAttribute="bottom" constant="50" id="6Ly-6u-0s1"/>
+                                    <constraint firstItem="ZAk-es-am6" firstAttribute="top" secondItem="8AJ-NY-Vkl" secondAttribute="top" constant="-30" id="8tu-5b-HRe"/>
+                                    <constraint firstItem="4wC-hi-vVq" firstAttribute="top" secondItem="8AJ-NY-Vkl" secondAttribute="top" constant="-40" id="H3k-1A-Mhi"/>
                                     <constraint firstItem="GXT-H4-4pi" firstAttribute="centerX" secondItem="8AJ-NY-Vkl" secondAttribute="centerX" id="lxr-be-dFH"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZAk-es-am6" secondAttribute="trailing" constant="-30" id="orK-lM-90k"/>
+                                    <constraint firstAttribute="trailing" secondItem="4wC-hi-vVq" secondAttribute="trailing" constant="-40" id="pdB-tJ-VsG"/>
                                 </constraints>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yKg-vJ-nuT">
@@ -779,6 +797,8 @@
                     <connections>
                         <outlet property="canvas" destination="8AJ-NY-Vkl" id="ZyN-Nx-8jd"/>
                         <outlet property="colorButton" destination="13H-9I-Faz" id="U8v-HD-R0s"/>
+                        <outlet property="colorIndicatorView" destination="ZAk-es-am6" id="aD7-Bd-Uqt"/>
+                        <outlet property="colorIndicatorViewBorder" destination="4wC-hi-vVq" id="0RN-ax-92f"/>
                         <outlet property="refreshButton" destination="PxB-8S-jQe" id="bs7-OL-vqF"/>
                         <outlet property="statusTextField" destination="yKg-vJ-nuT" id="aPe-3J-Er3"/>
                         <outlet property="undoButton" destination="0hK-rL-6H3" id="Age-l1-dn3"/>
