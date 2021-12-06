@@ -141,6 +141,7 @@ extern "C" {
 					IMU_ST_SENSOR_DATA *pstGyroRawData,
 					IMU_ST_SENSOR_DATA *pstAccelRawData,
 					IMU_ST_SENSOR_DATA *pstMagnRawData); 
+	void accelDataGet(IMU_ST_SENSOR_DATA *pstAccelRawData); 
 	char I2C_ReadOneByte(char reg);
 	void I2C_WriteOneByte(char reg, char val);
 

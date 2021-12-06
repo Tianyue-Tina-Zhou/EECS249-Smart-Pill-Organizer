@@ -11,6 +11,10 @@ main reactor Main {
         #include "Infrared.h"
 		#include "TCS34725.h"
         #include "icm20948.h"
+        #include <math.h>
+
+        #define sample_size 20
+        #define accel_threshold 300
 
         // Global Variables
         //joystick & BUTTON AB
@@ -26,22 +30,26 @@ main reactor Main {
         const uint LED_PIN = 25;
         const uint PB3_PIN = 28;
         
-
         bool led = true;
         UWORD *BlackImage;
         int count = 0;
         bool PB3_Pressed = false;
         bool A_Pressed = false;
         bool B_Pressed = false;
-
         const char * CMD_PREFIX = "<C>";
+
 
         // IMU Data Pointers
         IMU_EN_SENSOR_TYPE enMotionSensorType;
-	    IMU_ST_ANGLES_DATA stAngles;
-	    IMU_ST_SENSOR_DATA stGyroRawData;
 	    IMU_ST_SENSOR_DATA stAccelRawData;
-	    IMU_ST_SENSOR_DATA stMagnRawData;
+        int prev_x, prev_y;
+        // const int accel_threshold = 500;
+        //const int sample_size = 10;
+        int x_samples[sample_size];
+        int y_samples[sample_size];
+        int delta_x, delta_y;
+        int x_v, y_v;
+
 
         // Initialization Functions
         int lcd_init() {
@@ -67,6 +75,43 @@ main reactor Main {
 			
 		}
 
+        void init_gpio() {
+            
+            gpio_init(LED_PIN);
+            gpio_set_dir(LED_PIN, GPIO_OUT);
+            gpio_init(PB3_PIN);
+            gpio_set_dir(PB3_PIN, GPIO_IN);
+            
+            gpio_init(keyA);
+            gpio_set_dir(keyA, GPIO_IN);
+            gpio_pull_up(keyA);
+            gpio_init(keyB);
+            gpio_set_dir(keyB, GPIO_IN);
+            gpio_pull_up(keyB);
+
+        }
+
+        void init_imu()
+        {
+            imuInit(&enMotionSensorType);
+            if(IMU_EN_SENSOR_TYPE_ICM20948 == enMotionSensorType)
+            {
+                printf("Motion sersor is ICM-20948\n" );
+            }
+            else
+            {
+                printf("Motion sersor NULL\n");
+            }
+            for (int i = 0; i < 5; i ++) {
+                accelDataGet(&stAccelRawData);
+                prev_x = (prev_x + stAccelRawData.s16X)/2;
+                prev_y = (prev_y + stAccelRawData.s16Y)/2;
+                sleep_ms(10);
+            }
+        }
+
+
+        // Helper functions
         void lcd_print(const char * pString)
         {   
             // 1.Create a new image cache named BlackImage and fill it with white
@@ -102,34 +147,44 @@ main reactor Main {
             DEV_SET_PWM(10);
         }
 
-        void init_gpio()
-        {
-            
-            gpio_init(LED_PIN);
-            gpio_set_dir(LED_PIN, GPIO_OUT);
-            gpio_init(PB3_PIN);
-            gpio_set_dir(PB3_PIN, GPIO_IN);
-            
-            gpio_init(keyA);
-            gpio_set_dir(keyA, GPIO_IN);
-            gpio_pull_up(keyA);
-            gpio_init(keyB);
-            gpio_set_dir(keyB, GPIO_IN);
-            gpio_pull_up(keyB);
+        void sample_accel_save_in_buffer() {
+            static int ptr = 0;
+            accelDataGet(&stAccelRawData);
+            x_samples[ptr] = stAccelRawData.s16X;
+            y_samples[ptr] = stAccelRawData.s16Y;
 
+            ptr ++;
+            if (ptr == sample_size) {
+                ptr = 0;
+                // int x_avg = buffer_averaging(x_samples);
+                // int y_avg = buffer_averaging(y_samples);
+                // delta_x = x_avg - prev_x;
+                // delta_y = y_avg - prev_y;
+
+                // prev_x = x_avg;
+                // prev_y = y_avg;
+                x_v = accel_integrate(x_samples);
+                y_v = accel_integrate(y_samples);
+            }
         }
 
-        void init_imu()
-        {
-            imuInit(&enMotionSensorType);
-            if(IMU_EN_SENSOR_TYPE_ICM20948 == enMotionSensorType)
-            {
-                printf("Motion sersor is ICM-20948\n" );
+        int buffer_averaging (int samples[]) {
+            int result = 0;
+            for (int i; i < sample_size; i ++) {
+                result += samples[i];
             }
-            else
-            {
-                printf("Motion sersor NULL\n");
+            result /= sample_size;
+
+            return result;
+        }
+
+        int accel_integrate (int samples[]) {
+            int result = 0;
+            for (int i; i < sample_size - 1; i ++) {
+                result += samples[i + 1] - samples[i];
             }
+
+            return result;
         }
     =}
     
@@ -142,7 +197,7 @@ main reactor Main {
         printf("System Initialized!\r\n");
     =}
 
-    timer blink_led(100 msec, 200 msec)
+    timer blink_led(100 msec, 500 msec)
     reaction(blink_led) {=
         gpio_put(LED_PIN, led);
         led = !led;
@@ -168,13 +223,52 @@ main reactor Main {
     //     lcd_print(display_buf);
     // =}
 
-    timer imu_fetch(100 msec, 100 msec)
+    timer imu_fetch(1 sec, 5 msec)
     reaction(imu_fetch) {=
-        imuDataGet( &stAngles, &stGyroRawData, &stAccelRawData, &stMagnRawData);
+        sample_accel_save_in_buffer();
+    =}
+
+    timer motion_detection(3 sec, 50 msec)
+    reaction(motion_detection) {=
+        printf("----------------\n");
+        // if (abs(delta_x) >= accel_threshold || abs(delta_y) >= accel_threshold) {
+        //     printf("Delta X: %d     Delta Y: %d\r\n", delta_x, delta_y);
+        //     if (delta_x >= accel_threshold) {
+        //         printf("UP  ");
+        //     } else if (delta_x <= -accel_threshold) {
+        //         printf("DOWN  ");
+        //     }
+
+        //     if (delta_y >= accel_threshold) {
+        //         printf("RIGHT  ");
+        //     } else if (delta_y <= -accel_threshold) {
+        //         printf("LEFT  ");
+        //     }
+        //     delta_x = 0;
+        //     delta_y = 0;
+        //     printf("\r\n\n");
+        // }
+        if (abs(x_v) >= accel_threshold || abs(y_v) >= accel_threshold) {
+            printf("X_V: %d     Y_V: %d\r\n", x_v, y_v);
+            if (x_v >= accel_threshold) {
+                printf("UP  ");
+            } else if (x_v <= -accel_threshold) {
+                printf("DOWN  ");
+            }
+
+            if (y_v >= accel_threshold) {
+                printf("RIGHT  ");
+            } else if (y_v <= -accel_threshold) {
+                printf("LEFT  ");
+            }
+            // delta_x = 0;
+            // delta_y = 0;
+            printf("\r\n\n");
+        }
 		// printf("Roll: %.2f     Pitch: %.2f     Yaw: %.2f \r\n",stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
-        printf("----------------------------------------------------\r\n");
-        printf("Acceleration: X: %d     Y: %d     Z: %d \r\n",stAccelRawData.s16X, stAccelRawData.s16Y, stAccelRawData.s16Z);
-		printf("Gyroscope: X: %d     Y: %d     Z: %d \r\n",stGyroRawData.s16X, stGyroRawData.s16Y, stGyroRawData.s16Z);
+        // printf("----------------------------------------------------\r\n");
+        // printf("Acceleration: X: %d     Y: %d     Z: %d \r\n",stAccelRawData.s16X, stAccelRawData.s16Y, stAccelRawData.s16Z);
+		//printf("Gyroscope: X: %d     Y: %d     Z: %d \r\n",stGyroRawData.s16X, stGyroRawData.s16Y, stGyroRawData.s16Z);
     =}
 
     // timer color_Sensing(0 sec, 1000 msec)

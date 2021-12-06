@@ -70,6 +70,7 @@ void imuInit(IMU_EN_SENSOR_TYPE *penMotionSensorType)
 
 	return;
 }
+
 void imuDataGet(IMU_ST_ANGLES_DATA *pstAngles, 
                 IMU_ST_SENSOR_DATA *pstGyroRawData,
                 IMU_ST_SENSOR_DATA *pstAccelRawData,
@@ -111,6 +112,19 @@ void imuDataGet(IMU_ST_ANGLES_DATA *pstAngles,
   pstMagnRawData->s16X = s16Magn[0];
   pstMagnRawData->s16Y = s16Magn[1];
   pstMagnRawData->s16Z = s16Magn[2];  
+
+  return;  
+}
+
+void accelDataGet(IMU_ST_SENSOR_DATA *pstAccelRawData)
+{
+  int16_t s16Accel[3];
+
+  icm20948AccelRead(&s16Accel[0], &s16Accel[1], &s16Accel[2]);
+
+  pstAccelRawData->s16X = s16Accel[0];
+  pstAccelRawData->s16Y = s16Accel[1];
+  pstAccelRawData->s16Z  = s16Accel[2];
 
   return;  
 }
