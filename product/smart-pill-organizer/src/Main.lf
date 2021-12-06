@@ -94,14 +94,14 @@ main reactor Main {
         void init_imu()
         {
             imuInit(&enMotionSensorType);
-            if(IMU_EN_SENSOR_TYPE_ICM20948 == enMotionSensorType)
-            {
-                printf("Motion sersor is ICM-20948\n" );
-            }
-            else
-            {
-                printf("Motion sersor NULL\n");
-            }
+            // if(IMU_EN_SENSOR_TYPE_ICM20948 == enMotionSensorType)
+            // {
+            //     printf("Motion sersor is ICM-20948\n" );
+            // }
+            // else
+            // {
+            //     printf("Motion sersor NULL\n");
+            // }
             for (int i = 0; i < 5; i ++) {
                 accelDataGet(&stAccelRawData);
                 prev_x = (prev_x + stAccelRawData.s16X)/2;
@@ -186,6 +186,14 @@ main reactor Main {
 
             return result;
         }
+
+        int check_bound(int x) {
+            if (abs(x) >= 9999) {
+                return x > 0 ? 9999 : -9999;
+            } else {
+                return x;
+            }
+        }
     =}
     
     reaction(startup) {=
@@ -194,7 +202,7 @@ main reactor Main {
         lcd_init();
 		color_sensing_init();
         init_imu();
-        printf("System Initialized!\r\n");
+        // printf("System Initialized!\r\n");
     =}
 
     timer blink_led(100 msec, 500 msec)
@@ -230,7 +238,7 @@ main reactor Main {
 
     timer motion_detection(3 sec, 50 msec)
     reaction(motion_detection) {=
-        printf("----------------\n");
+        // printf("----------------\n");
         // if (abs(delta_x) >= accel_threshold || abs(delta_y) >= accel_threshold) {
         //     printf("Delta X: %d     Delta Y: %d\r\n", delta_x, delta_y);
         //     if (delta_x >= accel_threshold) {
@@ -249,21 +257,22 @@ main reactor Main {
         //     printf("\r\n\n");
         // }
         if (abs(x_v) >= accel_threshold || abs(y_v) >= accel_threshold) {
-            printf("X_V: %d     Y_V: %d\r\n", x_v, y_v);
-            if (x_v >= accel_threshold) {
-                printf("UP  ");
-            } else if (x_v <= -accel_threshold) {
-                printf("DOWN  ");
-            }
+            //printf("X_V: %d     Y_V: %d\r\n", x_v, y_v);
+            printf("<C>1 0 %d %d</c>", check_bound(x_v), check_bound(y_v));
+            // if (x_v >= accel_threshold) {
+            //     printf("UP  ");
+            // } else if (x_v <= -accel_threshold) {
+            //     printf("DOWN  ");
+            // }
 
-            if (y_v >= accel_threshold) {
-                printf("RIGHT  ");
-            } else if (y_v <= -accel_threshold) {
-                printf("LEFT  ");
-            }
-            // delta_x = 0;
-            // delta_y = 0;
-            printf("\r\n\n");
+            // if (y_v >= accel_threshold) {
+            //     printf("RIGHT  ");
+            // } else if (y_v <= -accel_threshold) {
+            //     printf("LEFT  ");
+            // }
+            // // delta_x = 0;
+            // // delta_y = 0;
+            // printf("\r\n\n");
         }
 		// printf("Roll: %.2f     Pitch: %.2f     Yaw: %.2f \r\n",stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
         // printf("----------------------------------------------------\r\n");
