@@ -63,6 +63,7 @@ class CommandParser {
         result.removeLast(kCommandSuffix.count)
         
         guard let command = Command(string: result) else { return false }
+        print("Command: \(command)")
         
         delegate?.didRecieveNewCommand(command: command)
         
