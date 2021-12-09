@@ -42,6 +42,10 @@ main reactor Main {
         // IMU Data Pointers
         IMU_EN_SENSOR_TYPE enMotionSensorType;
 	    IMU_ST_SENSOR_DATA stAccelRawData;
+        IMU_ST_SENSOR_DATA stGyroRawData;
+        IMU_ST_ANGLES_DATA stAngles;
+        IMU_ST_SENSOR_DATA stMagnRawData;
+
         int prev_x, prev_y;
         // const int accel_threshold = 500;
         //const int sample_size = 10;
@@ -231,10 +235,10 @@ main reactor Main {
     //     lcd_print(display_buf);
     // =}
 
-    timer imu_fetch(1 sec, 5 msec)
-    reaction(imu_fetch) {=
-        sample_accel_save_in_buffer();
-    =}
+    // timer imu_fetch(1 sec, 5 msec)
+    // reaction(imu_fetch) {=
+    //     sample_accel_save_in_buffer();
+    // =}
 
     timer motion_detection(3 sec, 50 msec)
     reaction(motion_detection) {=
@@ -256,9 +260,9 @@ main reactor Main {
         //     delta_y = 0;
         //     printf("\r\n\n");
         // }
-        if (abs(x_v) >= accel_threshold || abs(y_v) >= accel_threshold) {
+        // if (abs(x_v) >= accel_threshold || abs(y_v) >= accel_threshold) {
             //printf("X_V: %d     Y_V: %d\r\n", x_v, y_v);
-            printf("<C>1 0 %d %d</c>", check_bound(x_v), check_bound(y_v));
+            //printf("<C>1 0 %d %d</C>", check_bound(y_v), check_bound(x_v));
             // if (x_v >= accel_threshold) {
             //     printf("UP  ");
             // } else if (x_v <= -accel_threshold) {
@@ -273,11 +277,12 @@ main reactor Main {
             // // delta_x = 0;
             // // delta_y = 0;
             // printf("\r\n\n");
-        }
+        // }
 		// printf("Roll: %.2f     Pitch: %.2f     Yaw: %.2f \r\n",stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
         // printf("----------------------------------------------------\r\n");
         // printf("Acceleration: X: %d     Y: %d     Z: %d \r\n",stAccelRawData.s16X, stAccelRawData.s16Y, stAccelRawData.s16Z);
-		//printf("Gyroscope: X: %d     Y: %d     Z: %d \r\n",stGyroRawData.s16X, stGyroRawData.s16Y, stGyroRawData.s16Z);
+        imuDataGet(&stAngles, &stGyroRawData, &stAccelRawData, &stMagnRawData);
+		printf("Gyroscope: X: %d     Y: %d     Z: %d \r\n", stGyroRawData.s16X, stGyroRawData.s16Y, stGyroRawData.s16Z);
     =}
 
     // timer color_Sensing(0 sec, 1000 msec)
