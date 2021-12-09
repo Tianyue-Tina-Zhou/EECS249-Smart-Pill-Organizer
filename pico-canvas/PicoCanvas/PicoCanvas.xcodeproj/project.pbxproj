@@ -13,6 +13,7 @@
 		BF6150992752ED3E009FCAF2 /* ControlPacketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6150982752ED3E009FCAF2 /* ControlPacketProvider.swift */; };
 		BF7BED12275C00A500593F5F /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7BED11275C00A500593F5F /* Drawing.swift */; };
 		BF7BED14275C00AA00593F5F /* DrawingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7BED13275C00AA00593F5F /* DrawingManager.swift */; };
+		BFB54D5B2760876A00AC3B5A /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB54D5A2760876A00AC3B5A /* OrientationManager.swift */; };
 		BFC5C5952752A1EB007CE939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5C5942752A1EB007CE939 /* AppDelegate.swift */; };
 		BFC5C5972752A1EB007CE939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5C5962752A1EB007CE939 /* ViewController.swift */; };
 		BFC5C5992752A1EC007CE939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC5C5982752A1EC007CE939 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		BF6150982752ED3E009FCAF2 /* ControlPacketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPacketProvider.swift; sourceTree = "<group>"; };
 		BF7BED11275C00A500593F5F /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		BF7BED13275C00AA00593F5F /* DrawingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingManager.swift; sourceTree = "<group>"; };
+		BFB54D5A2760876A00AC3B5A /* OrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationManager.swift; sourceTree = "<group>"; };
 		BFC5C5912752A1EB007CE939 /* PicoCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicoCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC5C5942752A1EB007CE939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC5C5962752A1EB007CE939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				BF6150982752ED3E009FCAF2 /* ControlPacketProvider.swift */,
 				BF017C192752F20E00B54C80 /* Canvas.swift */,
 				BF7BED10275C008C00593F5F /* Drawing */,
+				BFB54D5A2760876A00AC3B5A /* OrientationManager.swift */,
 			);
 			path = PicoCanvas;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			files = (
 				BF0276262752AF2C00054F9D /* SerialPortManager.swift in Sources */,
 				BF7BED12275C00A500593F5F /* Drawing.swift in Sources */,
+				BFB54D5B2760876A00AC3B5A /* OrientationManager.swift in Sources */,
 				BFC5C5972752A1EB007CE939 /* ViewController.swift in Sources */,
 				BF6150992752ED3E009FCAF2 /* ControlPacketProvider.swift in Sources */,
 				BF0276282752AFF900054F9D /* CommandParser.swift in Sources */,

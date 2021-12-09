@@ -41,15 +41,7 @@ main reactor Main {
 
         // IMU Data Pointers
         IMU_EN_SENSOR_TYPE enMotionSensorType;
-	    IMU_ST_SENSOR_DATA stAccelRawData;
-        int prev_x, prev_y;
-        // const int accel_threshold = 500;
-        //const int sample_size = 10;
-        int x_samples[sample_size];
-        int y_samples[sample_size];
-        int delta_x, delta_y;
-        int x_v, y_v;
-
+        IMU_ST_ANGLES_DATA stAngles;
 
         // Initialization Functions
         int lcd_init() {
@@ -94,20 +86,6 @@ main reactor Main {
         void init_imu()
         {
             imuInit(&enMotionSensorType);
-            // if(IMU_EN_SENSOR_TYPE_ICM20948 == enMotionSensorType)
-            // {
-            //     printf("Motion sersor is ICM-20948\n" );
-            // }
-            // else
-            // {
-            //     printf("Motion sersor NULL\n");
-            // }
-            for (int i = 0; i < 5; i ++) {
-                accelDataGet(&stAccelRawData);
-                prev_x = (prev_x + stAccelRawData.s16X)/2;
-                prev_y = (prev_y + stAccelRawData.s16Y)/2;
-                sleep_ms(10);
-            }
         }
 
 
@@ -146,54 +124,6 @@ main reactor Main {
             LCD_1IN14_V2_Display(BlackImage);
             DEV_SET_PWM(10);
         }
-
-        void sample_accel_save_in_buffer() {
-            static int ptr = 0;
-            accelDataGet(&stAccelRawData);
-            x_samples[ptr] = stAccelRawData.s16X;
-            y_samples[ptr] = stAccelRawData.s16Y;
-
-            ptr ++;
-            if (ptr == sample_size) {
-                ptr = 0;
-                // int x_avg = buffer_averaging(x_samples);
-                // int y_avg = buffer_averaging(y_samples);
-                // delta_x = x_avg - prev_x;
-                // delta_y = y_avg - prev_y;
-
-                // prev_x = x_avg;
-                // prev_y = y_avg;
-                x_v = accel_integrate(x_samples);
-                y_v = accel_integrate(y_samples);
-            }
-        }
-
-        int buffer_averaging (int samples[]) {
-            int result = 0;
-            for (int i; i < sample_size; i ++) {
-                result += samples[i];
-            }
-            result /= sample_size;
-
-            return result;
-        }
-
-        int accel_integrate (int samples[]) {
-            int result = 0;
-            for (int i; i < sample_size - 1; i ++) {
-                result += samples[i + 1] - samples[i];
-            }
-
-            return result;
-        }
-
-        int check_bound(int x) {
-            if (abs(x) >= 9999) {
-                return x > 0 ? 9999 : -9999;
-            } else {
-                return x;
-            }
-        }
     =}
     
     reaction(startup) {=
@@ -224,60 +154,14 @@ main reactor Main {
         //printf("PB3 Pressed: %d\n", PB3_Pressed);
     =}
 
-    // timer lcd_refresh(100 msec, 500 msec)
-    // reaction(lcd_refresh) {=
-    //     static char display_buf[16];
-    //     snprintf(display_buf, 16, "PB3: %d", PB3_Pressed);
-    //     lcd_print(display_buf);
-    // =}
-
-    timer imu_fetch(1 sec, 5 msec)
+    timer imu_fetch(1 sec, 50 msec)
     reaction(imu_fetch) {=
-        sample_accel_save_in_buffer();
+        imuDataGet( &stAngles, NULL, NULL, NULL);
     =}
 
     timer motion_detection(3 sec, 50 msec)
     reaction(motion_detection) {=
-        // printf("----------------\n");
-        // if (abs(delta_x) >= accel_threshold || abs(delta_y) >= accel_threshold) {
-        //     printf("Delta X: %d     Delta Y: %d\r\n", delta_x, delta_y);
-        //     if (delta_x >= accel_threshold) {
-        //         printf("UP  ");
-        //     } else if (delta_x <= -accel_threshold) {
-        //         printf("DOWN  ");
-        //     }
-
-        //     if (delta_y >= accel_threshold) {
-        //         printf("RIGHT  ");
-        //     } else if (delta_y <= -accel_threshold) {
-        //         printf("LEFT  ");
-        //     }
-        //     delta_x = 0;
-        //     delta_y = 0;
-        //     printf("\r\n\n");
-        // }
-        if (abs(x_v) >= accel_threshold || abs(y_v) >= accel_threshold) {
-            //printf("X_V: %d     Y_V: %d\r\n", x_v, y_v);
-            printf("<C>1 0 %d %d</c>", check_bound(x_v), check_bound(y_v));
-            // if (x_v >= accel_threshold) {
-            //     printf("UP  ");
-            // } else if (x_v <= -accel_threshold) {
-            //     printf("DOWN  ");
-            // }
-
-            // if (y_v >= accel_threshold) {
-            //     printf("RIGHT  ");
-            // } else if (y_v <= -accel_threshold) {
-            //     printf("LEFT  ");
-            // }
-            // // delta_x = 0;
-            // // delta_y = 0;
-            // printf("\r\n\n");
-        }
-		// printf("Roll: %.2f     Pitch: %.2f     Yaw: %.2f \r\n",stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
-        // printf("----------------------------------------------------\r\n");
-        // printf("Acceleration: X: %d     Y: %d     Z: %d \r\n",stAccelRawData.s16X, stAccelRawData.s16Y, stAccelRawData.s16Z);
-		//printf("Gyroscope: X: %d     Y: %d     Z: %d \r\n",stGyroRawData.s16X, stGyroRawData.s16Y, stGyroRawData.s16Z);
+        printf("<C>3 %d %f %f %f</C>", A_Pressed ? 1 : 0, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
     =}
 
     // timer color_Sensing(0 sec, 1000 msec)

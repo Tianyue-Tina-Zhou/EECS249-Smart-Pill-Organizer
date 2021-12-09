@@ -21,6 +21,8 @@ class ViewController: NSViewController {
     @IBOutlet var colorIndicatorViewBorder: NSView?
     
     private var lastCursor: CGPoint = .zero
+    private var lastAngle = DeviceOrientation(roll: 0, pitch: 0, yaw: 0)
+    private var baseAngle = DeviceOrientation(roll: 0, pitch: 0, yaw: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,6 +125,7 @@ extension ViewController {
     func didClickReCenterButton() {
         guard let canvas = canvas else { return }
         canvas.recenter()
+        baseAngle = lastAngle
     }
     
     @objc
@@ -153,6 +156,11 @@ extension ViewController: CommandParserDelegate {
             canvas.update(controlPacket: packet)
         case .undo:
             canvas.undo()
+        case .angle(let orientation, let stroke):
+            lastAngle = orientation
+            let delta = OrientationManager.shared.calculateDelta(base: baseAngle, orientation: orientation)
+            let packet = ControlPacket(speedX: Float(delta.pitch), speedY: -Float(delta.roll), stroke: stroke)
+            canvas.update(controlPacket: packet)
         }
     }
     
