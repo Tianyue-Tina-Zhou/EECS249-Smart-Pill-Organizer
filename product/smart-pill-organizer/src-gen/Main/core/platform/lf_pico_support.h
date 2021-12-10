@@ -32,6 +32,8 @@ THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef LF_PICO_SUPPORT_H
 #define LF_PICO_SUPPORT_H
 
+#define NUMBER_OF_WORKERS
+
 #ifdef NUMBER_OF_WORKERS
 #include "lf_pico_threads_support.h"
 #endif

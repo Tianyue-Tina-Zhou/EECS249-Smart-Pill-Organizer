@@ -10,6 +10,12 @@
  * @return 0 on success, error number otherwise (see pthread_create()).
  */
 int lf_thread_create(_lf_thread_t* thread, void *(*lf_thread) (void *), void* arguments) {
+    if(thread == NULL){
+        //multicore_launch_core0((*lf_thread)(*arguments));
+    } 
+    else{
+        multicore_launch_core1((lf_thread)(arguments));
+    }
     return 0;
 }
 
@@ -31,6 +37,7 @@ int lf_thread_join(_lf_thread_t thread, void** thread_return) {
  */
 int lf_mutex_init(_lf_mutex_t* mutex) {
     // Set up a recursive mutex
+    mutex_init(mutex);
     return 0;
 }
 
@@ -40,6 +47,7 @@ int lf_mutex_init(_lf_mutex_t* mutex) {
  * @return 0 on success, error number otherwise (see pthread_mutex_lock()).
  */
 int lf_mutex_lock(_lf_mutex_t* mutex) {
+    mutex_enter_blocking(mutex);
     return 0;
 }
 
@@ -49,6 +57,7 @@ int lf_mutex_lock(_lf_mutex_t* mutex) {
  * @return 0 on success, error number otherwise (see pthread_mutex_unlock()).
  */
 int lf_mutex_unlock(_lf_mutex_t* mutex) {
+    mutex_exit(mutex);
     return 0;
 }
 
@@ -58,6 +67,7 @@ int lf_mutex_unlock(_lf_mutex_t* mutex) {
  * @return 0 on success, error number otherwise (see pthread_cond_init()).
  */
 int lf_cond_init(_lf_cond_t* cond) {
+    lock_init(cond, 1);
     return 0;
 }
 
@@ -67,6 +77,7 @@ int lf_cond_init(_lf_cond_t* cond) {
  * @return 0 on success, error number otherwise (see pthread_cond_broadcast()).
  */
 int lf_cond_broadcast(_lf_cond_t* cond) {
+    //lock_internal_spin_unlock_with_notify(cond, )
     return 0;
 }
 
@@ -76,6 +87,7 @@ int lf_cond_broadcast(_lf_cond_t* cond) {
  * @return 0 on success, error number otherwise (see pthread_cond_signal()).
  */
 int lf_cond_signal(_lf_cond_t* cond) {
+    //lock_internal_spin_unlock_with_notify;
     return 0;
 }
 
@@ -86,6 +98,7 @@ int lf_cond_signal(_lf_cond_t* cond) {
  * @return 0 on success, error number otherwise (see pthread_cond_wait()).
  */
 int lf_cond_wait(_lf_cond_t* cond, _lf_mutex_t* mutex) {
+    //lock_internal_spin_unlock_with_wait()
     return 0;
 }
 

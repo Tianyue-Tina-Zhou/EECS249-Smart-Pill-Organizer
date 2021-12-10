@@ -1,4 +1,4 @@
-target C{keepalive:true};
+target C;
 main reactor Main {
     preamble {=
         #include "pico/stdlib.h"
@@ -12,7 +12,6 @@ main reactor Main {
 		#include "TCS34725.h"
         #include "icm20948.h"
         #include <math.h>
-
 
         #define sample_size 20
         #define accel_threshold 300
@@ -35,8 +34,8 @@ main reactor Main {
         UWORD *BlackImage;
         int count = 0;
         bool PB3_Pressed = false;
-        //bool A_Pressed = false;
-        //bool B_Pressed = false;
+        bool A_Pressed = false;
+        bool B_Pressed = false;
         const char * CMD_PREFIX = "<C>";
 
 
@@ -54,9 +53,6 @@ main reactor Main {
         int y_samples[sample_size];
         int delta_x, delta_y;
         int x_v, y_v;
-
-
-        
 
 
         // Initialization Functions
@@ -141,27 +137,24 @@ main reactor Main {
             DEV_SET_PWM(10);
         }
 
-        void* A_ptr;
-        void* B_ptr;
+
 
         void botton_irq(uint gpio, uint32_t events){
             if(gpio == keyA){
                 if(events == GPIO_IRQ_EDGE_FALL){
-                    //A_Pressed = true;
-                    schedule(A_ptr, 0);
+                    A_Pressed = true;
                 }
-                //if(events == GPIO_IRQ_EDGE_RISE){
-                //    A_Pressed = false;
-                //}
+                if(events == GPIO_IRQ_EDGE_RISE){
+                    A_Pressed = false;
+                }
             }
             if(gpio == keyB){
                 if(events == GPIO_IRQ_EDGE_FALL){
-                    //B_Pressed = true;
-                    schedule(B_ptr, 0);
+                    B_Pressed = true;
                 }
-                //if(events == GPIO_IRQ_EDGE_RISE){
-                //    B_Pressed = false;
-                //}
+                if(events == GPIO_IRQ_EDGE_RISE){
+                    B_Pressed = false;
+                }
             }
         }
     
@@ -176,41 +169,14 @@ main reactor Main {
         init_imu();
 
         gpio_set_irq_enabled_with_callback(keyA, GPIO_IRQ_EDGE_FALL, true, botton_irq);
-        //gpio_set_irq_enabled_with_callback(keyA, GPIO_IRQ_EDGE_RISE, true, botton_irq);
+        gpio_set_irq_enabled_with_callback(keyA, GPIO_IRQ_EDGE_RISE, true, botton_irq);
         gpio_set_irq_enabled_with_callback(keyB, GPIO_IRQ_EDGE_FALL, true, botton_irq);
-        //gpio_set_irq_enabled_with_callback(keyB, GPIO_IRQ_EDGE_RISE, true, botton_irq);
+        gpio_set_irq_enabled_with_callback(keyB, GPIO_IRQ_EDGE_RISE, true, botton_irq);
         //gpio_set_irq_enabled_with_callback(keyA, EDGEHIGH, true, irq_A_release);
         // printf("System Initialized!\r\n");
     =}
 
-
-    // to check physical action: uncomment the following codes
-    /* 
-    physical action A:bool;
-    physical action B:bool;
-
-
-
-    
-    reaction(startup)->A,  B {=
-        A_ptr = A;
-        B_ptr = B;
-    =}
-
-    reaction(A) {=
-         //static char display_buf[16];
-         //snprintf(display_buf, 16, "A is pressed ");
-         //lcd_print(display_buf);
-        //display_buf = "A is pressed";
-        printf("AAAAAAAAAAAA");
-    =}
-
-
-    */
-
-
-
-    timer blink_led(100 msec, 50 msec)
+    timer blink_led(100 msec, 500 msec)
     reaction(blink_led) {=
         gpio_put(LED_PIN, led);
         led = !led;
@@ -219,22 +185,15 @@ main reactor Main {
     timer pb_sampling(100 msec, 50 msec)
     reaction(pb_sampling) {=
         PB3_Pressed = gpio_get(PB3_PIN);
-
-        //printf("A Pressed: %d\n", A_Pressed);
-        //printf("PB3 Pressed: %d\n", PB3_Pressed);
     =}
-    
-    
-    timer lcd_refresh(100 msec, 50 msec)
+
+    timer lcd_refresh(100 msec, 500 msec)
     reaction(lcd_refresh) {=
-         static char display_buf[16];     
-        //snprintf(display_buf, 16, "A: %d; B: %d", A_Pressed, B_Pressed);
-         snprintf(display_buf, 16, "WORK!");
+         static char display_buf[16];
+         snprintf(display_buf, 16, "A: %d; B: %d", A_Pressed, B_Pressed);
          lcd_print(display_buf);
     =}
-    
 
-    
     // timer imu_fetch(1 sec, 5 msec)
     // reaction(imu_fetch) {=
     //     sample_accel_save_in_buffer();
