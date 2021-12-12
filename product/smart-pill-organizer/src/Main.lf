@@ -13,6 +13,9 @@ main reactor Main {
         #include "icm20948.h"
         #include <math.h>
 
+        #include "pico/multicore.h"
+        #include "hardware/irq.h"
+
         #define sample_size 20
         #define accel_threshold 300
 
@@ -150,6 +153,34 @@ main reactor Main {
             LCD_1IN14_V2_Display(BlackImage);
             DEV_SET_PWM(10);
         }
+        // Core 1 interrupt Handler
+        void core1_interrupt_handler() {
+
+            // Receive Raw Value, Convert and Print Temperature Value
+            while (multicore_fifo_rvalid()){
+                uint16_t raw = multicore_fifo_pop_blocking();
+                const float conversion_factor = 3.3f / (1 << 12);
+                float result = raw * conversion_factor;
+                float temp = 27 - (result - 0.706)/0.001721;
+                printf("Temp = %f C\n", temp);        
+            }
+
+            multicore_fifo_clear_irq(); // Clear interrupt
+        }
+
+        // Core 1 Main Code
+        void core1_entry() {
+            // Configure Core 1 Interrupt
+            multicore_fifo_clear_irq();
+            irq_set_exclusive_handler(SIO_IRQ_PROC1, core1_interrupt_handler);
+
+            irq_set_enabled(SIO_IRQ_PROC1, true);
+
+            // Infinte While Loop to wait for interrupt
+            while (1){
+                tight_loop_contents();
+            }
+        }
 
         void sample_accel_save_in_buffer() {
             static int ptr = 0;
@@ -206,6 +237,7 @@ main reactor Main {
         lcd_init();
 		color_sensing_init();
         init_imu();
+        multicore_launch_core1(core1_entry);
         // printf("System Initialized!\r\n");
     =}
 
@@ -213,6 +245,7 @@ main reactor Main {
     reaction(blink_led) {=
         gpio_put(LED_PIN, led);
         led = !led;
+        multicore_fifo_push_blocking(123);
     =}
 	
     timer pb_sampling(100 msec, 50 msec)
