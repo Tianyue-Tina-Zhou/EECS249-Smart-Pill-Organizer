@@ -185,7 +185,7 @@ main reactor Main {
 
 
     // to check physical action: uncomment the following codes
-    /* 
+    
     physical action A:bool;
     physical action B:bool;
 
@@ -206,7 +206,7 @@ main reactor Main {
     =}
 
 
-    */
+    
 
 
 

@@ -1,7 +1,7 @@
 rm -rf smart-pill-organizer/src-gen/Main/*
 # # Build C codes from LF
 echo "Building Lingua-Franca codes into C ..."
-../lfc/bin/run/lfc smart-pill-organizer/src/Main.lf 2> /dev/null 1> /dev/null
+../lfc/bin/run/lfc -threads 0 smart-pill-organizer/src/Main.lf 2> /dev/null 1> /dev/null
 echo "Building Lingua-Franca codes into C. Done!"
 
 # # Remove bin as we will build the PICO executable ourselves
