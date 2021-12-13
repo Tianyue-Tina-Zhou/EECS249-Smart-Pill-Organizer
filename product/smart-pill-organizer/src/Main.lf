@@ -24,7 +24,7 @@ main reactor Main {
         //const uint up = 2;
         //const uint left = 16;
         //const uint ctrl = 3;
-        //const uint right = 20;
+        const uint right = 20;
         //const uint down = 18;
         
         const uint LED_PIN = 25;
@@ -33,10 +33,26 @@ main reactor Main {
         bool led = true;
         UWORD *BlackImage;
         int count = 0;
+
+        const char * CMD_PREFIX = "<C>";
+
+        //button
         bool PB3_Pressed = false;
         bool A_Pressed = false;
         bool B_Pressed = false;
-        const char * CMD_PREFIX = "<C>";
+        bool R_pressed = false
+
+
+        //FSM: 
+        int curr_state = 0;
+        #define SENSING     0
+        #define PAINTING    1
+        #define UNDO        2
+        
+        #define FUNC        PB3_Pressed
+        #define MODE        A_Pressed
+        #define ERASE       B_Pressed
+        #define CENTER      R_Pressed
 
 
         // IMU Data Pointers
@@ -80,6 +96,10 @@ main reactor Main {
             gpio_init(keyB);
             gpio_set_dir(keyB, GPIO_IN);
             gpio_pull_up(keyB);
+            gpio_init(right);
+            gpio_set_dir(right, GPIO_IN);
+            gpio_pull_up(right);
+
 
         }
 
@@ -144,33 +164,124 @@ main reactor Main {
     timer pb_sampling(100 msec, 50 msec)
     reaction(pb_sampling) {=
         PB3_Pressed = gpio_get(PB3_PIN);
+        //A_Pressed = gpio_get(keyA);
+        //B_Pressed = gpio_get(keyB);
+        
         if(gpio_get(keyA) == 0){
             A_Pressed = true;
         }
         else{
             A_Pressed = false;
         }
-        //printf("A Pressed: %d\n", A_Pressed);
-        //printf("PB3 Pressed: %d\n", PB3_Pressed);
+
+        if(gpio_get(keyB) == 0){
+            B_Pressed = true;
+        }
+        else{
+            B_Pressed = false;
+        }
+
+
+        if(gpio_get(right) == 0){
+            R_Pressed = true;
+        }
+        else{
+            R_Pressed = false;
+        }
+
     =}
 
-    timer imu_fetch(1 sec, 50 msec)
-    reaction(imu_fetch) {=
-        imuDataGet( &stAngles, NULL, NULL, NULL);
+
+   
+   
+
+   /*
+    timer lcd_refresh(100 msec, 50 msec)
+    reaction(lcd_refresh) {=
+         static char display_buf[16];
+          switch(curr_state){
+            case SENSING:
+                snprintf(display_buf, 16, "S A: %d", A_Pressed);
+                
+            break;
+            case PAINTING:
+                snprintf(display_buf, 16, "P A: %d", A_Pressed);
+            break;
+            case UNDO:
+                snprintf(display_buf, 16, "U A: %d", A_Pressed);
+            break;
+        }
+
+         lcd_print(display_buf);
+    =}
+    */
+
+    timer FSM_timer(3 sec, 50 msec)
+    reaction(FSM_timer){=
+        int next_state = curr_state; 
+        switch(curr_state){
+            case SENSING:
+                if(MODE)
+                    next_state = PAINTING;
+                
+            break;
+            case PAINTING:
+                if(MODE){
+                    next_state = SENSING;
+                }
+            break;
+            /*
+            case UNDO:
+                if(MODE){
+                    next_state = SENSING;
+                }
+            break;
+            */
+        }
+        printf("STATE CHANGED");
+        curr_state = next_state;
+    
+    
     =}
 
-    timer motion_detection(3 sec, 50 msec)
+
+    timer motion_detection(1 sec, 50 msec)
     reaction(motion_detection) {=
-        printf("<C>3 %d %f %f %f</C>", A_Pressed ? 1 : 0, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+        imuDataGet( &stAngles, NULL, NULL, NULL);
+        if(curr_state == PAINTING){
+            if(CENTER){
+                // CODE
+                ...
+            }
+            else{
+                if(ERASE){
+
+                }
+                else{
+                    printf("<C>3 %d %f %f %f</C>", FUNC ? 1 : 0, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+                }
+
+            }
+        }
+            
     =}
 
-    // timer color_Sensing(0 sec, 1000 msec)
-	// reaction(color_Sensing) {=
-	// 	RGB rgb=TCS34725_Get_RGBData();
-	// 	UWORD RGB565=TCS34725_GetRGB565(rgb);
-    //     UDOUBLE RGB888=TCS34725_GetRGB888(rgb);
-	// 	printf("Color sensed in RGB565 %X, RGB888 %X!\r\n", RGB565, RGB888);
-    //     lcd_show_color(RGB565);
-    // =}
+
+
+    timer color_Sensing(0 sec, 100 msec)
+    reaction(color_Sensing) {=
+        if(curr_state == SENSING && FUNC ){
+            RGB rgb=TCS34725_Get_RGBData();
+            UWORD RGB565=TCS34725_GetRGB565(rgb);
+            UDOUBLE RGB888=TCS34725_GetRGB888(rgb);
+            printf("Color sensed in RGB565 %X, RGB888 %X!\r\n", RGB565, RGB888);
+            lcd_show_color(RGB565);
+
+            //printf("<C>0 %d %f %f %f</C>", A_Pressed ? 1 : 0, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+            
+        
+        }
+    =}
+    
 }
 
