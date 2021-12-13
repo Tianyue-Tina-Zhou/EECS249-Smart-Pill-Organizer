@@ -40,7 +40,7 @@ main reactor Main {
         bool PB3_Pressed = false;
         bool A_Pressed = false;
         bool B_Pressed = false;
-        bool R_pressed = false
+        bool R_Pressed = false;
 
 
         //FSM: 
@@ -51,7 +51,7 @@ main reactor Main {
         
         #define FUNC        PB3_Pressed
         #define MODE        A_Pressed
-        #define ERASE       B_Pressed
+        #define PEN       B_Pressed
         #define CENTER      R_Pressed
 
 
@@ -240,27 +240,25 @@ main reactor Main {
         }
         printf("STATE CHANGED");
         curr_state = next_state;
-    
-    
     =}
 
 
-    timer motion_detection(1 sec, 50 msec)
-    reaction(motion_detection) {=
+    timer painting_timer(1 sec, 50 msec)
+    reaction(painting_timer) {=
         imuDataGet( &stAngles, NULL, NULL, NULL);
         if(curr_state == PAINTING){
+            // CENTER > UNDO(FUNC) > PAINT
             if(CENTER){
-                // CODE
-                ...
-            }
+                // CENTER
+            }   
             else{
-                if(ERASE){
-
+                if(FUNC){
+                    //UNDO
                 }
+                //paint
                 else{
-                    printf("<C>3 %d %f %f %f</C>", FUNC ? 1 : 0, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+                    printf("<C>3 %d %f %f %f</C>", PEN ? 1 : 0, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
                 }
-
             }
         }
             
