@@ -12,16 +12,24 @@ protocol CommandParserDelegate: AnyObject {
     func didRecieveNewCommand(command: Command)
 }
 
+struct DeviceOrientation {
+    let roll: Double
+    let pitch: Double
+    let yaw: Double
+}
+
 enum CommandType: Int {
     case rgb = 0
     case penMove
     case undo
+    case angle
 }
 
 enum Command {
     case rgb(color: NSColor)
     case penMove(x: Int, y: Int, stroke: Bool)
     case undo
+    case angle(orientation: DeviceOrientation, stroke: Bool)
     
     init?(string: String) {
         let args = string.components(separatedBy: " ")
@@ -35,10 +43,16 @@ enum Command {
             self = .rgb(color: NSColor(hex: args[1]))
         case .penMove:
             guard args.count == 4 else { return nil }
-            guard let stroke = Int(args[0]), let x = Int(args[2]), let y = Int(args[3]) else { return nil }
+            guard let stroke = Int(args[1]), let x = Int(args[2]), let y = Int(args[3]) else { return nil }
             self = .penMove(x: x, y: y, stroke: stroke != 0)
-        case.undo:
+        case .undo:
             self = .undo
+        case .angle:
+            guard args.count == 5 else { return nil }
+            guard let stroke = Int(args[1]), let roll = Double(args[2]), let pitch = Double(args[3]), let yaw = Double(args[4]) else { return nil }
+            guard !roll.isNaN && !pitch.isNaN && !yaw.isNaN else { return nil }
+            let orientation = DeviceOrientation(roll: roll, pitch: pitch, yaw: yaw)
+            self = .angle(orientation: orientation, stroke: stroke != 0)
         }
     }
 }

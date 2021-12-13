@@ -20,7 +20,7 @@ struct CanvasConfig {
     var cursorPenUpAlpha: Double = 0.3
     var cursorPenDownAlpha: Double = 0.8
     var cursorAnimationDuration: TimeInterval = 0.2
-    var trackingSpeed: Double = 0.001
+    var trackingSpeed: Double = 0.1
     
     static let `default` = CanvasConfig()
 }
@@ -93,7 +93,7 @@ extension Canvas {
     func update(cursorPosition: CGPoint, stroke: Bool) {
         defer { lastStroke = stroke }
         
-        self.cursorPosition = cursorPosition
+        self.cursorPosition = clip(point: cursorPosition)
         
         if stroke {
             if lastStroke {
@@ -124,6 +124,25 @@ extension Canvas {
 }
 
 extension Canvas {
+    private func clip(point: CGPoint) -> CGPoint {
+        return CGPoint(
+            x: clip(min: 0, max: frame.width, value: point.x),
+            y: clip(min: 0, max: frame.height, value: point.y)
+        )
+    }
+    
+    private func clip(min: CGFloat, max: CGFloat, value: CGFloat) -> CGFloat {
+        if value < min {
+            return min
+        }
+        
+        if value > max {
+            return max
+        }
+        
+        return value
+    }
+    
     private func configureViews() {
         cursorView.wantsLayer = true
         addSubview(cursorView)
