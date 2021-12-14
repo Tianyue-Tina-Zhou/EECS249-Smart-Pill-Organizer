@@ -13,6 +13,9 @@ main reactor Main {
         #include "icm20948.h"
         #include <math.h>
 
+        #include "pico/multicore.h"
+        #include "hardware/irq.h"
+
         #define sample_size 20
         #define accel_threshold 300
 
@@ -124,6 +127,85 @@ main reactor Main {
             LCD_1IN14_V2_Display(BlackImage);
             DEV_SET_PWM(10);
         }
+<<<<<<< HEAD
+=======
+        // Core 1 interrupt Handler
+        void core1_interrupt_handler() {
+
+            // Receive Raw Value, Convert and Print Temperature Value
+            while (multicore_fifo_rvalid()){
+                uint16_t raw = multicore_fifo_pop_blocking();
+                const float conversion_factor = 3.3f / (1 << 12);
+                float result = raw * conversion_factor;
+                float temp = 27 - (result - 0.706)/0.001721;
+                printf("Temp = %f C\n", temp);        
+            }
+
+            multicore_fifo_clear_irq(); // Clear interrupt
+        }
+
+        // Core 1 Main Code
+        void core1_entry() {
+            // Configure Core 1 Interrupt
+            multicore_fifo_clear_irq();
+            irq_set_exclusive_handler(SIO_IRQ_PROC1, core1_interrupt_handler);
+
+            irq_set_enabled(SIO_IRQ_PROC1, true);
+
+            // Infinte While Loop to wait for interrupt
+            while (1){
+                tight_loop_contents();
+            }
+        }
+
+        void sample_accel_save_in_buffer() {
+            static int ptr = 0;
+            accelDataGet(&stAccelRawData);
+            x_samples[ptr] = stAccelRawData.s16X;
+            y_samples[ptr] = stAccelRawData.s16Y;
+
+            ptr ++;
+            if (ptr == sample_size) {
+                ptr = 0;
+                // int x_avg = buffer_averaging(x_samples);
+                // int y_avg = buffer_averaging(y_samples);
+                // delta_x = x_avg - prev_x;
+                // delta_y = y_avg - prev_y;
+
+                // prev_x = x_avg;
+                // prev_y = y_avg;
+                x_v = accel_integrate(x_samples);
+                y_v = accel_integrate(y_samples);
+            }
+        }
+
+        int buffer_averaging (int samples[]) {
+            int result = 0;
+            for (int i; i < sample_size; i ++) {
+                result += samples[i];
+            }
+            result /= sample_size;
+
+            return result;
+        }
+
+        int accel_integrate (int samples[]) {
+            int result = 0;
+            for (int i; i < sample_size - 1; i ++) {
+                result += samples[i + 1] - samples[i];
+            }
+
+            return result;
+        }
+
+        int check_bound(int x) {
+            if (abs(x) >= 9999) {
+                return x > 0 ? 9999 : -9999;
+            } else {
+                return x;
+            }
+        }
+>>>>>>> feature/multicore
     =}
     
     reaction(startup) {=
@@ -132,6 +214,7 @@ main reactor Main {
         lcd_init();
 		color_sensing_init();
         init_imu();
+        multicore_launch_core1(core1_entry);
         // printf("System Initialized!\r\n");
     =}
 
@@ -139,6 +222,7 @@ main reactor Main {
     reaction(blink_led) {=
         gpio_put(LED_PIN, led);
         led = !led;
+        multicore_fifo_push_blocking(123);
     =}
 	
     timer pb_sampling(100 msec, 50 msec)
