@@ -145,10 +145,12 @@ main reactor Main {
         void* B_ptr;
 
         void botton_irq(uint gpio, uint32_t events){
+            gpio_acknowledge_irq(gpio, events);
             if(gpio == keyA){
                 if(events == GPIO_IRQ_EDGE_FALL){
                     //A_Pressed = true;
-                    schedule(A_ptr, 0);
+                    schedule(A_ptr, 100000000);
+                    printf("It works!! A");
                 }
                 //if(events == GPIO_IRQ_EDGE_RISE){
                 //    A_Pressed = false;
@@ -157,7 +159,8 @@ main reactor Main {
             if(gpio == keyB){
                 if(events == GPIO_IRQ_EDGE_FALL){
                     //B_Pressed = true;
-                    schedule(B_ptr, 0);
+                    schedule(B_ptr, 100000000);
+                    printf("It works!! B");
                 }
                 //if(events == GPIO_IRQ_EDGE_RISE){
                 //    B_Pressed = false;
@@ -171,9 +174,9 @@ main reactor Main {
     reaction(startup) {=
         stdio_init_all();
         init_gpio();
-        lcd_init();
-		color_sensing_init();
-        init_imu();
+        // lcd_init();
+		// color_sensing_init();
+        // init_imu();
 
         gpio_set_irq_enabled_with_callback(keyA, GPIO_IRQ_EDGE_FALL, true, botton_irq);
         //gpio_set_irq_enabled_with_callback(keyA, GPIO_IRQ_EDGE_RISE, true, botton_irq);
@@ -192,7 +195,7 @@ main reactor Main {
 
 
     
-    reaction(startup)->A,  B {=
+    reaction(startup) A, B {=
         A_ptr = A;
         B_ptr = B;
     =}
@@ -206,8 +209,9 @@ main reactor Main {
     =}
 
 
-    
-
+    // reaction(shutdown) {=
+    //     printf("The system has properly terminated.\n");
+    // =}
 
 
     timer blink_led(100 msec, 50 msec)
@@ -216,22 +220,22 @@ main reactor Main {
         led = !led;
     =}
 	
-    timer pb_sampling(100 msec, 50 msec)
-    reaction(pb_sampling) {=
-        PB3_Pressed = gpio_get(PB3_PIN);
+    // timer pb_sampling(100 msec, 50 msec)
+    // reaction(pb_sampling) {=
+    //     PB3_Pressed = gpio_get(PB3_PIN);
 
-        //printf("A Pressed: %d\n", A_Pressed);
-        //printf("PB3 Pressed: %d\n", PB3_Pressed);
-    =}
+    //     //printf("A Pressed: %d\n", A_Pressed);
+    //     //printf("PB3 Pressed: %d\n", PB3_Pressed);
+    // =}
     
     
-    timer lcd_refresh(100 msec, 50 msec)
-    reaction(lcd_refresh) {=
-         static char display_buf[16];     
-        //snprintf(display_buf, 16, "A: %d; B: %d", A_Pressed, B_Pressed);
-         snprintf(display_buf, 16, "WORK!");
-         lcd_print(display_buf);
-    =}
+    // timer lcd_refresh(5000 msec, 5000 msec)
+    // reaction(lcd_refresh) {=
+    //      static char display_buf[16];     
+    //     //snprintf(display_buf, 16, "A: %d; B: %d", A_Pressed, B_Pressed);
+    //      snprintf(display_buf, 16, "WORK!");
+    //      lcd_print(display_buf);
+    // =}
     
 
     
@@ -240,8 +244,8 @@ main reactor Main {
     //     sample_accel_save_in_buffer();
     // =}
 
-    timer motion_detection(3 sec, 50 msec)
-    reaction(motion_detection) {=
+    // timer motion_detection(3 sec, 50 msec)
+    // reaction(motion_detection) {=
         // printf("----------------\n");
         // if (abs(delta_x) >= accel_threshold || abs(delta_y) >= accel_threshold) {
         //     printf("Delta X: %d     Delta Y: %d\r\n", delta_x, delta_y);
@@ -281,9 +285,9 @@ main reactor Main {
 		// printf("Roll: %.2f     Pitch: %.2f     Yaw: %.2f \r\n",stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
         // printf("----------------------------------------------------\r\n");
         // printf("Acceleration: X: %d     Y: %d     Z: %d \r\n",stAccelRawData.s16X, stAccelRawData.s16Y, stAccelRawData.s16Z);
-        imuDataGet(&stAngles, &stGyroRawData, &stAccelRawData, &stMagnRawData);
-		printf("Gyroscope: X: %d     Y: %d     Z: %d \r\n", stGyroRawData.s16X, stGyroRawData.s16Y, stGyroRawData.s16Z);
-    =}
+        // imuDataGet(&stAngles, &stGyroRawData, &stAccelRawData, &stMagnRawData);
+		// printf("Gyroscope: X: %d     Y: %d     Z: %d \r\n", stGyroRawData.s16X, stGyroRawData.s16Y, stGyroRawData.s16Z);
+    // =}
 
     // timer color_Sensing(0 sec, 1000 msec)
 	// reaction(color_Sensing) {=

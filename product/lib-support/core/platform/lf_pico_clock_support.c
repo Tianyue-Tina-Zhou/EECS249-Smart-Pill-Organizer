@@ -23,7 +23,7 @@ int lf_clock_gettime(instant_t* t) {
         // The t argument address references invalid memory
         return -1;
     }
-     *t = time_us_64() * 1000;
+     *t = (instant_t) time_us_64() * 1000;
     return 0;
 }
 
