@@ -42,7 +42,7 @@ main reactor Main {
         const char * CMD_PREFIX = "<C>";
         char IMUData[200]; 
         bool senderReady = true;
-
+        UWORD RGB565;
 
         // IMU Data Pointers
         IMU_EN_SENSOR_TYPE enMotionSensorType;
@@ -135,7 +135,14 @@ main reactor Main {
             // Receive Raw Value, Convert and Print Temperature Value
             while (multicore_fifo_rvalid()){
                 int temp = multicore_fifo_pop_blocking();
-                printf("%s", IMUData);
+                if (temp == 1)
+                {
+                    printf("%s", IMUData);
+                }
+                else
+                {
+                    lcd_show_color(RGB565);
+                }
                 senderReady = true;        
             }
 
@@ -205,13 +212,18 @@ main reactor Main {
       //  printf("<C>3 %d %f %f %f</C>", A_Pressed ? 1 : 0, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
     // =}
 
-    // timer color_Sensing(0 sec, 1000 msec)
-	// reaction(color_Sensing) {=
-	// 	RGB rgb=TCS34725_Get_RGBData();
-	// 	UWORD RGB565=TCS34725_GetRGB565(rgb);
-    //     UDOUBLE RGB888=TCS34725_GetRGB888(rgb);
-	// 	printf("Color sensed in RGB565 %X, RGB888 %X!\r\n", RGB565, RGB888);
-    //     lcd_show_color(RGB565);
-    // =}
+    timer color_Sensing(0 sec, 1000 msec)
+	reaction(color_Sensing) {=
+        if (senderReady) 
+        {
+            RGB rgb=TCS34725_Get_RGBData();
+            RGB565=TCS34725_GetRGB565(rgb);
+            UDOUBLE RGB888=TCS34725_GetRGB888(rgb);
+
+            printf("Color sensed in RGB565 %X, RGB888 %X!\r\n", RGB565, RGB888);
+            multicore_fifo_push_blocking(2);
+            senderReady = false;
+        }
+    =}
 }
 
