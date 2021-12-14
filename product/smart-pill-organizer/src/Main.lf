@@ -18,6 +18,7 @@ main reactor Main {
 
         #define sample_size 20
         #define accel_threshold 300
+        #define debounceDelay 50
 
         // Global Variables
         //joystick & BUTTON AB
@@ -27,7 +28,7 @@ main reactor Main {
         //const uint up = 2;
         //const uint left = 16;
         //const uint ctrl = 3;
-        //const uint right = 20;
+        // const uint right = 20;
         //const uint down = 18;
         
         const uint LED_PIN = 25;
@@ -36,13 +37,27 @@ main reactor Main {
         bool led = true;
         UWORD *BlackImage;
         int count = 0;
+
+
+        // Buttons
         bool PB3_Pressed = false;
         bool A_Pressed = false;
         bool B_Pressed = false;
-        const char * CMD_PREFIX = "<C>";
+
         char IMUData[200]; 
         bool senderReady = true;
         UWORD RGB565;
+
+        // FSM
+        int curr_state = 0;
+
+        #define SENSING     0
+        #define PAINTING    1
+        
+        #define FUNC        B_Pressed
+        #define MODE        A_Pressed
+        #define PEN         PB3_Pressed
+
 
         // IMU Data Pointers
         IMU_EN_SENSOR_TYPE enMotionSensorType;
@@ -61,7 +76,6 @@ main reactor Main {
 
             UDOUBLE Imagesize = LCD_1IN14_V2_HEIGHT * LCD_1IN14_V2_WIDTH * 2;
             if((BlackImage = (UWORD *)malloc(Imagesize)) == NULL) {
-                // Failed to apply for black memory...
                 return 1;
             }
         }
@@ -73,7 +87,6 @@ main reactor Main {
 		}
 
         void init_gpio() {
-            
             gpio_init(LED_PIN);
             gpio_set_dir(LED_PIN, GPIO_OUT);
             gpio_init(PB3_PIN);
@@ -85,7 +98,6 @@ main reactor Main {
             gpio_init(keyB);
             gpio_set_dir(keyB, GPIO_IN);
             gpio_pull_up(keyB);
-
         }
 
         void init_imu()
@@ -176,35 +188,21 @@ main reactor Main {
         // printf("System Initialized!\r\n");
     =}
 
-    timer blink_led(100 msec, 500 msec)
+    timer blink_led(100 msec, 200 msec)
     reaction(blink_led) {=
         gpio_put(LED_PIN, led);
         led = !led;
     =}
 	
-    timer pb_sampling(100 msec, 50 msec)
+    timer pb_sampling(100 msec, 150 msec)
     reaction(pb_sampling) {=
         PB3_Pressed = gpio_get(PB3_PIN);
-        if(gpio_get(keyA) == 0){
-            A_Pressed = true;
-        }
-        else{
-            A_Pressed = false;
-        }
-        //printf("A Pressed: %d\n", A_Pressed);
-        //printf("PB3 Pressed: %d\n", PB3_Pressed);
-    =}
+        
+        if(!gpio_get(keyA)) A_Pressed = true;
 
-    timer imu_fetch(1 sec, 50 msec)
-    reaction(imu_fetch) {=
-        if (senderReady) 
-        {
-            imuDataGet( &stAngles, NULL, NULL, NULL);
-            sprintf(IMUData, "<C>3 %d %f %f %f</C>\0\n", A_Pressed ? 1 : 0, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
-            multicore_fifo_push_blocking(1);
-            senderReady = false;
-        }
- 
+        if(!gpio_get(keyB)) B_Pressed = true;
+
+        // sleepdebounceDelay
     =}
 
    // timer motion_detection(3 sec, 50 msec)
@@ -212,18 +210,68 @@ main reactor Main {
       //  printf("<C>3 %d %f %f %f</C>", A_Pressed ? 1 : 0, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
     // =}
 
-    timer color_Sensing(0 sec, 1000 msec)
-	reaction(color_Sensing) {=
-        if (senderReady) 
-        {
-            RGB rgb=TCS34725_Get_RGBData();
-            RGB565=TCS34725_GetRGB565(rgb);
-            UDOUBLE RGB888=TCS34725_GetRGB888(rgb);
+
+    timer FSM_timer(3 sec, 50 msec)
+    reaction(FSM_timer){=
+        int next_state = curr_state; 
+        switch(curr_state){
+            case SENSING:
+                if(MODE) {
+                    next_state = PAINTING;
+                    MODE = false;
+                    static char display_buf[16];
+                    snprintf(display_buf, 16, "PAINTING");
+                    // lcd_print(display_buf);
+                }
+            break;
+            case PAINTING:
+                if(MODE){
+                    next_state = SENSING;
+                    MODE = false;
+                }
+            break;
+        }
+        // printf("STATE: %d \r\n", next_state);
+        curr_state = next_state;
+    =}
+
+
+    timer painting_timer(1 sec, 50 msec)
+    reaction(painting_timer) {=
+        if (senderReady) {
+            if(curr_state == PAINTING){
+                imuDataGet( &stAngles, NULL, NULL, NULL);
+                if (FUNC) {
+                    // Undo
+                    sprintf(IMUData, "<C>2</C>");
+                    
+                    FUNC = false;
+                }
+                else if (PEN) {
+                    // Paint
+                    sprintf(IMUData, "<C>1 1 %f %f %f</C>", stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+                } else {
+                    // Paint
+                    sprintf(IMUData, "<C>1 0 %f %f %f</C>", stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+                }
+                multicore_fifo_push_blocking(1);
+                senderReady = false;
+            }
+        }
+    =}
+
+
+    timer color_Sensing(1 sec, 100 msec)
+    reaction(color_Sensing) {=
+        if(curr_state == SENSING){
+            RGB rgb = TCS34725_Get_RGBData();
+            UDOUBLE RGB888 = TCS34725_GetRGB888(rgb);
+            RGB565 = TCS34725_GetRGB565(rgb);
 
             printf("Color sensed in RGB565 %X, RGB888 %X!\r\n", RGB565, RGB888);
             multicore_fifo_push_blocking(2);
-            senderReady = false;
+            senderReady = false;            // lcd_show_color(RGB565);
+            // printf("Sensing color\r\n");
         }
     =}
 }
-

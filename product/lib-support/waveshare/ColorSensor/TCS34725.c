@@ -31,7 +31,7 @@
 ******************************************************************************/
 #include "TCS34725.h"
 
-TCS34725IntegrationTime_t IntegrationTime_t = TCS34725_INTEGRATIONTIME_700MS;
+TCS34725IntegrationTime_t IntegrationTime_t = TCS34725_INTEGRATIONTIME_50MS;
 TCS34725Gain_t  Gain_t = TCS34725_GAIN_60X;
 
 /******************************************************************************
