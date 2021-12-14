@@ -263,15 +263,15 @@ main reactor Main {
 
     timer color_Sensing(1 sec, 100 msec)
     reaction(color_Sensing) {=
-        if(curr_state == SENSING){
+        if(senderReady && curr_state == SENSING){
             RGB rgb = TCS34725_Get_RGBData();
             UDOUBLE RGB888 = TCS34725_GetRGB888(rgb);
             RGB565 = TCS34725_GetRGB565(rgb);
 
-            printf("Color sensed in RGB565 %X, RGB888 %X!\r\n", RGB565, RGB888);
-            multicore_fifo_push_blocking(2);
-            senderReady = false;            // lcd_show_color(RGB565);
-            // printf("Sensing color\r\n");
+            //printf("Color sensed in RGB565 %X, RGB888 %X!\r\n", RGB565, RGB888);
+            //multicore_fifo_push_blocking(2);
+            //senderReady = false;            // lcd_show_color(RGB565);
+            //printf("Sensing color\r\n");
         }
     =}
 }
