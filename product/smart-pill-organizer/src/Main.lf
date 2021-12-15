@@ -50,8 +50,8 @@ main reactor Main {
         int curr_state = 0;
         uint32_t last_color = 0xFFFFFF;
 
-        #define SENSING     0
-        #define PAINTING    1
+        #define STATE_COLOR_SENSING     0
+        #define STATE_PAINTING    1
 
         #define CMD_COLOR  0
         #define CMD_MOTION  1
@@ -194,15 +194,15 @@ main reactor Main {
     reaction(FSM_timer){=
         int next_state = curr_state; 
         switch(curr_state){
-            case SENSING:
+            case STATE_COLOR_SENSING:
                 if (isModeButtonPressed) {
-                    next_state = PAINTING;
+                    next_state = STATE_PAINTING;
                     isModeButtonPressed = false;
                 }
             break;
-            case PAINTING:
+            case STATE_PAINTING:
                 if (isModeButtonPressed){
-                    next_state = SENSING;
+                    next_state = STATE_COLOR_SENSING;
                     isModeButtonPressed = false;
                 }
             break;
@@ -215,7 +215,7 @@ main reactor Main {
     timer painting_timer(1 sec, 50 msec)
     reaction(painting_timer) {=
         if (senderReady) {
-            if(curr_state == PAINTING){
+            if(curr_state == STATE_PAINTING){
                 imuDataGet( &stAngles, NULL, NULL, NULL);
                 
                 if (isFuncButtonPressed) {
@@ -242,7 +242,7 @@ main reactor Main {
 
     timer color_Sensing(1 sec, 100 msec)
     reaction(color_Sensing) {=
-        if(senderReady && curr_state == SENSING){
+        if(senderReady && curr_state == STATE_COLOR_SENSING){
             RGB rgb = TCS34725_Get_RGBData();
             UDOUBLE RGB888 = TCS34725_GetRGB888(rgb);
             RGB565 = TCS34725_GetRGB565(rgb);
