@@ -42,6 +42,10 @@ main reactor Main {
         bool isFuncButtonPressed = false;
         bool isCalibrateButtonPressed = false;
 
+        bool isModeButtonClick = false;
+        bool isFuncButtonClick = false;
+        bool isCalibrateButtonClick = false;
+
         char serialOutput[200];
         bool hasNewSerialOutput = false;
 
@@ -51,7 +55,8 @@ main reactor Main {
         // FSM
         int curr_state = 0;
         char state_display[5];
-        UDOUBLE lastColor = 0;
+        UDOUBLE last_color = 0;
+        bool updated_for_paint = false;
 
         #define STATE_COLOR_SENSING     0
         #define STATE_PAINTING    1
@@ -157,10 +162,14 @@ main reactor Main {
 
                 if (curr_state == STATE_COLOR_SENSING) {
                     RGB color = TCS34725_Get_RGBData();
-                    lastColor = TCS34725_GetRGB888(color);
+                    last_color = TCS34725_GetRGB888(color);
                     UWORD lcdColor = TCS34725_GetRGB565(color);
-                    printf("<C>%d %X</C>", CMD_COLOR, lastColor);
                     lcd_show_color(lcdColor);
+                    updated_for_paint = false;
+                } 
+                else if (!updated_for_paint) {
+                    lcd_show_color(WHITE);
+                    updated_for_paint = true;
                 }
                 
                 sleep_ms(50);
@@ -182,19 +191,23 @@ main reactor Main {
     reaction(pb_sampling) {=
         isPenButtonPressed = gpio_get(PIN_PEN_BUTTON);
         
-        // Do not allow the these button pressed change to false
-        // They will get reset when the pressed event is consumed
-        if(!gpio_get(PIN_MODE_BUTTON)) {
-            isModeButtonPressed = true;
+        bool new_mode_value = gpio_get(PIN_MODE_BUTTON);
+        if(!new_mode_value && isModeButtonPressed) {
+            isModeButtonClick = true;
         }
+        isModeButtonPressed = new_mode_value;
         
-        if(!gpio_get(PIN_FUNC_BUTTON)) {
-            isFuncButtonPressed = true;
+        bool new_func_value = gpio_get(PIN_FUNC_BUTTON);
+        if(!new_func_value && isFuncButtonPressed) {
+            isFuncButtonClick = true;
         }
+        isFuncButtonPressed = new_func_value;
 
-        if(!gpio_get(PIN_CALIBRATE_BUTTON))  {
-            isCalibrateButtonPressed = true;
+        bool new_calibrate_value = gpio_get(PIN_CALIBRATE_BUTTON);
+        if(!new_calibrate_value && isCalibrateButtonPressed)  {
+            isCalibrateButtonClick = true;
         }
+        isCalibrateButtonPressed = new_calibrate_value;
     =}
 
     timer FSM_timer(3 sec, 50 msec)
@@ -203,16 +216,16 @@ main reactor Main {
         switch(curr_state){
             case STATE_COLOR_SENSING:
                 sprintf(state_display, "COLOR");
-                if (isModeButtonPressed) {
+                if (isModeButtonClick) {
                     next_state = STATE_PAINTING;
-                    isModeButtonPressed = false;
+                    isModeButtonClick = false;
                 }
             break;
             case STATE_PAINTING:
                 sprintf(state_display, "PAINT");
-                if (isModeButtonPressed){
+                if (isModeButtonClick){
                     next_state = STATE_COLOR_SENSING;
-                    isModeButtonPressed = false;
+                    isModeButtonClick = false;
                 }
             break;
         }
@@ -226,16 +239,16 @@ main reactor Main {
         if(curr_state == STATE_PAINTING){
             imuDataGet( &stAngles, NULL, NULL, NULL);
             
-            if (isFuncButtonPressed) {
+            if (isFuncButtonClick) {
                 // UNDO
                 sprintf(serialOutput, "<C>%d</C>", CMD_UNDO);
-                isFuncButtonPressed = false;
+                isFuncButtonClick = false;
                 hasNewSerialOutput = true;
             }
-            else if (isCalibrateButtonPressed) {
+            else if (isCalibrateButtonClick) {
                 // CALIBRATE
                 sprintf(serialOutput, "<C>%d</C>", CMD_CALIBRATE);
-                isCalibrateButtonPressed = false;
+                isCalibrateButtonClick = false;
                 hasNewSerialOutput = true;
             }
             else {
@@ -250,7 +263,7 @@ main reactor Main {
 
     timer color_Sensing(1 sec, 100 msec)
     reaction(color_Sensing) {=
-        if(senderReady && curr_state == STATE_COLOR_SENSING){
+        if(curr_state == STATE_COLOR_SENSING){
             // RGB rgb = TCS34725_Get_RGBData();
             // UDOUBLE RGB888 = TCS34725_GetRGB888(rgb);
             // RGB565 = TCS34725_GetRGB565(rgb);
@@ -259,8 +272,10 @@ main reactor Main {
             //multicore_fifo_push_blocking(2);
             //senderReady = false;            // lcd_show_color(RGB565);
             
-            sprintf(serialOutput, "<C>%d %X</C>", CMD_COLOR, lastColor);
-            hasNewSerialOutput = true;
+            if (isPenButtonPressed) {
+                sprintf(serialOutput, "<C>%d %X</C>", CMD_COLOR, last_color);
+                hasNewSerialOutput = true;
+            }
         }
     =}
 }
