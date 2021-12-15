@@ -17,24 +17,21 @@ main reactor Main {
         #include "hardware/irq.h"
 
         // PINs
-        const uint PIN_MODE_BUTTON = 15; // A
-        const uint PIN_FUNC_BUTTON = 17; // B
-        const uint PIN_PEN_BUTTON = 28; // PB
-        const uint PIN_CALIBRATE_BUTTON = 20; // Right
 
-        // PIN references
-        // A = 15
-        // B = 17
-        // up = 2
-        // left = 16
-        // center = 3
-        // right = 20
-        // down = 18
+        #define LCD_BUTTON_PIN_A        15
+        #define LCD_BUTTON_PIN_B        17
+        #define LCD_BUTTON_PIN_UP       2
+        #define LCD_BUTTON_PIN_DOWN     18
+        #define LCD_BUTTON_PIN_LEFT     16
+        #define LCD_BUTTON_PIN_RIGHT    20
+        #define LCD_BUTTON_PIN_CENTER   3
+        #define EXTRA_PUSH_BUTTON_PIN   28
+
+        const uint PIN_MODE_BUTTON = LCD_BUTTON_PIN_A;
+        const uint PIN_FUNC_BUTTON = LCD_BUTTON_PIN_B;
+        const uint PIN_PEN_BUTTON = EXTRA_PUSH_BUTTON_PIN;
+        const uint PIN_CALIBRATE_BUTTON = LCD_BUTTON_PIN_RIGHT;
         
-        const uint LED_PIN = 25;
-        
-        
-        bool led = true;
         UWORD *BlackImage;
         int count = 0;
 
@@ -105,9 +102,6 @@ main reactor Main {
 
             gpio_init(PIN_PEN_BUTTON);
             gpio_set_dir(PIN_PEN_BUTTON, GPIO_IN);
-
-            gpio_init(LED_PIN);
-            gpio_set_dir(LED_PIN, GPIO_OUT);
         }
 
         void init_imu()
@@ -196,12 +190,6 @@ main reactor Main {
         multicore_launch_core1(core1_entry);
 
         // printf("System Initialized!\r\n");
-    =}
-
-    timer blink_led(100 msec, 200 msec)
-    reaction(blink_led) {=
-        gpio_put(LED_PIN, led);
-        led = !led;
     =}
 	
     timer pb_sampling(100 msec, 150 msec)
