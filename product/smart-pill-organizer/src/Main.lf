@@ -27,6 +27,19 @@ main reactor Main {
         #define LCD_BUTTON_PIN_CENTER   3
         #define EXTRA_PUSH_BUTTON_PIN   28
 
+        #define STATE_COLOR_SENSING     0
+        #define STATE_PAINTING    1
+
+        #define CMD_COLOR  0
+        #define CMD_MOTION  1
+        #define CMD_UNDO 2
+        #define CMD_CALIBRATE 3
+
+        #define MULTI_CORE_CMD_SERIAL_OUTPUT 1
+        #define MULTI_CORE_CMD_LCD_UPDATE 2
+
+        #define LF_PHYSICAL_ACTION_DELAY 200000000
+
         const uint PIN_MODE_BUTTON = LCD_BUTTON_PIN_A;
         const uint PIN_FUNC_BUTTON = LCD_BUTTON_PIN_B;
         const uint PIN_CALIBRATE_BUTTON = LCD_BUTTON_PIN_RIGHT;
@@ -39,7 +52,7 @@ main reactor Main {
         bool has_serial_output = false;
 
         // FSM
-        int curr_state = 0;
+        int curr_state = STATE_COLOR_SENSING;
 
         // LCD
         UWORD *image_buffer;
@@ -47,29 +60,40 @@ main reactor Main {
         UDOUBLE last_color = 0;
         bool updated_for_paint = false;
 
-        #define STATE_COLOR_SENSING     0
-        #define STATE_PAINTING    1
-
-        #define CMD_COLOR  0
-        #define CMD_MOTION  1
-        #define CMD_UNDO 2
-        #define CMD_CALIBRATE 3
-
-        #define MULTI_CORE_CMD_SERIAL_OUTPUT 1
-        #define MULTI_CORE_CMD_LCD_UPDATE 2
-
-        void * mode_click_pointer;
-        void * func_click_pointer;
-        void * calibrate_click_pointer;
+        // Physical Action Forward Declarations
+        void * mode_click_action;
+        void * func_click_action;
+        void * calibrate_click_action;
 
         // IMU Data Pointers
         IMU_EN_SENSOR_TYPE enMotionSensorType;
         IMU_ST_ANGLES_DATA stAngles;
 
+        // Interrupt Handler
+        void handle_button_interrupts(uint gpio, uint32_t events){
+            gpio_acknowledge_irq(gpio, events);
+            printf("button interrupted");
+            if (events != GPIO_IRQ_EDGE_FALL) {
+                return;
+            }
+
+            if (gpio == PIN_MODE_BUTTON){
+                schedule(mode_click_action, LF_PHYSICAL_ACTION_DELAY);
+            }
+
+            if (gpio == PIN_FUNC_BUTTON) {
+                schedule(func_click_action, LF_PHYSICAL_ACTION_DELAY);
+            }
+
+            if (gpio == PIN_CALIBRATE_BUTTON) {
+                schedule(calibrate_click_action, LF_PHYSICAL_ACTION_DELAY);
+            }
+        }
+
         // Initialization Functions
-        int init_lcd() {
+        void init_lcd() {
             if(DEV_Module_Init()!=0){
-                return -1;
+                return;
             }
             DEV_SET_PWM(50);
             
@@ -79,7 +103,7 @@ main reactor Main {
 
             UDOUBLE Imagesize = LCD_1IN14_V2_HEIGHT * LCD_1IN14_V2_WIDTH * 2;
             if((image_buffer = (UWORD *)malloc(Imagesize)) == NULL) {
-                return 1;
+                return;
             }
             Paint_NewImage((UBYTE *) image_buffer, LCD_1IN14_V2.WIDTH, LCD_1IN14_V2.HEIGHT, 0, WHITE);
             Paint_SetScale(65);
@@ -118,46 +142,18 @@ main reactor Main {
             imuInit(&enMotionSensorType);
         }
 
-        void botton_irq(uint gpio, uint32_t events){
-            gpio_acknowledge_irq(gpio, events);
-            printf("button interrupted");
-            if (events != GPIO_IRQ_EDGE_FALL) {
-                return;
-            }
-
-            if (gpio == PIN_MODE_BUTTON){
-                schedule(mode_click_pointer, 200000000);
-            }
-
-            if (gpio == PIN_FUNC_BUTTON) {
-                schedule(func_click_pointer, 200000000);
-            }
-
-            if (gpio == PIN_CALIBRATE_BUTTON) {
-                schedule(calibrate_click_pointer, 200000000);
-            }
-        }
-
         void init_interrupt() {
-            gpio_set_irq_enabled_with_callback(PIN_MODE_BUTTON, GPIO_IRQ_EDGE_FALL, true, botton_irq);
-            gpio_set_irq_enabled_with_callback(PIN_FUNC_BUTTON, GPIO_IRQ_EDGE_FALL, true, botton_irq);
-            gpio_set_irq_enabled_with_callback(PIN_CALIBRATE_BUTTON, GPIO_IRQ_EDGE_FALL, true, botton_irq);
+            gpio_set_irq_enabled_with_callback(PIN_MODE_BUTTON, GPIO_IRQ_EDGE_FALL, true, handle_button_interrupts);
+            gpio_set_irq_enabled_with_callback(PIN_FUNC_BUTTON, GPIO_IRQ_EDGE_FALL, true, handle_button_interrupts);
+            gpio_set_irq_enabled_with_callback(PIN_CALIBRATE_BUTTON, GPIO_IRQ_EDGE_FALL, true, handle_button_interrupts);
         }
 		
+        // Secondary Core Tasks
 		void lcd_show_color(UWORD color)
         {   
             Paint_DrawRectangle(0, 0, LCD_1IN14_V2.WIDTH, LCD_1IN14_V2.HEIGHT, color, DOT_PIXEL_2X2,DRAW_FILL_FULL);
             Paint_DrawString_EN(80, 57, state_display, &Font20, WHITE, BLACK);
             LCD_1IN14_V2_Display(image_buffer);
-        }
-
-        void update_serial_output_if_needed() {
-            if (!has_serial_output) {
-                return;
-            }
-
-            printf("%s", serial_output);
-            has_serial_output = false;
         }
 
         void sample_push_buttons() {
@@ -185,8 +181,8 @@ main reactor Main {
             imuDataGet( &stAngles, NULL, NULL, NULL);
         }
 
-        // Core 1 Main Code
-        void core1_entry() {
+        // Secondary Core Entry Point
+        void secondary_core_entry() {
             while (1){
                 sample_push_buttons();
                 update_lcd_if_needed();
@@ -201,24 +197,29 @@ main reactor Main {
     physical action calibrate_click: bool;
     
     reaction(startup) mode_click, func_click, calibrate_click {=
+        curr_state = STATE_COLOR_SENSING;
+        sprintf(state_display, "COLOR");
+
         stdio_init_all();
         init_gpio();
         init_lcd();
 		init_color_sensor();
         init_imu();
         init_interrupt();
-        multicore_launch_core1(core1_entry);
+        multicore_launch_core1(secondary_core_entry);
 
-        mode_click_pointer = mode_click;
-        func_click_pointer = func_click;
-        calibrate_click_pointer = calibrate_click;
+        mode_click_action = mode_click;
+        func_click_action = func_click;
+        calibrate_click_action = calibrate_click;
     =}
 
     reaction(mode_click) {=
         if (curr_state == STATE_COLOR_SENSING) {
+            sprintf(state_display, "PAINT");
             curr_state = STATE_PAINTING;
         }
         else {
+            sprintf(state_display, "COLOR");
             curr_state = STATE_COLOR_SENSING;
         }
     =}
@@ -243,29 +244,28 @@ main reactor Main {
 
     timer serial_output_timer(50 msec, 50 msec) 
     reaction(serial_output_timer){=
-        update_serial_output_if_needed();
+        if (!has_serial_output) {
+            return;
+        }
+
+        printf("%s", serial_output);
+        has_serial_output = false;
     =}
 
     timer FSM_timer(50 msec, 50 msec)
     reaction(FSM_timer){=
-        int next_state = curr_state; 
-        switch(curr_state){
-            case STATE_COLOR_SENSING:
-                sprintf(state_display, "COLOR");
-                if (is_pen_button_pressed) {
-                    sprintf(serial_output, "<C>%d %X</C>", CMD_COLOR, last_color);
-                    has_serial_output = true;
-                }
-            break;
-
-            case STATE_PAINTING:
-                sprintf(state_display, "PAINT");
-                int stroke = is_pen_button_pressed ? 1 : 0;
-                sprintf(serial_output, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
-                has_serial_output = true;
-            break;
+        if (curr_state == STATE_COLOR_SENSING) {
+            if (!is_pen_button_pressed) { 
+                return; 
+            }
+            
+            sprintf(serial_output, "<C>%d %X</C>", CMD_COLOR, last_color);
+            has_serial_output = true;
+        } 
+        else {
+            int stroke = is_pen_button_pressed ? 1 : 0;
+            sprintf(serial_output, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+            has_serial_output = true;
         }
-
-        curr_state = next_state;
     =}
 }
