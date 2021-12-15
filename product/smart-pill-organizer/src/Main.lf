@@ -16,23 +16,23 @@ main reactor Main {
         #include "pico/multicore.h"
         #include "hardware/irq.h"
 
-        #define sample_size 20
-        #define accel_threshold 300
-        #define debounceDelay 50
+        // PINs
+        const uint PIN_MODE_BUTTON = 15; // A
+        const uint PIN_FUNC_BUTTON = 17; // B
+        const uint PIN_PEN_BUTTON = 28; // PB
+        const uint PIN_CALIBRATE_BUTTON = 20; // Right
 
-        // Global Variables
-        //joystick & BUTTON AB
-        const uint keyA = 15; 
-        const uint keyB = 17; 
-
-        //const uint up = 2;
-        //const uint left = 16;
-        //const uint ctrl = 3;
-        // const uint right = 20;
-        //const uint down = 18;
+        // PIN references
+        // A = 15
+        // B = 17
+        // up = 2
+        // left = 16
+        // center = 3
+        // right = 20
+        // down = 18
         
         const uint LED_PIN = 25;
-        const uint PB3_PIN = 28;
+        
         
         bool led = true;
         UWORD *BlackImage;
@@ -40,9 +40,10 @@ main reactor Main {
 
 
         // Buttons
-        bool PB3_Pressed = false;
-        bool A_Pressed = false;
-        bool B_Pressed = false;
+        bool isPenButtonPressed = false;
+        bool isModeButtonPressed = false;
+        bool isFuncButtonPressed = false;
+        bool isCalibrateButtonPressed = false;
 
         char IMUData[200]; 
         bool senderReady = true;
@@ -54,10 +55,6 @@ main reactor Main {
 
         #define SENSING     0
         #define PAINTING    1
-        
-        #define FUNC        B_Pressed
-        #define MODE        A_Pressed
-        #define PEN         PB3_Pressed
 
         #define CMD_COLOR  0
         #define CMD_MOTION  1
@@ -94,17 +91,23 @@ main reactor Main {
 		}
 
         void init_gpio() {
+            gpio_init(PIN_MODE_BUTTON);
+            gpio_set_dir(PIN_MODE_BUTTON, GPIO_IN);
+            gpio_pull_up(PIN_MODE_BUTTON);
+
+            gpio_init(PIN_FUNC_BUTTON);
+            gpio_set_dir(PIN_FUNC_BUTTON, GPIO_IN);
+            gpio_pull_up(PIN_FUNC_BUTTON);
+
+            gpio_init(PIN_CALIBRATE_BUTTON);
+            gpio_set_dir(PIN_CALIBRATE_BUTTON, GPIO_IN);
+            gpio_pull_up(PIN_CALIBRATE_BUTTON);
+
+            gpio_init(PIN_PEN_BUTTON);
+            gpio_set_dir(PIN_PEN_BUTTON, GPIO_IN);
+
             gpio_init(LED_PIN);
             gpio_set_dir(LED_PIN, GPIO_OUT);
-            gpio_init(PB3_PIN);
-            gpio_set_dir(PB3_PIN, GPIO_IN);
-            
-            gpio_init(keyA);
-            gpio_set_dir(keyA, GPIO_IN);
-            gpio_pull_up(keyA);
-            gpio_init(keyB);
-            gpio_set_dir(keyB, GPIO_IN);
-            gpio_pull_up(keyB);
         }
 
         void init_imu()
@@ -203,42 +206,41 @@ main reactor Main {
 	
     timer pb_sampling(100 msec, 150 msec)
     reaction(pb_sampling) {=
-        PB3_Pressed = gpio_get(PB3_PIN);
+        isPenButtonPressed = gpio_get(PIN_PEN_BUTTON);
         
-        if(!gpio_get(keyA)) A_Pressed = true;
+        // Do not allow the these button pressed change to false
+        // They will get reset when the pressed event is consumed
+        if(!gpio_get(PIN_MODE_BUTTON)) {
+            isModeButtonPressed = true;
+        }
+        
+        if(!gpio_get(PIN_FUNC_BUTTON)) {
+            isFuncButtonPressed = true;
+        }
 
-        if(!gpio_get(keyB)) B_Pressed = true;
-
-        // sleepdebounceDelay
+        if(!gpio_get(PIN_CALIBRATE_BUTTON))  {
+            isCalibrateButtonPressed = true;
+        }
     =}
-
-   // timer motion_detection(3 sec, 50 msec)
-    //reaction(motion_detection) {=
-      //  printf("<C>3 %d %f %f %f</C>", A_Pressed ? 1 : 0, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
-    // =}
-
 
     timer FSM_timer(3 sec, 50 msec)
     reaction(FSM_timer){=
         int next_state = curr_state; 
         switch(curr_state){
             case SENSING:
-                if(MODE) {
+                if (isModeButtonPressed) {
                     next_state = PAINTING;
-                    MODE = false;
-                    static char display_buf[16];
-                    snprintf(display_buf, 16, "PAINTING");
-                    // lcd_print(display_buf);
+                    isModeButtonPressed = false;
                 }
             break;
             case PAINTING:
-                if(MODE){
+                if (isModeButtonPressed){
                     next_state = SENSING;
-                    MODE = false;
+                    isModeButtonPressed = false;
                 }
             break;
         }
-        // printf("STATE: %d \r\n", next_state);
+
         curr_state = next_state;
     =}
 
@@ -249,13 +251,18 @@ main reactor Main {
             if(curr_state == PAINTING){
                 imuDataGet( &stAngles, NULL, NULL, NULL);
                 
-                if (FUNC) {
+                if (isFuncButtonPressed) {
                     // Undo
                     sprintf(IMUData, "<C>%d</C>", CMD_UNDO);
-                    FUNC = false;
+                    isFuncButtonPressed = false;
+                }
+                else if (isCalibrateButtonPressed) {
+                    // CALIBRATE
+                    sprintf(IMUData, "<C>%d</C>", CMD_CALIBRATE);
+                    isCalibrateButtonPressed = false;
                 }
                 else {
-                    int stroke = PEN ? 1 : 0;
+                    int stroke = isPenButtonPressed ? 1 : 0;
                     sprintf(IMUData, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
                 }
 
