@@ -28,7 +28,9 @@ main reactor Main {
         #define EXTRA_PUSH_BUTTON_PIN   28
 
         #define STATE_COLOR_SENSING     0
-        #define STATE_PAINTING    1
+        #define STATE_PAINTING          1
+        #define STATE_NAME_COLOR_SENSING    "COLOR"
+        #define STATE_NAME_PAINTING         "PAINT"
 
         #define CMD_COLOR  0
         #define CMD_MOTION  1
@@ -199,7 +201,7 @@ main reactor Main {
     // Startup Reaction
     reaction(startup) mode_click, func_click, calibrate_click {=
         curr_state = STATE_COLOR_SENSING;
-        sprintf(state_display, "COLOR");
+        sprintf(state_display, STATE_NAME_COLOR_SENSING);
 
         stdio_init_all();
         init_gpio();
@@ -217,11 +219,11 @@ main reactor Main {
     // Physical Reactions
     reaction(mode_click) {=
         if (curr_state == STATE_COLOR_SENSING) {
-            sprintf(state_display, "PAINT");
+            sprintf(state_display, STATE_NAME_PAINTING);
             curr_state = STATE_PAINTING;
         }
         else {
-            sprintf(state_display, "COLOR");
+            sprintf(state_display, STATE_NAME_COLOR_SENSING);
             curr_state = STATE_COLOR_SENSING;
         }
     =}
