@@ -172,7 +172,7 @@ extension ViewController: CommandParserDelegate {
         guard let canvas = canvas else { return }
         lastAngle = orientation
         let delta = OrientationManager.shared.calculateDelta(base: baseAngle, orientation: orientation)
-        let packet = ControlPacket(speedX: Float(delta.roll), speedY: Float(delta.pitch), stroke: stroke)
+        let packet = ControlPacket(speedX: Float(delta.roll), speedY: -Float(delta.pitch), stroke: stroke)
         canvas.update(controlPacket: packet)
     }
     
