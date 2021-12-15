@@ -20,14 +20,16 @@ struct DeviceOrientation {
 
 enum CommandType: Int {
     case rgb = 0
-    case motion
-    case undo
+    case motion = 1
+    case undo = 2
+    case calibrate = 3
 }
 
 enum Command {
     case rgb(color: NSColor)
     case motion(orientation: DeviceOrientation, stroke: Bool)
     case undo
+    case calibrate
     
     init?(string: String) {
         let args = string.components(separatedBy: " ")
@@ -47,6 +49,8 @@ enum Command {
             self = .motion(orientation: orientation, stroke: stroke != 0)
         case .undo:
             self = .undo
+        case .calibrate:
+            self = .calibrate
         }
     }
 }

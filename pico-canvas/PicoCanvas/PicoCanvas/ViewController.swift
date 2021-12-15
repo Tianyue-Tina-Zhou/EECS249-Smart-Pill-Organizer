@@ -98,7 +98,7 @@ extension ViewController {
     
     @objc
     private func didClickUndoButton() {
-        canvas?.undo()
+        undo()
     }
     
     @objc
@@ -123,9 +123,7 @@ extension ViewController {
     
     @objc
     func didClickReCenterButton() {
-        guard let canvas = canvas else { return }
-        canvas.recenter()
-        baseAngle = lastAngle
+        calibrate()
     }
     
     @objc
@@ -147,18 +145,35 @@ extension ViewController: SerialPortManagerDelegate {
 
 extension ViewController: CommandParserDelegate {
     func didRecieveNewCommand(command: Command) {
-        guard let canvas = canvas else { return }
         switch command {
         case .rgb(let color):
             update(color: color)
         case .motion(let orientation, let stroke):
-            lastAngle = orientation
-            let delta = OrientationManager.shared.calculateDelta(base: baseAngle, orientation: orientation)
-            let packet = ControlPacket(speedX: Float(delta.roll), speedY: Float(delta.pitch), stroke: stroke)
-            canvas.update(controlPacket: packet)
+            update(orientation: orientation, stroke: stroke)
         case .undo:
-            canvas.undo()
+            undo()
+        case .calibrate:
+            calibrate()
         }
+    }
+    
+    private func calibrate() {
+        guard let canvas = canvas else { return }
+        canvas.recenter()
+        baseAngle = lastAngle
+    }
+    
+    private func undo() {
+        guard let canvas = canvas else { return }
+        canvas.undo()
+    }
+    
+    private func update(orientation: DeviceOrientation, stroke: Bool) {
+        guard let canvas = canvas else { return }
+        lastAngle = orientation
+        let delta = OrientationManager.shared.calculateDelta(base: baseAngle, orientation: orientation)
+        let packet = ControlPacket(speedX: Float(delta.roll), speedY: Float(delta.pitch), stroke: stroke)
+        canvas.update(controlPacket: packet)
     }
     
     private func update(color: NSColor) {

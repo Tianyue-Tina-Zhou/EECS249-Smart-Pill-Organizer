@@ -16,47 +16,48 @@ main reactor Main {
         #include "pico/multicore.h"
         #include "hardware/irq.h"
 
-        #define sample_size 20
-        #define accel_threshold 300
-        #define debounceDelay 50
+        // PINs
 
-        // Global Variables
-        //joystick & BUTTON AB
-        const uint keyA = 15; 
-        const uint keyB = 17; 
+        #define LCD_BUTTON_PIN_A        15
+        #define LCD_BUTTON_PIN_B        17
+        #define LCD_BUTTON_PIN_UP       2
+        #define LCD_BUTTON_PIN_DOWN     18
+        #define LCD_BUTTON_PIN_LEFT     16
+        #define LCD_BUTTON_PIN_RIGHT    20
+        #define LCD_BUTTON_PIN_CENTER   3
+        #define EXTRA_PUSH_BUTTON_PIN   28
 
-        //const uint up = 2;
-        //const uint left = 16;
-        //const uint ctrl = 3;
-        // const uint right = 20;
-        //const uint down = 18;
+        const uint PIN_MODE_BUTTON = LCD_BUTTON_PIN_A;
+        const uint PIN_FUNC_BUTTON = LCD_BUTTON_PIN_B;
+        const uint PIN_PEN_BUTTON = EXTRA_PUSH_BUTTON_PIN;
+        const uint PIN_CALIBRATE_BUTTON = LCD_BUTTON_PIN_RIGHT;
         
-        const uint LED_PIN = 25;
-        const uint PB3_PIN = 28;
-        
-        bool led = true;
         UWORD *BlackImage;
         int count = 0;
 
 
         // Buttons
-        bool PB3_Pressed = false;
-        bool A_Pressed = false;
-        bool B_Pressed = false;
+        bool isPenButtonPressed = false;
+        bool isModeButtonPressed = false;
+        bool isFuncButtonPressed = false;
+        bool isCalibrateButtonPressed = false;
 
-        char IMUData[200]; 
+        char serialOutput[200]; 
         bool senderReady = true;
         UWORD RGB565;
 
         // FSM
         int curr_state = 0;
+        uint32_t last_color = 0xFFFFFF;
 
         #define SENSING     0
         #define PAINTING    1
-        
-        #define FUNC        B_Pressed
-        #define MODE        A_Pressed
-        #define PEN         PB3_Pressed
+
+        #define CMD_COLOR  0
+        #define CMD_MOTION  1
+        #define CMD_UNDO 2
+        #define CMD_CALIBRATE 3
+
 
 
         // IMU Data Pointers
@@ -87,17 +88,20 @@ main reactor Main {
 		}
 
         void init_gpio() {
-            gpio_init(LED_PIN);
-            gpio_set_dir(LED_PIN, GPIO_OUT);
-            gpio_init(PB3_PIN);
-            gpio_set_dir(PB3_PIN, GPIO_IN);
-            
-            gpio_init(keyA);
-            gpio_set_dir(keyA, GPIO_IN);
-            gpio_pull_up(keyA);
-            gpio_init(keyB);
-            gpio_set_dir(keyB, GPIO_IN);
-            gpio_pull_up(keyB);
+            gpio_init(PIN_MODE_BUTTON);
+            gpio_set_dir(PIN_MODE_BUTTON, GPIO_IN);
+            gpio_pull_up(PIN_MODE_BUTTON);
+
+            gpio_init(PIN_FUNC_BUTTON);
+            gpio_set_dir(PIN_FUNC_BUTTON, GPIO_IN);
+            gpio_pull_up(PIN_FUNC_BUTTON);
+
+            gpio_init(PIN_CALIBRATE_BUTTON);
+            gpio_set_dir(PIN_CALIBRATE_BUTTON, GPIO_IN);
+            gpio_pull_up(PIN_CALIBRATE_BUTTON);
+
+            gpio_init(PIN_PEN_BUTTON);
+            gpio_set_dir(PIN_PEN_BUTTON, GPIO_IN);
         }
 
         void init_imu()
@@ -149,7 +153,7 @@ main reactor Main {
                 int temp = multicore_fifo_pop_blocking();
                 if (temp == 1)
                 {
-                    printf("%s", IMUData);
+                    printf("%s", serialOutput);
                 }
                 else
                 {
@@ -187,51 +191,44 @@ main reactor Main {
 
         // printf("System Initialized!\r\n");
     =}
-
-    timer blink_led(100 msec, 200 msec)
-    reaction(blink_led) {=
-        gpio_put(LED_PIN, led);
-        led = !led;
-    =}
 	
     timer pb_sampling(100 msec, 150 msec)
     reaction(pb_sampling) {=
-        PB3_Pressed = gpio_get(PB3_PIN);
+        isPenButtonPressed = gpio_get(PIN_PEN_BUTTON);
         
-        if(!gpio_get(keyA)) A_Pressed = true;
+        // Do not allow the these button pressed change to false
+        // They will get reset when the pressed event is consumed
+        if(!gpio_get(PIN_MODE_BUTTON)) {
+            isModeButtonPressed = true;
+        }
+        
+        if(!gpio_get(PIN_FUNC_BUTTON)) {
+            isFuncButtonPressed = true;
+        }
 
-        if(!gpio_get(keyB)) B_Pressed = true;
-
-        // sleepdebounceDelay
+        if(!gpio_get(PIN_CALIBRATE_BUTTON))  {
+            isCalibrateButtonPressed = true;
+        }
     =}
-
-   // timer motion_detection(3 sec, 50 msec)
-    //reaction(motion_detection) {=
-      //  printf("<C>3 %d %f %f %f</C>", A_Pressed ? 1 : 0, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
-    // =}
-
 
     timer FSM_timer(3 sec, 50 msec)
     reaction(FSM_timer){=
         int next_state = curr_state; 
         switch(curr_state){
             case SENSING:
-                if(MODE) {
+                if (isModeButtonPressed) {
                     next_state = PAINTING;
-                    MODE = false;
-                    static char display_buf[16];
-                    snprintf(display_buf, 16, "PAINTING");
-                    // lcd_print(display_buf);
+                    isModeButtonPressed = false;
                 }
             break;
             case PAINTING:
-                if(MODE){
+                if (isModeButtonPressed){
                     next_state = SENSING;
-                    MODE = false;
+                    isModeButtonPressed = false;
                 }
             break;
         }
-        // printf("STATE: %d \r\n", next_state);
+
         curr_state = next_state;
     =}
 
@@ -241,19 +238,22 @@ main reactor Main {
         if (senderReady) {
             if(curr_state == PAINTING){
                 imuDataGet( &stAngles, NULL, NULL, NULL);
-                if (FUNC) {
+                
+                if (isFuncButtonPressed) {
                     // Undo
-                    sprintf(IMUData, "<C>2</C>");
-                    
-                    FUNC = false;
+                    sprintf(serialOutput, "<C>%d</C>", CMD_UNDO);
+                    isFuncButtonPressed = false;
                 }
-                else if (PEN) {
-                    // Paint
-                    sprintf(IMUData, "<C>1 1 %f %f %f</C>", stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
-                } else {
-                    // Paint
-                    sprintf(IMUData, "<C>1 0 %f %f %f</C>", stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+                else if (isCalibrateButtonPressed) {
+                    // CALIBRATE
+                    sprintf(serialOutput, "<C>%d</C>", CMD_CALIBRATE);
+                    isCalibrateButtonPressed = false;
                 }
+                else {
+                    int stroke = isPenButtonPressed ? 1 : 0;
+                    sprintf(serialOutput, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+                }
+
                 multicore_fifo_push_blocking(1);
                 senderReady = false;
             }
@@ -271,7 +271,7 @@ main reactor Main {
             //printf("Color sensed in RGB565 %X, RGB888 %X!\r\n", RGB565, RGB888);
             //multicore_fifo_push_blocking(2);
             //senderReady = false;            // lcd_show_color(RGB565);
-            printf("<C>0 %X</C>", RGB888);
+            printf("<C>%d %X</C>", CMD_COLOR, RGB888);
         }
     =}
 }
