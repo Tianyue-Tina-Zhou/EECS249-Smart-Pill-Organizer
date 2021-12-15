@@ -196,6 +196,7 @@ main reactor Main {
     physical action func_click: bool;
     physical action calibrate_click: bool;
     
+    // Startup Reaction
     reaction(startup) mode_click, func_click, calibrate_click {=
         curr_state = STATE_COLOR_SENSING;
         sprintf(state_display, "COLOR");
@@ -213,6 +214,7 @@ main reactor Main {
         calibrate_click_action = calibrate_click;
     =}
 
+    // Physical Reactions
     reaction(mode_click) {=
         if (curr_state == STATE_COLOR_SENSING) {
             sprintf(state_display, "PAINT");
@@ -242,6 +244,7 @@ main reactor Main {
         has_serial_output = true;
     =}
 
+    // Controlled Serial Output
     timer serial_output_timer(50 msec, 50 msec) 
     reaction(serial_output_timer){=
         if (!has_serial_output) {
@@ -252,8 +255,9 @@ main reactor Main {
         has_serial_output = false;
     =}
 
-    timer FSM_timer(50 msec, 50 msec)
-    reaction(FSM_timer){=
+    // Time Trigger For FSM
+    timer state_machine_timer(50 msec, 50 msec)
+    reaction(state_machine_timer){=
         if (curr_state == STATE_COLOR_SENSING) {
             if (!is_pen_button_pressed) { 
                 return; 
