@@ -41,6 +41,7 @@ main reactor Main {
         #define MULTI_CORE_CMD_LCD_UPDATE 2
 
         #define LF_PHYSICAL_ACTION_DELAY 200000000
+        #define LF_PHYSICAL_ACTION_CD_TIME 200000000
 
         const uint PIN_MODE_BUTTON = LCD_BUTTON_PIN_A;
         const uint PIN_FUNC_BUTTON = LCD_BUTTON_PIN_B;
@@ -51,7 +52,6 @@ main reactor Main {
         bool is_pen_button_pressed = false;
 
         char serial_output[200];
-        bool has_serial_output = false;
 
         // FSM
         int curr_state = STATE_COLOR_SENSING;
@@ -71,11 +71,18 @@ main reactor Main {
         IMU_EN_SENSOR_TYPE en_motion_sensor_type;
         IMU_ST_ANGLES_DATA stAngles;
 
+        instant_t last_button_click_time = 0;
+
         // Interrupt Handler
         void handle_button_interrupts(uint gpio, uint32_t events){
             gpio_acknowledge_irq(gpio, events);
             printf("button interrupted");
             if (events != GPIO_IRQ_EDGE_FALL) {
+                return;
+            }
+
+            instant_t current_time = get_logical_time();
+            if (current_time < last_button_click_time + LF_PHYSICAL_ACTION_CD_TIME) {
                 return;
             }
 
@@ -90,6 +97,8 @@ main reactor Main {
             if (gpio == PIN_CALIBRATE_BUTTON) {
                 schedule(calibrate_click_action, LF_PHYSICAL_ACTION_DELAY);
             }
+
+            last_button_click_time = current_time;
         }
 
         // Initialization Functions
@@ -234,7 +243,6 @@ main reactor Main {
         }
 
         sprintf(serial_output, "<C>%d</C>", CMD_UNDO);
-        has_serial_output = true;
     =}
 
     reaction(calibrate_click) {=
@@ -243,18 +251,12 @@ main reactor Main {
         }
 
         sprintf(serial_output, "<C>%d</C>", CMD_CALIBRATE);
-        has_serial_output = true;
     =}
 
     // Controlled Serial Output
     timer serial_output_timer(50 msec, 50 msec) 
     reaction(serial_output_timer){=
-        if (!has_serial_output) {
-            return;
-        }
-
         printf("%s", serial_output);
-        has_serial_output = false;
     =}
 
     // Time Trigger For FSM
@@ -266,12 +268,10 @@ main reactor Main {
             }
             
             sprintf(serial_output, "<C>%d %X</C>", CMD_COLOR, last_color);
-            has_serial_output = true;
         } 
         else {
             int stroke = is_pen_button_pressed ? 1 : 0;
             sprintf(serial_output, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
-            has_serial_output = true;
         }
     =}
 }
