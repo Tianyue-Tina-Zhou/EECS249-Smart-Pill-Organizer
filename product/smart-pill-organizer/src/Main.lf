@@ -29,18 +29,11 @@ main reactor Main {
 
         const uint PIN_MODE_BUTTON = LCD_BUTTON_PIN_A;
         const uint PIN_FUNC_BUTTON = LCD_BUTTON_PIN_B;
-        const uint PIN_PEN_BUTTON = EXTRA_PUSH_BUTTON_PIN;
         const uint PIN_CALIBRATE_BUTTON = LCD_BUTTON_PIN_RIGHT;
+        const uint PIN_PEN_BUTTON = EXTRA_PUSH_BUTTON_PIN;
 
         // Buttons
         bool is_pen_button_pressed = false;
-        bool is_mode_button_pressed = false;
-        bool is_func_button_pressed = false;
-        bool is_calibrate_button_pressed = false;
-
-        bool is_mode_button_clicked = false;
-        bool is_func_button_clicked = false;
-        bool is_calibrate_button_clicked = false;
 
         char serial_output[200];
         bool has_serial_output = false;
@@ -65,6 +58,9 @@ main reactor Main {
         #define MULTI_CORE_CMD_SERIAL_OUTPUT 1
         #define MULTI_CORE_CMD_LCD_UPDATE 2
 
+        void * mode_click_pointer;
+        void * func_click_pointer;
+        void * calibrate_click_pointer;
 
         // IMU Data Pointers
         IMU_EN_SENSOR_TYPE enMotionSensorType;
@@ -121,6 +117,32 @@ main reactor Main {
         {
             imuInit(&enMotionSensorType);
         }
+
+        void botton_irq(uint gpio, uint32_t events){
+            gpio_acknowledge_irq(gpio, events);
+            printf("button interrupted");
+            if (events != GPIO_IRQ_EDGE_FALL) {
+                return;
+            }
+
+            if (gpio == PIN_MODE_BUTTON){
+                schedule(mode_click_pointer, 200000000);
+            }
+
+            if (gpio == PIN_FUNC_BUTTON) {
+                schedule(func_click_pointer, 200000000);
+            }
+
+            if (gpio == PIN_CALIBRATE_BUTTON) {
+                schedule(calibrate_click_pointer, 200000000);
+            }
+        }
+
+        void init_interrupt() {
+            gpio_set_irq_enabled_with_callback(PIN_MODE_BUTTON, GPIO_IRQ_EDGE_FALL, true, botton_irq);
+            gpio_set_irq_enabled_with_callback(PIN_FUNC_BUTTON, GPIO_IRQ_EDGE_FALL, true, botton_irq);
+            gpio_set_irq_enabled_with_callback(PIN_CALIBRATE_BUTTON, GPIO_IRQ_EDGE_FALL, true, botton_irq);
+        }
 		
 		void lcd_show_color(UWORD color)
         {   
@@ -140,24 +162,6 @@ main reactor Main {
 
         void sample_push_buttons() {
             is_pen_button_pressed = gpio_get(PIN_PEN_BUTTON);
-        
-            bool new_mode_value = gpio_get(PIN_MODE_BUTTON);
-            if(!new_mode_value && is_mode_button_pressed) {
-                is_mode_button_clicked = true;
-            }
-            is_mode_button_pressed = new_mode_value;
-            
-            bool new_func_value = gpio_get(PIN_FUNC_BUTTON);
-            if(!new_func_value && is_func_button_pressed) {
-                is_func_button_clicked = true;
-            }
-            is_func_button_pressed = new_func_value;
-
-            bool new_calibrate_value = gpio_get(PIN_CALIBRATE_BUTTON);
-            if(!new_calibrate_value && is_calibrate_button_pressed)  {
-                is_calibrate_button_clicked = true;
-            }
-            is_calibrate_button_pressed = new_calibrate_value;
         }
 
         void update_lcd_if_needed() {
@@ -190,16 +194,51 @@ main reactor Main {
                 sleep_ms(20);
             }
         }
-
     =}
+
+    physical action mode_click: bool;
+    physical action func_click: bool;
+    physical action calibrate_click: bool;
     
-    reaction(startup) {=
+    reaction(startup) mode_click, func_click, calibrate_click {=
         stdio_init_all();
         init_gpio();
         init_lcd();
 		init_color_sensor();
         init_imu();
+        init_interrupt();
         multicore_launch_core1(core1_entry);
+
+        mode_click_pointer = mode_click;
+        func_click_pointer = func_click;
+        calibrate_click_pointer = calibrate_click;
+    =}
+
+    reaction(mode_click) {=
+        if (curr_state == STATE_COLOR_SENSING) {
+            curr_state = STATE_PAINTING;
+        }
+        else {
+            curr_state = STATE_COLOR_SENSING;
+        }
+    =}
+
+    reaction(func_click) {=
+        if (curr_state != STATE_PAINTING) {
+            return;
+        }
+
+        sprintf(serial_output, "<C>%d</C>", CMD_UNDO);
+        has_serial_output = true;
+    =}
+
+    reaction(calibrate_click) {=
+        if (curr_state != STATE_PAINTING) {
+            return;
+        }
+
+        sprintf(serial_output, "<C>%d</C>", CMD_CALIBRATE);
+        has_serial_output = true;
     =}
 
     timer serial_output_timer(50 msec, 50 msec) 
@@ -213,12 +252,7 @@ main reactor Main {
         switch(curr_state){
             case STATE_COLOR_SENSING:
                 sprintf(state_display, "COLOR");
-                if (is_mode_button_clicked) {
-                    // Switching to PAINTING state
-                    next_state = STATE_PAINTING;
-                    is_mode_button_clicked = false;
-                } 
-                else if (is_pen_button_pressed) {
+                if (is_pen_button_pressed) {
                     sprintf(serial_output, "<C>%d %X</C>", CMD_COLOR, last_color);
                     has_serial_output = true;
                 }
@@ -226,29 +260,9 @@ main reactor Main {
 
             case STATE_PAINTING:
                 sprintf(state_display, "PAINT");
-                if (is_mode_button_clicked){
-                    // Switching to COLOR SENSING state
-                    next_state = STATE_COLOR_SENSING;
-                    is_mode_button_clicked = false;
-                }
-                else if (is_func_button_clicked) {
-                    // Undo
-                    sprintf(serial_output, "<C>%d</C>", CMD_UNDO);
-                    is_func_button_clicked = false;
-                    has_serial_output = true;
-                }
-                else if (is_calibrate_button_clicked) {
-                    // Calibrate
-                    sprintf(serial_output, "<C>%d</C>", CMD_CALIBRATE);
-                    is_calibrate_button_clicked = false;
-                    has_serial_output = true;
-                }
-                else {
-                    // Motion
-                    int stroke = is_pen_button_pressed ? 1 : 0;
-                    sprintf(serial_output, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
-                    has_serial_output = true;
-                }
+                int stroke = is_pen_button_pressed ? 1 : 0;
+                sprintf(serial_output, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+                has_serial_output = true;
             break;
         }
 
