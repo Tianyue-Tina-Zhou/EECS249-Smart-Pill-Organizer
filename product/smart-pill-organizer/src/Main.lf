@@ -152,25 +152,55 @@ main reactor Main {
             multicore_fifo_clear_irq(); // Clear interrupt
         }
 
+        void update_serial_output() {
+            if (hasNewSerialOutput) {
+                printf("%s", serialOutput);
+                hasNewSerialOutput = false;
+            }
+        }
+
+        void sample_push_buttons() {
+            isPenButtonPressed = gpio_get(PIN_PEN_BUTTON);
+        
+            bool new_mode_value = gpio_get(PIN_MODE_BUTTON);
+            if(!new_mode_value && isModeButtonPressed) {
+                isModeButtonClick = true;
+            }
+            isModeButtonPressed = new_mode_value;
+            
+            bool new_func_value = gpio_get(PIN_FUNC_BUTTON);
+            if(!new_func_value && isFuncButtonPressed) {
+                isFuncButtonClick = true;
+            }
+            isFuncButtonPressed = new_func_value;
+
+            bool new_calibrate_value = gpio_get(PIN_CALIBRATE_BUTTON);
+            if(!new_calibrate_value && isCalibrateButtonPressed)  {
+                isCalibrateButtonClick = true;
+            }
+            isCalibrateButtonPressed = new_calibrate_value;
+        }
+
+        void update_lcd() {
+            if (curr_state == STATE_COLOR_SENSING) {
+                RGB color = TCS34725_Get_RGBData();
+                last_color = TCS34725_GetRGB888(color);
+                UWORD lcdColor = TCS34725_GetRGB565(color);
+                lcd_show_color(lcdColor);
+                updated_for_paint = false;
+            } 
+            else if (!updated_for_paint) {
+                lcd_show_color(WHITE);
+                updated_for_paint = true;
+            }
+        }
+
         // Core 1 Main Code
         void core1_entry() {
             while (1){
-                if (hasNewSerialOutput) {
-                    printf("%s", serialOutput);
-                    hasNewSerialOutput = false;
-                }
-
-                if (curr_state == STATE_COLOR_SENSING) {
-                    RGB color = TCS34725_Get_RGBData();
-                    last_color = TCS34725_GetRGB888(color);
-                    UWORD lcdColor = TCS34725_GetRGB565(color);
-                    lcd_show_color(lcdColor);
-                    updated_for_paint = false;
-                } 
-                else if (!updated_for_paint) {
-                    lcd_show_color(WHITE);
-                    updated_for_paint = true;
-                }
+                update_serial_output();
+                sample_push_buttons();
+                update_lcd();
                 
                 sleep_ms(50);
             }
@@ -185,29 +215,6 @@ main reactor Main {
 		init_color_sensor();
         init_imu();
         multicore_launch_core1(core1_entry);
-    =}
-	
-    timer pb_sampling(100 msec, 150 msec)
-    reaction(pb_sampling) {=
-        isPenButtonPressed = gpio_get(PIN_PEN_BUTTON);
-        
-        bool new_mode_value = gpio_get(PIN_MODE_BUTTON);
-        if(!new_mode_value && isModeButtonPressed) {
-            isModeButtonClick = true;
-        }
-        isModeButtonPressed = new_mode_value;
-        
-        bool new_func_value = gpio_get(PIN_FUNC_BUTTON);
-        if(!new_func_value && isFuncButtonPressed) {
-            isFuncButtonClick = true;
-        }
-        isFuncButtonPressed = new_func_value;
-
-        bool new_calibrate_value = gpio_get(PIN_CALIBRATE_BUTTON);
-        if(!new_calibrate_value && isCalibrateButtonPressed)  {
-            isCalibrateButtonClick = true;
-        }
-        isCalibrateButtonPressed = new_calibrate_value;
     =}
 
     timer FSM_timer(3 sec, 50 msec)
