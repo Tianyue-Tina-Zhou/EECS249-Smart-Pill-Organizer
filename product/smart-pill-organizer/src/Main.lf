@@ -42,22 +42,32 @@ main reactor Main {
         bool isFuncButtonPressed = false;
         bool isCalibrateButtonPressed = false;
 
-        char serialOutput[200]; 
+        bool isModeButtonClick = false;
+        bool isFuncButtonClick = false;
+        bool isCalibrateButtonClick = false;
+
+        char serialOutput[200];
+        bool hasNewSerialOutput = false;
+
         bool senderReady = true;
         UWORD RGB565;
 
         // FSM
         int curr_state = 0;
-        uint32_t last_color = 0xFFFFFF;
+        char state_display[5];
+        UDOUBLE last_color = 0;
+        bool updated_for_paint = false;
 
-        #define SENSING     0
-        #define PAINTING    1
+        #define STATE_COLOR_SENSING     0
+        #define STATE_PAINTING    1
 
         #define CMD_COLOR  0
         #define CMD_MOTION  1
         #define CMD_UNDO 2
         #define CMD_CALIBRATE 3
 
+        #define MULTI_CORE_CMD_SERIAL_OUTPUT 1
+        #define MULTI_CORE_CMD_LCD_UPDATE 2
 
 
         // IMU Data Pointers
@@ -65,7 +75,7 @@ main reactor Main {
         IMU_ST_ANGLES_DATA stAngles;
 
         // Initialization Functions
-        int lcd_init() {
+        int init_lcd() {
             if(DEV_Module_Init()!=0){
                 return -1;
             }
@@ -79,9 +89,16 @@ main reactor Main {
             if((BlackImage = (UWORD *)malloc(Imagesize)) == NULL) {
                 return 1;
             }
+            Paint_NewImage((UBYTE *) BlackImage, LCD_1IN14_V2.WIDTH, LCD_1IN14_V2.HEIGHT, 0, WHITE);
+            Paint_SetScale(65);
+            Paint_Clear(WHITE);
+            Paint_SetRotate(ROTATE_180);
+            Paint_Clear(WHITE);
+
+            DEV_SET_PWM(10);
         }
 		
-		void color_sensing_init() {
+		void init_color_sensor() {
             TCS34725_Init();
 			DEV_SET_PWM(50);
 		
@@ -108,74 +125,84 @@ main reactor Main {
         {
             imuInit(&enMotionSensorType);
         }
-
-
-        // Helper functions
-        void lcd_print(const char * pString)
-        {   
-            // 1.Create a new image cache named BlackImage and fill it with white
-            Paint_NewImage((UBYTE *) BlackImage, LCD_1IN14_V2.WIDTH, LCD_1IN14_V2.HEIGHT, 0, WHITE);
-            Paint_SetScale(65);
-            Paint_Clear(WHITE);
-            Paint_SetRotate(ROTATE_0);
-            Paint_Clear(WHITE);
-            
-            // 2.Drawing on the image
-            Paint_DrawString_EN(20, 20, pString, &Font20, WHITE, BLACK);
-
-            // 3.Refresh the picture in RAM to LCD
-            LCD_1IN14_V2_Display(BlackImage);
-            DEV_SET_PWM(10);
-        }
 		
 		void lcd_show_color(UWORD color)
         {   
-            // 1.Create a new image cache named BlackImage and fill it with white
-            Paint_NewImage((UBYTE *) BlackImage, LCD_1IN14_V2.WIDTH, LCD_1IN14_V2.HEIGHT, 0, WHITE);
-            Paint_SetScale(65);
-            Paint_Clear(WHITE);
-            Paint_SetRotate(ROTATE_0);
-            Paint_Clear(WHITE);
-            
-            // 2.Drawing on the image
-			Paint_DrawString_EN(20, 20, "Color collected", &Font20, WHITE, BLACK);
-            Paint_DrawRectangle(45, 60, 180, 90, color, DOT_PIXEL_2X2,DRAW_FILL_FULL);
-
-            // 3.Refresh the picture in RAM to LCD
+            Paint_DrawRectangle(0, 0, LCD_1IN14_V2.WIDTH, LCD_1IN14_V2.HEIGHT, color, DOT_PIXEL_2X2,DRAW_FILL_FULL);
+            Paint_DrawString_EN(80, 57, state_display, &Font20, WHITE, BLACK);
             LCD_1IN14_V2_Display(BlackImage);
-            DEV_SET_PWM(10);
         }
+
         // Core 1 interrupt Handler
         void core1_interrupt_handler() {
 
-            // Receive Raw Value, Convert and Print Temperature Value
+            // Receive CMD, and execute the corresponding I/O
             while (multicore_fifo_rvalid()){
-                int temp = multicore_fifo_pop_blocking();
-                if (temp == 1)
-                {
+                int cmd = multicore_fifo_pop_blocking();
+                if (cmd == MULTI_CORE_CMD_SERIAL_OUTPUT) {
                     printf("%s", serialOutput);
                 }
-                else
-                {
+                else if (cmd == MULTI_CORE_CMD_LCD_UPDATE) {
                     lcd_show_color(RGB565);
                 }
+
                 senderReady = true;        
             }
 
             multicore_fifo_clear_irq(); // Clear interrupt
         }
 
+        void update_serial_output() {
+            if (hasNewSerialOutput) {
+                printf("%s", serialOutput);
+                hasNewSerialOutput = false;
+            }
+        }
+
+        void sample_push_buttons() {
+            isPenButtonPressed = gpio_get(PIN_PEN_BUTTON);
+        
+            bool new_mode_value = gpio_get(PIN_MODE_BUTTON);
+            if(!new_mode_value && isModeButtonPressed) {
+                isModeButtonClick = true;
+            }
+            isModeButtonPressed = new_mode_value;
+            
+            bool new_func_value = gpio_get(PIN_FUNC_BUTTON);
+            if(!new_func_value && isFuncButtonPressed) {
+                isFuncButtonClick = true;
+            }
+            isFuncButtonPressed = new_func_value;
+
+            bool new_calibrate_value = gpio_get(PIN_CALIBRATE_BUTTON);
+            if(!new_calibrate_value && isCalibrateButtonPressed)  {
+                isCalibrateButtonClick = true;
+            }
+            isCalibrateButtonPressed = new_calibrate_value;
+        }
+
+        void update_lcd() {
+            if (curr_state == STATE_COLOR_SENSING) {
+                RGB color = TCS34725_Get_RGBData();
+                last_color = TCS34725_GetRGB888(color);
+                UWORD lcdColor = TCS34725_GetRGB565(color);
+                lcd_show_color(lcdColor);
+                updated_for_paint = false;
+            } 
+            else if (!updated_for_paint) {
+                lcd_show_color(WHITE);
+                updated_for_paint = true;
+            }
+        }
+
         // Core 1 Main Code
         void core1_entry() {
-            // Configure Core 1 Interrupt
-            multicore_fifo_clear_irq();
-            irq_set_exclusive_handler(SIO_IRQ_PROC1, core1_interrupt_handler);
-
-            irq_set_enabled(SIO_IRQ_PROC1, true);
-
-            // Infinte While Loop to wait for interrupt
             while (1){
-                tight_loop_contents();
+                update_serial_output();
+                sample_push_buttons();
+                update_lcd();
+                
+                sleep_ms(50);
             }
         }
 
@@ -184,47 +211,28 @@ main reactor Main {
     reaction(startup) {=
         stdio_init_all();
         init_gpio();
-        lcd_init();
-		color_sensing_init();
+        init_lcd();
+		init_color_sensor();
         init_imu();
         multicore_launch_core1(core1_entry);
-
-        // printf("System Initialized!\r\n");
-    =}
-	
-    timer pb_sampling(100 msec, 150 msec)
-    reaction(pb_sampling) {=
-        isPenButtonPressed = gpio_get(PIN_PEN_BUTTON);
-        
-        // Do not allow the these button pressed change to false
-        // They will get reset when the pressed event is consumed
-        if(!gpio_get(PIN_MODE_BUTTON)) {
-            isModeButtonPressed = true;
-        }
-        
-        if(!gpio_get(PIN_FUNC_BUTTON)) {
-            isFuncButtonPressed = true;
-        }
-
-        if(!gpio_get(PIN_CALIBRATE_BUTTON))  {
-            isCalibrateButtonPressed = true;
-        }
     =}
 
     timer FSM_timer(3 sec, 50 msec)
     reaction(FSM_timer){=
         int next_state = curr_state; 
         switch(curr_state){
-            case SENSING:
-                if (isModeButtonPressed) {
-                    next_state = PAINTING;
-                    isModeButtonPressed = false;
+            case STATE_COLOR_SENSING:
+                sprintf(state_display, "COLOR");
+                if (isModeButtonClick) {
+                    next_state = STATE_PAINTING;
+                    isModeButtonClick = false;
                 }
             break;
-            case PAINTING:
-                if (isModeButtonPressed){
-                    next_state = SENSING;
-                    isModeButtonPressed = false;
+            case STATE_PAINTING:
+                sprintf(state_display, "PAINT");
+                if (isModeButtonClick){
+                    next_state = STATE_COLOR_SENSING;
+                    isModeButtonClick = false;
                 }
             break;
         }
@@ -235,27 +243,26 @@ main reactor Main {
 
     timer painting_timer(1 sec, 50 msec)
     reaction(painting_timer) {=
-        if (senderReady) {
-            if(curr_state == PAINTING){
-                imuDataGet( &stAngles, NULL, NULL, NULL);
-                
-                if (isFuncButtonPressed) {
-                    // Undo
-                    sprintf(serialOutput, "<C>%d</C>", CMD_UNDO);
-                    isFuncButtonPressed = false;
-                }
-                else if (isCalibrateButtonPressed) {
-                    // CALIBRATE
-                    sprintf(serialOutput, "<C>%d</C>", CMD_CALIBRATE);
-                    isCalibrateButtonPressed = false;
-                }
-                else {
-                    int stroke = isPenButtonPressed ? 1 : 0;
-                    sprintf(serialOutput, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
-                }
-
-                multicore_fifo_push_blocking(1);
-                senderReady = false;
+        if(curr_state == STATE_PAINTING){
+            imuDataGet( &stAngles, NULL, NULL, NULL);
+            
+            if (isFuncButtonClick) {
+                // UNDO
+                sprintf(serialOutput, "<C>%d</C>", CMD_UNDO);
+                isFuncButtonClick = false;
+                hasNewSerialOutput = true;
+            }
+            else if (isCalibrateButtonClick) {
+                // CALIBRATE
+                sprintf(serialOutput, "<C>%d</C>", CMD_CALIBRATE);
+                isCalibrateButtonClick = false;
+                hasNewSerialOutput = true;
+            }
+            else {
+                // MOTION
+                int stroke = isPenButtonPressed ? 1 : 0;
+                sprintf(serialOutput, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+                hasNewSerialOutput = true;
             }
         }
     =}
@@ -263,15 +270,19 @@ main reactor Main {
 
     timer color_Sensing(1 sec, 100 msec)
     reaction(color_Sensing) {=
-        if(senderReady && curr_state == SENSING){
-            RGB rgb = TCS34725_Get_RGBData();
-            UDOUBLE RGB888 = TCS34725_GetRGB888(rgb);
-            RGB565 = TCS34725_GetRGB565(rgb);
+        if(curr_state == STATE_COLOR_SENSING){
+            // RGB rgb = TCS34725_Get_RGBData();
+            // UDOUBLE RGB888 = TCS34725_GetRGB888(rgb);
+            // RGB565 = TCS34725_GetRGB565(rgb);
 
             //printf("Color sensed in RGB565 %X, RGB888 %X!\r\n", RGB565, RGB888);
             //multicore_fifo_push_blocking(2);
             //senderReady = false;            // lcd_show_color(RGB565);
-            printf("<C>%d %X</C>", CMD_COLOR, RGB888);
+            
+            if (isPenButtonPressed) {
+                sprintf(serialOutput, "<C>%d %X</C>", CMD_COLOR, last_color);
+                hasNewSerialOutput = true;
+            }
         }
     =}
 }
