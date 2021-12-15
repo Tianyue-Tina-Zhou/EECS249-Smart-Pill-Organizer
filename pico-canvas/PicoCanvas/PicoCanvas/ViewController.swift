@@ -151,16 +151,13 @@ extension ViewController: CommandParserDelegate {
         switch command {
         case .rgb(let color):
             update(color: color)
-        case .penMove(let x, let y, let stroke):
-            let packet = ControlPacket(speedX: Float(x), speedY: Float(y), stroke: stroke)
+        case .motion(let orientation, let stroke):
+            lastAngle = orientation
+            let delta = OrientationManager.shared.calculateDelta(base: baseAngle, orientation: orientation)
+            let packet = ControlPacket(speedX: Float(delta.roll), speedY: Float(delta.pitch), stroke: stroke)
             canvas.update(controlPacket: packet)
         case .undo:
             canvas.undo()
-        case .angle(let orientation, let stroke):
-            lastAngle = orientation
-            let delta = OrientationManager.shared.calculateDelta(base: baseAngle, orientation: orientation)
-            let packet = ControlPacket(speedX: Float(delta.pitch), speedY: -Float(delta.roll), stroke: stroke)
-            canvas.update(controlPacket: packet)
         }
     }
     

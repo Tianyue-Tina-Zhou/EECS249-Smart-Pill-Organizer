@@ -271,7 +271,7 @@ main reactor Main {
             //printf("Color sensed in RGB565 %X, RGB888 %X!\r\n", RGB565, RGB888);
             //multicore_fifo_push_blocking(2);
             //senderReady = false;            // lcd_show_color(RGB565);
-            //printf("Sensing color\r\n");
+            printf("<C>0 %X</C>", RGB888);
         }
     =}
 }

@@ -20,16 +20,14 @@ struct DeviceOrientation {
 
 enum CommandType: Int {
     case rgb = 0
-    case penMove
+    case motion
     case undo
-    case angle
 }
 
 enum Command {
     case rgb(color: NSColor)
-    case penMove(x: Int, y: Int, stroke: Bool)
+    case motion(orientation: DeviceOrientation, stroke: Bool)
     case undo
-    case angle(orientation: DeviceOrientation, stroke: Bool)
     
     init?(string: String) {
         let args = string.components(separatedBy: " ")
@@ -41,18 +39,14 @@ enum Command {
             guard args.count == 2 else { return nil }
             guard args[1].count == 6 else { return nil }
             self = .rgb(color: NSColor(hex: args[1]))
-        case .penMove:
-            guard args.count == 4 else { return nil }
-            guard let stroke = Int(args[1]), let x = Int(args[2]), let y = Int(args[3]) else { return nil }
-            self = .penMove(x: x, y: y, stroke: stroke != 0)
-        case .undo:
-            self = .undo
-        case .angle:
+        case .motion:
             guard args.count == 5 else { return nil }
             guard let stroke = Int(args[1]), let roll = Double(args[2]), let pitch = Double(args[3]), let yaw = Double(args[4]) else { return nil }
             guard !roll.isNaN && !pitch.isNaN && !yaw.isNaN else { return nil }
             let orientation = DeviceOrientation(roll: roll, pitch: pitch, yaw: yaw)
-            self = .angle(orientation: orientation, stroke: stroke != 0)
+            self = .motion(orientation: orientation, stroke: stroke != 0)
+        case .undo:
+            self = .undo
         }
     }
 }
