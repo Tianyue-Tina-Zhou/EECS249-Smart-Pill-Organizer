@@ -184,7 +184,6 @@ main reactor Main {
         // Core 1 Main Code
         void core1_entry() {
             while (1){
-                update_serial_output_if_needed();
                 sample_push_buttons();
                 update_lcd_if_needed();
                 update_motion_reading_if_need();
@@ -201,6 +200,11 @@ main reactor Main {
 		init_color_sensor();
         init_imu();
         multicore_launch_core1(core1_entry);
+    =}
+
+    timer serial_output_timer(50 msec, 50 msec) 
+    reaction(serial_output_timer){=
+        update_serial_output_if_needed();
     =}
 
     timer FSM_timer(50 msec, 50 msec)
