@@ -50,6 +50,7 @@ main reactor Main {
 
         // FSM
         int curr_state = 0;
+        uint32_t last_color = 0xFFFFFF;
 
         #define SENSING     0
         #define PAINTING    1
@@ -57,6 +58,12 @@ main reactor Main {
         #define FUNC        B_Pressed
         #define MODE        A_Pressed
         #define PEN         PB3_Pressed
+
+        #define CMD_COLOR  0
+        #define CMD_MOTION  1
+        #define CMD_UNDO 2
+        #define CMD_CALIBRATE 3
+
 
 
         // IMU Data Pointers
@@ -241,19 +248,17 @@ main reactor Main {
         if (senderReady) {
             if(curr_state == PAINTING){
                 imuDataGet( &stAngles, NULL, NULL, NULL);
+                
                 if (FUNC) {
                     // Undo
-                    sprintf(IMUData, "<C>2</C>");
-                    
+                    sprintf(IMUData, "<C>%d</C>", CMD_UNDO);
                     FUNC = false;
                 }
-                else if (PEN) {
-                    // Paint
-                    sprintf(IMUData, "<C>1 1 %f %f %f</C>", stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
-                } else {
-                    // Paint
-                    sprintf(IMUData, "<C>1 0 %f %f %f</C>", stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+                else {
+                    int stroke = PEN ? 1 : 0;
+                    sprintf(IMUData, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
                 }
+
                 multicore_fifo_push_blocking(1);
                 senderReady = false;
             }
@@ -271,7 +276,7 @@ main reactor Main {
             //printf("Color sensed in RGB565 %X, RGB888 %X!\r\n", RGB565, RGB888);
             //multicore_fifo_push_blocking(2);
             //senderReady = false;            // lcd_show_color(RGB565);
-            printf("<C>0 %X</C>", RGB888);
+            printf("<C>%d %X</C>", CMD_COLOR, RGB888);
         }
     =}
 }
