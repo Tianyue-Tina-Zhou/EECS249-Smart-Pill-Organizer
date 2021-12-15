@@ -129,11 +129,13 @@ main reactor Main {
             LCD_1IN14_V2_Display(image_buffer);
         }
 
-        void update_serial_output() {
-            if (has_serial_output) {
-                printf("%s", serial_output);
-                has_serial_output = false;
+        void update_serial_output_if_needed() {
+            if (!has_serial_output) {
+                return;
             }
+
+            printf("%s", serial_output);
+            has_serial_output = false;
         }
 
         void sample_push_buttons() {
@@ -158,7 +160,7 @@ main reactor Main {
             is_calibrate_button_pressed = new_calibrate_value;
         }
 
-        void update_lcd() {
+        void update_lcd_if_needed() {
             if (curr_state == STATE_COLOR_SENSING) {
                 RGB color = TCS34725_Get_RGBData();
                 last_color = TCS34725_GetRGB888(color);
@@ -172,14 +174,21 @@ main reactor Main {
             }
         }
 
+        void update_motion_reading_if_need() {
+            if (curr_state != STATE_PAINTING) { 
+                return; 
+            }
+            imuDataGet( &stAngles, NULL, NULL, NULL);
+        }
+
         // Core 1 Main Code
         void core1_entry() {
             while (1){
-                update_serial_output();
+                update_serial_output_if_needed();
                 sample_push_buttons();
-                update_lcd();
-                
-                sleep_ms(50);
+                update_lcd_if_needed();
+                update_motion_reading_if_need();
+                sleep_ms(20);
             }
         }
 
@@ -194,64 +203,51 @@ main reactor Main {
         multicore_launch_core1(core1_entry);
     =}
 
-    timer FSM_timer(3 sec, 50 msec)
+    timer FSM_timer(50 msec, 50 msec)
     reaction(FSM_timer){=
         int next_state = curr_state; 
         switch(curr_state){
             case STATE_COLOR_SENSING:
                 sprintf(state_display, "COLOR");
                 if (is_mode_button_clicked) {
+                    // Switching to PAINTING state
                     next_state = STATE_PAINTING;
                     is_mode_button_clicked = false;
+                } 
+                else if (is_pen_button_pressed) {
+                    sprintf(serial_output, "<C>%d %X</C>", CMD_COLOR, last_color);
+                    has_serial_output = true;
                 }
             break;
+
             case STATE_PAINTING:
                 sprintf(state_display, "PAINT");
                 if (is_mode_button_clicked){
+                    // Switching to COLOR SENSING state
                     next_state = STATE_COLOR_SENSING;
                     is_mode_button_clicked = false;
+                }
+                else if (is_func_button_clicked) {
+                    // Undo
+                    sprintf(serial_output, "<C>%d</C>", CMD_UNDO);
+                    is_func_button_clicked = false;
+                    has_serial_output = true;
+                }
+                else if (is_calibrate_button_clicked) {
+                    // Calibrate
+                    sprintf(serial_output, "<C>%d</C>", CMD_CALIBRATE);
+                    is_calibrate_button_clicked = false;
+                    has_serial_output = true;
+                }
+                else {
+                    // Motion
+                    int stroke = is_pen_button_pressed ? 1 : 0;
+                    sprintf(serial_output, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+                    has_serial_output = true;
                 }
             break;
         }
 
         curr_state = next_state;
-    =}
-
-
-    timer painting_timer(1 sec, 50 msec)
-    reaction(painting_timer) {=
-        if(curr_state == STATE_PAINTING){
-            imuDataGet( &stAngles, NULL, NULL, NULL);
-            
-            if (is_func_button_clicked) {
-                // UNDO
-                sprintf(serial_output, "<C>%d</C>", CMD_UNDO);
-                is_func_button_clicked = false;
-                has_serial_output = true;
-            }
-            else if (is_calibrate_button_clicked) {
-                // CALIBRATE
-                sprintf(serial_output, "<C>%d</C>", CMD_CALIBRATE);
-                is_calibrate_button_clicked = false;
-                has_serial_output = true;
-            }
-            else {
-                // MOTION
-                int stroke = is_pen_button_pressed ? 1 : 0;
-                sprintf(serial_output, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
-                has_serial_output = true;
-            }
-        }
-    =}
-
-
-    timer color_Sensing(1 sec, 100 msec)
-    reaction(color_Sensing) {=
-        if(curr_state == STATE_COLOR_SENSING){
-            if (is_pen_button_pressed) {
-                sprintf(serial_output, "<C>%d %X</C>", CMD_COLOR, last_color);
-                has_serial_output = true;
-            }
-        }
     =}
 }
