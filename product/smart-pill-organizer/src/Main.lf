@@ -65,7 +65,7 @@ main reactor Main {
         IMU_ST_ANGLES_DATA stAngles;
 
         // Initialization Functions
-        int lcd_init() {
+        int init_lcd() {
             if(DEV_Module_Init()!=0){
                 return -1;
             }
@@ -81,7 +81,7 @@ main reactor Main {
             }
         }
 		
-		void color_sensing_init() {
+		void init_color_sensor() {
             TCS34725_Init();
 			DEV_SET_PWM(50);
 		
@@ -107,25 +107,6 @@ main reactor Main {
         void init_imu()
         {
             imuInit(&enMotionSensorType);
-        }
-
-
-        // Helper functions
-        void lcd_print(const char * pString)
-        {   
-            // 1.Create a new image cache named BlackImage and fill it with white
-            Paint_NewImage((UBYTE *) BlackImage, LCD_1IN14_V2.WIDTH, LCD_1IN14_V2.HEIGHT, 0, WHITE);
-            Paint_SetScale(65);
-            Paint_Clear(WHITE);
-            Paint_SetRotate(ROTATE_0);
-            Paint_Clear(WHITE);
-            
-            // 2.Drawing on the image
-            Paint_DrawString_EN(20, 20, pString, &Font20, WHITE, BLACK);
-
-            // 3.Refresh the picture in RAM to LCD
-            LCD_1IN14_V2_Display(BlackImage);
-            DEV_SET_PWM(10);
         }
 		
 		void lcd_show_color(UWORD color)
@@ -184,12 +165,10 @@ main reactor Main {
     reaction(startup) {=
         stdio_init_all();
         init_gpio();
-        lcd_init();
-		color_sensing_init();
+        init_lcd();
+		init_color_sensor();
         init_imu();
         multicore_launch_core1(core1_entry);
-
-        // printf("System Initialized!\r\n");
     =}
 	
     timer pb_sampling(100 msec, 150 msec)
