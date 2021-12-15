@@ -66,7 +66,7 @@ main reactor Main {
         void * calibrate_click_action;
 
         // IMU Data Pointers
-        IMU_EN_SENSOR_TYPE enMotionSensorType;
+        IMU_EN_SENSOR_TYPE en_motion_sensor_type;
         IMU_ST_ANGLES_DATA stAngles;
 
         // Interrupt Handler
@@ -139,7 +139,7 @@ main reactor Main {
 
         void init_imu()
         {
-            imuInit(&enMotionSensorType);
+            imuInit(&en_motion_sensor_type);
         }
 
         void init_interrupt() {
