@@ -45,7 +45,7 @@ main reactor Main {
         bool isFuncButtonPressed = false;
         bool isCalibrateButtonPressed = false;
 
-        char IMUData[200]; 
+        char serialOutput[200]; 
         bool senderReady = true;
         UWORD RGB565;
 
@@ -159,7 +159,7 @@ main reactor Main {
                 int temp = multicore_fifo_pop_blocking();
                 if (temp == 1)
                 {
-                    printf("%s", IMUData);
+                    printf("%s", serialOutput);
                 }
                 else
                 {
@@ -253,17 +253,17 @@ main reactor Main {
                 
                 if (isFuncButtonPressed) {
                     // Undo
-                    sprintf(IMUData, "<C>%d</C>", CMD_UNDO);
+                    sprintf(serialOutput, "<C>%d</C>", CMD_UNDO);
                     isFuncButtonPressed = false;
                 }
                 else if (isCalibrateButtonPressed) {
                     // CALIBRATE
-                    sprintf(IMUData, "<C>%d</C>", CMD_CALIBRATE);
+                    sprintf(serialOutput, "<C>%d</C>", CMD_CALIBRATE);
                     isCalibrateButtonPressed = false;
                 }
                 else {
                     int stroke = isPenButtonPressed ? 1 : 0;
-                    sprintf(IMUData, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
+                    sprintf(serialOutput, "<C>%d %d %f %f %f</C>", CMD_MOTION, stroke, stAngles.fRoll, stAngles.fPitch, stAngles.fYaw);
                 }
 
                 multicore_fifo_push_blocking(1);
